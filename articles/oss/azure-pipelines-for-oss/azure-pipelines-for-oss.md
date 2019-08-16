@@ -3,13 +3,13 @@ title: The ultimate (free) CI/CD for your open-source projects
 published: false
 description: A comparison of hosted GitHub CI services and a step-by-step tutorial on adding Azure Pipelines to your repo
 tags: opensource, github, devops, azure
-cover_image: images/pipeline.jpg
+cover_image: https://raw.githubusercontent.com/sinedied/articles/master/articles/oss/azure-pipelines-for-oss/assets/pipeline.jpg
 canonical_url:
 ---
 
 # The ultimate (free) CI/CD for your open-source projects
 
-![Man walking on a pipeline](images/pipeline.jpg)
+![Man walking on a pipeline](assets/pipeline.jpg)
 <figcaption>Photo by Rodion Kutsaev on Unsplash</figcaption>
 
 I spend a good part of my free time working on open-source software (OSS) on GitHub, and I do it (mostly) for fun and learning new things.
@@ -51,10 +51,10 @@ Jokes aside, the last point is easy to overlook and I fell into it too many time
 BIG MISTAKE. Once issues and PRs comes, it's *too late*.
 Reviewing, testing and deploying fixes and new features from your contributors becomes a black hole of time lost.
 
-![Free time in black hole](images/free-time-hole.jpg)
+![Free time in black hole](assets/free-time-hole.jpg)
 <figcaption>Black hole by Event Horizon Telescope Collaboration, <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> // Altered with my awesome Paint skills</figcaption>
 
-After a few projects though, it's probable that you don't make this mistake anymore and that you put in place a minimal CI pipeline as I did 😎 
+After a few projects though, it's probable that you don't make this mistake anymore and that you put in place a minimal CI pipeline as I did 😎
 
 ### Then it was fine. Somehow.
 
@@ -89,7 +89,7 @@ But when you start having *many projects* and each one have *multiple builds*, t
 
 Finally there's the most dreaded issue that took countless hours of my life for nothing: flaky builds 😱.
 
-![Fighting the build matrix](images/matrix-fight.jpg)
+![Fighting the build matrix](assets/matrix-fight.jpg)
 
 Sometimes, for *no good reasons*, one or many of your builds fails. And you (or your contributors) lose time investigating the issue, discovering that the CI service is the problem, not the code.
 
@@ -131,7 +131,7 @@ The migration was not that trivial this time as I had to use [a template](TODO) 
 - Only one config to manage (and no need to build an extra Docker image for Android)
 - More combinations tested for the same time
 
-After this experience, I can say that I'm all for Azure Pipeline now and I will continue to migrate my other repos 👍 
+After this experience, I can say that I'm all for Azure Pipeline now and I will continue to migrate my other repos 👍
 
 
 > Hey wait, but what about the new [GitHub Actions for CI/CD](https://github.blog/2019-08-08-github-actions-now-supports-ci-cd/?WT.mc_id=devto-blog-yolasors)?!
@@ -174,29 +174,29 @@ You can test your script by running `npm test`, to make sure everything works fi
 
 In your Azure DevOps account, create a new project and give it a name:
 
-![create project](images/1-create-project.png)
+![create project](assets/1-create-project.png)
 
 ### 3. Setup the pipeline
 
 After that, go to the **Pipelines** section on the left:
 
-![select pipelines](images/2-pipelines.png)
+![select pipelines](assets/2-pipelines.png)
 
 Then click `New pipeline` to start the setup process:
 
-![new pipeline](images/3-new-pipeline.png)
+![new pipeline](assets/3-new-pipeline.png)
 
 Choose `GitHub (YAML)`, then follow the process to link your account with Azure DevOps:
 
-![choose github](images/4-github.png)
+![choose github](assets/4-github.png)
 
 Select your repository, then authorize the app in GitHub.
 
 After that, choose the first `Node.js ` option (or any other relevant option for your tech stack):
 
-![choose nodejs](images/5-nodejs.png)
+![choose nodejs](assets/5-nodejs.png)
 
-> For other stacks and languages like C#, Java, Go, Python and so on you should take a look at the appropriate page in the [ecosystem section](https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core?view=azure-devops&WT.mc_id=devto-blog-yolasors) of the docs. You will get specific hints at how you can setup your build with your favorite tech. 
+> For other stacks and languages like C#, Java, Go, Python and so on you should take a look at the appropriate page in the [ecosystem section](https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core?view=azure-devops&WT.mc_id=devto-blog-yolasors) of the docs. You will get specific hints at how you can setup your build with your favorite tech.
 
 You can find a lot of example YAML files in [this repo](https://github.com/microsoft/azure-pipelines-yaml/tree/master/templates).
 
@@ -249,7 +249,7 @@ At this point you already have a working CI, but one of the benefits of using Az
 
 Choose `Edit pipeline` in the menu to go back to the YAML editor:
 
-![choose edit pipeline](images/6-edit.png)
+![choose edit pipeline](assets/6-edit.png)
 
 First add this matrix at the top of your file:
 
@@ -301,7 +301,7 @@ Don't forget to take a look at the full [documentation](https://docs.microsoft.c
 
 #### 6. Add a status badge (optional)
 
-![build succeeded badge](images/badge.png)
+![build succeeded badge](assets/badge.png)
 
 I highly recommend that you add a status badge on your GitHub repo, so that people gets a positive signal on your project:
 - It's maintained and you care for its quality
@@ -309,11 +309,11 @@ I highly recommend that you add a status badge on your GitHub repo, so that peop
 
 To do so, it's easy go back to your pipelines builds and click `Status badge` on the menu:
 
-![click status badge](images/8-status.png)
+![click status badge](assets/8-status.png)
 
 Then copy the markdown code using the button, and paste it at the top of your `readme.md` file at the root of your repository:
 
-![copy markdown](images/9-copy.png)
+![copy markdown](assets/9-copy.png)
 
 Once it's committed on the `master` branch it will become visible on the GitHub documentation of your project.
 The badge status will be updated automatically according to the last commit pushed on `master`.
@@ -327,7 +327,7 @@ That's it!
 
 Once a new commit or PR will be pushed to your repo, the CI will take care of it and show the result directly in GitHub:
 
-![pull request status checks](images/7-pr.png)
+![pull request status checks](assets/7-pr.png)
 
 Now you can relax and enjoy your free time again 🍻.
 
