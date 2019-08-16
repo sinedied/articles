@@ -1,20 +1,14 @@
 ---
 title: The ultimate (free) CI/CD for your open-source projects
 published: false
-description: A comparison of hosted GitHub CI services and a step-by-step tutorial on adding Azure Pipelines to your repo
+description: An OSS maintainer's story with hosted GitHub CI services and step-by-step tutorial for adding Azure Pipelines to your repo
 tags: opensource, github, devops, azure
-cover_image: https://raw.githubusercontent.com/sinedied/articles/master/articles/oss/azure-pipelines-for-oss/./assets/pipeline.jpg
+cover_image: https://raw.githubusercontent.com/sinedied/articles/master/articles/oss/azure-pipelines-for-oss/assets/pipeline.jpg
 canonical_url:
 ---
 
-# The ultimate (free) CI/CD for your open-source projects
-
-![Man walking on a pipeline](./assets/pipeline.jpg)
-<figcaption>Photo by Rodion Kutsaev on Unsplash</figcaption>
-
 I spend a good part of my free time working on open-source software (OSS) on GitHub, and I do it (mostly) for fun and learning new things.
-But one thing that I can tell you is no fun, is losing time hunting bugs that I cannot reproduce...
-Or fighting with tools supposed to help you, like your continuous integration (CI) system.
+But one thing that I can tell you is no fun, is losing time hunting bugs that I cannot reproduce... Or fighting with tools supposed to help you, like your continuous integration (CI) system.
 
 Did you ever wondered which CI/CD solution you should invest your time on then? You've come to right place!
 
