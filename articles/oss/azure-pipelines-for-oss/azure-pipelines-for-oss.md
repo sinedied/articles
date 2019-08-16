@@ -1,9 +1,9 @@
 ---
 title: The ultimate (free) CI/CD for your open-source projects
 published: false
-description: 
+description: A comparison of hosted GitHub CI services and a step-by-step tutorial on adding Azure Pipelines to your repo
 tags: opensource, github, devops, azure
-cover_image:
+cover_image: images/pipeline.jpg
 canonical_url:
 ---
 
