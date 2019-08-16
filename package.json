@@ -1,0 +1,14 @@
+{
+  "name": "articles",
+  "version": "1.0.0",
+  "description": "My blog articles",
+  "scripts": {
+    "deploy": "dev-to-git"
+  },
+  "keywords": [],
+  "author": "Yohan Lasorsa",
+  "license": "MIT",
+  "dependencies": {
+    "dev-to-git": "^1.2.0"
+  }
+}
