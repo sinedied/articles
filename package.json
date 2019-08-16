@@ -7,12 +7,17 @@
     "url": "https://github.com/sinedied/articles.git"
   },
   "scripts": {
-    "deploy": "dev-to-git"
+    "prettier": "prettier --write \"**/*.md\"",
+    "deploy": "npm run prettier -s && dev-to-git"
   },
   "keywords": [],
   "author": "Yohan Lasorsa",
   "license": "MIT",
   "dependencies": {
-    "dev-to-git": "^1.2.0"
+    "dev-to-git": "^1.2.0",
+    "prettier": "^1.18.2"
+  },
+  "prettier": {
+    "singleQuote": true
   }
 }
