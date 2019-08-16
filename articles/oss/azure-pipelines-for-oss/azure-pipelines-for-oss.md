@@ -1,7 +1,7 @@
 ---
 title: The ultimate (free) CI/CD for your open-source projects
 published: false
-description: An OSS maintainer's story with hosted GitHub CI services and step-by-step tutorial for adding Azure Pipelines to your repository
+description: An OSS maintainer's story with hosted CI services for GitHub and step-by-step tutorial for adding Azure Pipelines to your repository
 tags: opensource, github, devops, azure
 cover_image: https://raw.githubusercontent.com/sinedied/articles/master/articles/oss/azure-pipelines-for-oss/assets/pipeline.jpg
 canonical_url:
@@ -11,6 +11,8 @@ I spend a good part of my free time working on open-source software (OSS) on Git
 
 Did you ever wonder on which CI/CD solution you should invest your time? You've come to the right place!
 
+> *Mandatory disclosure: I now work for Microsoft, but I started thinking about CI migration way before switching job and I was NOT forced to do this in any way. My experience with OSS projects goes back far before my current job, and I tried to put my honest feedback as an OSS maintainer in this article.*
+
 ## TL;DR
 
 - If you plan to maintain an open-source project in the long run, what you must do is **automate**
@@ -19,7 +21,7 @@ Did you ever wonder on which CI/CD solution you should invest your time? You've 
 
 Based on this, I found that [Azure Pipelines](https://azure.microsoft.com/services/devops/pipelines/?WT.mc_id=devto-blog-yolasors) currently offers the best _time investment/benefits_ ratio in my opinion.
 
-That may probably change once [GitHub Actions CI/CD]() solution becomes available for everyone (planned for November, 13th). But until then I will stick with a tried & tested solution that allows me spending more time with my loved ones than fighting with build issues 🍸
+That may probably change once [GitHub Actions CI/CD](https://github.blog/2019-08-08-github-actions-now-supports-ci-cd/?WT.mc_id=devto-blog-yolasors) solution becomes available for everyone (planned for November, 13th). But until then I will stick with a tried & tested solution that allows me spending more time with my loved ones than fighting with build issues 🍸
 
 ## What will you learn here?
 
@@ -104,11 +106,11 @@ Some time ago I discovered that [JHipster](https://github.com/jhipster/generator
 Well, I was surprised to see that Azure Pipelines gives you quite a lot _for free_ compared to other solutions:
 
 - It can target any OS (Windows/Mac/Linux)
-- It's **fast** (10 parallels workers per organization for OSS tier )
+- It's fast (10 parallels workers per organization for OSS tier )
 - It seems more reliable (from my own experience and discussions with JHipster maintainers)
 - It's quite easy to set up and get working (a bit more complex than Travis though, but with way more flexibility)
 
-I started by migrating the tests of a [simple Node.js](https://github.com/sinedied/smoke) project of mine. The existing Travis/AppVeyor combo was replaced with a single Azure Pipeline to test on Windows/Mac/Linux, as done in [this PR](https://github.com/sinedied/smoke/pull/3/files). I had to disable git `autocrlf` option for Prettier check to be happy on Windows, but besides that the migration was trivial.
+I started by migrating the tests of a [simple Node.js](https://github.com/sinedied/smoke) project of mine. The existing Travis/AppVeyor combo was replaced with a single Azure Pipeline to test on Windows/Mac/Linux, as done in [this PR](https://github.com/sinedied/smoke/pull/3/files). I had to disable git `autocrlf` option for [Prettier](https://prettier.io) check to be happy on Windows, but besides that the migration was trivial.
 
 After this first success I moved on to migrate the much more complex and demanding CI of [generator-ngx-rocket](https://github.com/ngx-rocket/generator-ngx-rocket), and here is the result.
 
@@ -118,10 +120,11 @@ After this first success I moved on to migrate the much more complex and demandi
 | Combinations | 40 builds on Travis (Linux \* 2 Node versions)<br>20 builds on AppVeyor (Windows)<br>1 build on CircleCI (Android) | 83 builds (Linux/Windows \* 2 Node versions + Mac/Android)       |
 | Build time   | ~1h for a PR (~50min Travis, ~1h AppVeyor, ~5min CircleCI)                                                         | ~1h for a PR (~30min if limited to the previous Travis scenario) |
 
-The migration was not that trivial this time as I had to use [a template](TODO) to generate the combinations matrix, but the result is great:
+The migration was not trivial this time as I had to use [a template](https://github.com/ngx-rocket/generator-ngx-rocket/blob/master/.ci-templates/test.yml) to generate the combinations matrix, but the result is great:
 
 - Only one config to manage (and no need to build an extra Docker image for Android)
 - More combinations tested for the same time
+- Some bonus like publication of Android built APKs directly as a build artifact
 
 After this experience, I can say that I'm all for Azure Pipeline now and I will continue to migrate my other repositories 👍
 
@@ -301,7 +304,7 @@ Don't forget to take a look at the full [documentation](https://docs.microsoft.c
 I highly recommend that you add a status badge on your GitHub repository so that people get a positive signal on your project:
 
 - It's maintained and you care for its quality
-- Contributors can push PR with confidence
+- Contributors can push PRs with confidence
 
 To do so, go back to your pipelines builds and click `Status badge` on the menu:
 
