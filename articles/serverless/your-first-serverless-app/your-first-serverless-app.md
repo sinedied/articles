@@ -1,17 +1,18 @@
 ---
-title: "Build your first serverless app with Nitro: Angular, NestJS and Azure"
+title: "Build your first serverless app with Angular, NestJS and Azure"
 published: false
-description: "Let's build a fullstack serverless app from scratch, using the Nitro stack: Angular, NestJS and Azure"
-tags: angular, nestjs, azure, serverless, nitro
+description: "Let's build a full-stack serverless app from scratch using Angular, NestJS and Azure"
+tags: serverless, angular, nestjs, azure
 cover_image: https://raw.githubusercontent.com/sinedied/articles/master/articles/serverless/your-first-serverless-app/assets/banner.jpg
+series:
 canonical_url:
 ---
 
-Ever wanted take the plunge and see what it looks like to build a complete serverless app from scratch? Let's just do that!
+Ever wanted to take the plunge and see what it looks like to build a complete serverless app from scratch? Let's just do that!
 
 In this article we will go through **all** the steps to bootstrap, build and deploy a complete application using the [Nitro](https://aka.ms/nitro) stack: [Angular](https://angular.io) for the frontend, [NestJS](https://nestjs.com) for the backend and [Azure Serverless platform](https://azure.microsoft.com/services/functions/?WT.mc_id=servsept_devto-blog-yolasors) for deployment.
 
-The app we will build is a simple *"random cat fact"* that will fetch an interesting cat fact from our API and display it in a web page, like this:
+The app we will build is a simple *"random cat fact"* that will fetch an interesting cat fact from our API and display it on a web page, like this:
 
 ![final app screenshot showing a cat fact and a cat emoji](./assets/catfacts.jpg)
 
@@ -21,9 +22,9 @@ The app we will build is a simple *"random cat fact"* that will fetch an interes
 
 ## TL;DR key takeaways
 
-- If you like Angular, you should definitely take a look at NestJS: it leverages the same concepts, features and architecture but for Node.js backend development
+- If you like Angular, you should take a look at NestJS: it leverages the same concepts, features, and architecture but for Node.js backend development
 - Preparing a NestJS app for serverless deployment with Azure Functions can be done with just `nest add @nestjs/azure-func-http` and requires no changes to the existing structure
-- Nitro stack (= Angular + NestJS + Azure Serverless) allows you to build fullstack TypeScript apps in a consistent, robust and cost-efficient way
+- Nitro stack (= Angular + NestJS + Azure Serverless) allows you to build full-stack TypeScript apps in a consistent, robust and cost-efficient way
 
 Here is the final project [source code on GitHub](https://github.com/sinedied/catfacts).
 
@@ -49,28 +50,28 @@ In this article, we will:
 - A working [Node.js](https://nodejs.org) environment
 - The [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest?WT.mc_id=servsept_devto-blog-yolasors) to create resources on Azure. If you do not want to install it locally, you can use [https://shell.azure.com](https://shell.azure.com/?WT.mc_id=servsept_devto-blog-yolasors).
 
-An Azure account account is also needed to create resources and deploy the application. If you don't have an account, you can [create one for free using this link](https://azure.microsoft.com/free/?WT.mc_id=servsept_devto-blog-yolasors) (includes free credits, more than enough to cover usage for this article).
+An Azure account is also needed to create resources and deploy the application. If you don't have an account, you can [create one for free using this link](https://azure.microsoft.com/free/?WT.mc_id=servsept_devto-blog-yolasors) (includes free credits, more than enough to cover usage for this article).
 
 ## Getting started
 
-First let's create a new folder first in which we will put both the frontend and backend code.
+Let's create a new folder in which we will put both the frontend and backend code.
 
 ```sh
 $ mkdir catfacts
 $ cd catfacts
 ```
 
-We will first build the API to get random cat facts, then build the frontend that will use and it and display the fact in a web page.
+We will first build the API to get random cat facts, then build the frontend that will use and it and display the fact on a web page.
 
 ## Building the backend
 
 The backend for our application will be built using [NestJS](https://nestjs.com).
 
-If you're not familiar with NestJS, it is a [TypeScript](https://www.typescriptlang.org) Node.js framework that looks a lot like Angular, and helps you build enterprise-grade efficient and scalable Node.js applications.
+If you're not familiar with NestJS, it's a [TypeScript](https://www.typescriptlang.org) Node.js framework that looks a lot like Angular and helps you build enterprise-grade efficient and scalable Node.js applications.
 
 ### Install NestJS CLI and scaffold new server app
 
-Using following commands, we will install the NestJS CLI and create a new server app with it:
+Use the following commands to install the NestJS CLI and create a new server app:
 
 ```sh
 $ npm install -g @nestjs/cli
@@ -80,7 +81,7 @@ $ cd catfacts-server
 
 ### Create the random fact endpoint
 
-Let's create a new controller using the NestJS CLI:
+Then we use the NestJS CLI again to create a new controller:
 
 ```sh
 $ nest generate controller facts
@@ -166,7 +167,7 @@ Let's keep the server running, open a new terminal and move on to the frontend.
 
 Time to build our web app to display the cat facts! 🐈
 
-We will now use [Angular](https://angular.io) to build the frontend for our application, and explore some of the CLI options to make it easy to work with our server API running locally for development.
+We will use [Angular](https://angular.io) to build the frontend for our application, and explore some of the CLI options to make it easy to work with our server API running locally for development.
 
 ### Install Angular CLI and scaffold new client app
 
@@ -182,7 +183,7 @@ $ cd catfacts-client
 
 ### Prepare your app config
 
-First let's add a new `apiUrl` property to our environment config in `src/environments/environment.ts`, so we can tell where to consume our API for development (we will take care of the production URL once our server will be deployed):
+First, let's add a new `apiUrl` property to our environment config in `src/environments/environment.ts`, so we can tell where to consume our API for development (we will take care of the production URL once our server is deployed):
 
 ```ts
 export const environment = {
@@ -191,12 +192,14 @@ export const environment = {
 };
 ```
 
-Using just the relative path `/api` means that we will do our API calls on the same domain as the client, so we have to setup a proxy for Angular CLI webpack dev server to forward these calls to our server running locally. To do that, we will create a new file `proxy.local.js` at the root of our client project:
+Using just the relative path `/api` means that we will do our API calls on the same domain as the client, so we have to set up a proxy for Angular CLI dev server to forward these calls to our API server running locally.
+
+To do that, we will create a new file `proxy.local.js` at the root of our client project:
 
 ```js
 /*
  * This allows you to proxy HTTP requests like `http.get('/api/stuff')` to another server/port.
- * This is especially useful during app development to avoid CORS issues while running a local server.
+ * This is especially useful during development to avoid CORS issues while using a local server.
  * For more details and options see: https://angular.io/guide/build#proxying-to-a-backend-server
  */
 module.exports = {
@@ -207,7 +210,7 @@ module.exports = {
 };
 ```
 
-Then to use it we will add a new NPM script to our `package.json` file:
+Then we will add a new NPM script to our `package.json` file to use it:
 
 ```json
 "scripts": {
@@ -271,12 +274,12 @@ this.fact$ = http.get(
 );
 ```
 
-Here we use the Angular HTTP client injected in the constructor to make a GET HTTP call to our cat facts API, using the `apiUrl` prefix from our environment config. Since our request result is just plain text and not a JSON object, we also have explicitely set the response type to `'text'` so Angular won't try to parse it.
+Here we use the Angular HTTP client injected in the constructor to make a GET HTTP request to our cat facts API, using the `apiUrl` prefix from our environment config. Since our request result is just plain text and not a JSON object, we also have explicitly set the response type to `'text'` so Angular won't try to parse it.
 
 > Note that this line will create the `fact$` observable, but no actual HTTP call will be made until we **subscribe** to that observable!
 > For that we will use the [`AsyncPipe`](https://angular.io/api/common/AsyncPipe) in our template which will automatically subscribe/unsubscribe from this observable.
 
-Now edit `src/app/app.component.html` and replace all the boilerplate HTML so we display our cat fact instead:
+Now edit `src/app/app.component.html` and replace all the boilerplate HTML to display our cat fact instead:
 
 ```html
 <article>
@@ -291,7 +294,7 @@ We used the `async` pipe here to do all the magic: it will subscribe to the `fac
 
 Make sure your API server is still running, and run the dev server for your frontend with the command `npm run start:local` if it's not done already.
 
-Open the URL `http://localhost:4200` in your browser, and you should now see something like this:
+Open the URL `http://localhost:4200` in your browser, and you should see something like this:
 
 ![current app screenshot showing a cat fact with a cat emoji, without styling](./assets/catfacts-raw.jpg)
 
@@ -311,7 +314,7 @@ html, body {
 }
 ```
 
-Now open `src/app/app.component.css` to style our cat fact, by changing the font and and adding some margins:
+Now open `src/app/app.component.css` to style our cat fact, by changing the font and adding some margins:
 
 ```css
 @import url('https://fonts.googleapis.com/css?family=Caveat&display=swap');
@@ -347,9 +350,9 @@ At this point you should have your complete app running locally, now it's time t
 
 ### Go serverless
 
-Why serverless? Why not deploy our server on a container or an [Azure App Service](https://docs.microsoft.com/azure/app-service/?WT.mc_id=servsept_devto-blog-yolasors) for instance? There's 2 main reasons for that:
+Why serverless? Why not deploy our server on a container or an [Azure App Service](https://docs.microsoft.com/azure/app-service/?WT.mc_id=servsept_devto-blog-yolasors) for instance? There are 2 main reasons for that:
 
-- You only pay for your what you use, not for the resource allocation (and it's [dead cheap](https://dev.to/azure/is-serverless-really-as-cheap-as-everyone-claims-4i9n)!)
+- You only pay for what you use, not for the resource allocation (and it's [dead cheap](https://dev.to/azure/is-serverless-really-as-cheap-as-everyone-claims-4i9n)!)
 - It scales automatically without anything to setup
 
 First, let's update our NestJS into a serverless app so we can deploy it to [Azure Functions](https://docs.microsoft.com/azure/azure-functions/?WT.mc_id=servsept_devto-blog-yolasors).
@@ -368,9 +371,9 @@ Thanks to the included schematics, your server code is now ready to be deployed 
 
 If you take a closer look, here is what has been added:
 - `main`: a folder containing the Azure Functions trigger config and entry point
-- `src/main.azure.ts`: an alternative entry point for your server app that will be used only on Azure Function (thus leaving the regular entry point intact).
+- `src/main.azure.ts`: an alternative entry point for your server app that will be used only on Azure Functions (thus leaving the regular entry point intact).
 - Some config files in the project's root, we do not need to care about them for now.
-- A new `start:azure` NPM script in your `package.json` file, allowing to run your API locally but with the Azure Function simulator this time.
+- A new `start:azure` NPM script in your `package.json` file, allowing to run your API locally but with the Azure Functions simulator this time.
 
 To be able to use the command `npm run start:azure`, you must install the [Azure Functions Core Tools](https://docs.microsoft.com/azure/azure-functions/functions-run-local#v2?WT.mc_id=servsept_devto-blog-yolasors). It will install the `func` CLI that you can use to test your functions and deploy them to Azure.
 
@@ -401,7 +404,7 @@ $ curl http://localhost:7071/api/facts/random
 
 Now that our API is ready to run on Functions, let's deploy it to the real thing!
 
-First we have to create some Azure resources and for that we will use the [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest?WT.mc_id=servsept_devto-blog-yolasors) commands:
+First, we have to create some Azure resources. For that we will use the [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest?WT.mc_id=servsept_devto-blog-yolasors) commands:
 
 ```sh
 # Create a new resource group
@@ -465,14 +468,14 @@ export const environment = {
 
 ### Deploy the frontend
 
-The final step is to deploy our Angular app to Azure, and for that we will use the Angular CLI with the `@azure/ng-deploy` package:
+The final step is to deploy our Angular app to Azure. For that we will use the Angular CLI with the `@azure/ng-deploy` package:
 
 ```sh
 # Make sure to use the storage account name created previously
 $ ng add @azure/ng-deploy --resourceGroup catfacts --account catfacts
 ```
 
-You will be prompted to log in your Azure account, then you will need to choose the same subscription used for the creating the resources previously.
+You will be prompted to log in to your Azure account, then you will need to choose the same subscription used for creating the resources previously.
 
 As we want to reuse the same storage account we used for the backend, we have to enable static website hosting on it with this command:
 
@@ -522,30 +525,30 @@ If you refresh your web page, you should now see the cat fact properly.
 
 Congratulations, you have just finished deploying your first complete serverless app! ⚡️💪
 
-Let's quickly review what you we just did:
+Let's quickly review what we just did:
 
 - We bootstrapped a new NestJS server, created an API and prepared for serverless deployment.
 - We created a new Angular web app to consume your API and display the data, with different environment configurations for development and production.
 - We provisioned Azure resources and deployed our app on it.
 
-
+This was a bit lengthy, but now you have a complete end-to-end experience from bootstrapping to release a full-stack serverless app 🚀.
 
 The full source code for the app we just built can be found [here on GithHub](https://github.com/sinedied/catfacts).
 
-Don't forget to share your feedback and experience in comments!
+Share your feedback and experience in comments!
 
 ## Going further
 
-We only scratched the surface here, but you have already seen how quickly and easily you can create and deploy a new app with the Nitro stack.
+We only scratched the surface here, but you have already seen how quickly and easily you can create and deploy a complete application with Angular, NestJS and Azure.
 
-Our app current app is very basic for now, but it doesn't get much harder to extend it by adding CRUD operations on a database, file uploads and so on.
+Our current app is very basic for now, but it doesn't get much harder to extend it by adding CRUD operations on a database, file uploads and so on.
 
 Here are some article recommendations if you want to dig in further:
 
-- [Is Serverless really as cheap as everyone claims?](https://dev.to/azure/is-serverless-really-as-cheap-as-everyone-claims-4i9n)
 - [Getting started with NestJS](https://scotch.io/tutorials/getting-started-with-nestj)
-- [Introducing NoSQL Azure Table Storage for NestJS](https://trilon.io/blog/nestjs-nosql-azure-table-storage)
+- [Introducing NoSQL Azure Table Storage for NestJS](https://dev.to/azure/introducing-nosql-azure-table-storage-for-nestjs-291m)
 - [Azure Storage module for NestJS](https://github.com/nestjs/azure-storage)
+- [Is Serverless really as cheap as everyone claims?](https://dev.to/azure/is-serverless-really-as-cheap-as-everyone-claims-4i9n)
 
 For a more complete example app that also includes file upload and database connection using Azure Storage, you can take a look at the [Nitro Cats demo source code](https://github.com/nitro-stack/nitro-cats).
 

@@ -8,13 +8,13 @@
   },
   "scripts": {
     "prettier": "prettier --write \"**/*.md\"",
-    "deploy": "npm run prettier -s && dev-to-git"
+    "deploy": "dev-to-git"
   },
   "keywords": [],
   "author": "Yohan Lasorsa",
   "license": "MIT",
   "dependencies": {
-    "dev-to-git": "^1.2.0",
+    "dev-to-git": "^1.4.1",
     "prettier": "^1.18.2"
   },
   "prettier": {
