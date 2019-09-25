@@ -1,6 +1,6 @@
 ---
 title: The ultimate (free) CI/CD for your open-source projects
-published: false
+published: true
 description: An OSS maintainer's story with hosted CI services for GitHub and step-by-step tutorial for adding Azure Pipelines to your repository
 tags: opensource, github, devops, azure
 cover_image: https://raw.githubusercontent.com/sinedied/articles/master/articles/oss/azure-pipelines-for-oss/assets/pipeline.jpg
