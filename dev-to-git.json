@@ -2,5 +2,9 @@
   {
     "id": 157577,
     "relativePathToArticle": "./articles/oss/azure-pipelines-for-oss/azure-pipelines-for-oss.md"
+  },
+  {
+    "id": 176242,
+    "relativePathToArticle": "./articles/serverless/your-first-serverless-app/your-first-serverless-app.md"
   }
 ]
