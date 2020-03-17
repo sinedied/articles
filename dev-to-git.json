@@ -6,5 +6,9 @@
   {
     "id": 176242,
     "relativePathToArticle": "./articles/serverless/your-first-serverless-app/your-first-serverless-app.md"
+  },
+  {
+    "id": 282393,
+    "relativePathToArticle": "./articles/vscode/vm-extension/vm-extension.md"
   }
 ]
