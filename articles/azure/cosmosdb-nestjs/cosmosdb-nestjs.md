@@ -3,15 +3,15 @@ title: How to add a FREE MongoDB database to your NestJS API with TypeORM
 published: false
 description: Need a performant, geo-distributed database for your NestJS app? Learn how you can easily integrate Azure Cosmos DB using TypeORM and the MongoDB driver with this hands-on tutorial.
 tags: webdev, tutorial, node, azure
-cover_image: https://raw.githubusercontent.com/sinedied/articles/master/articles/oss/azure-pipelines-for-oss/assets/pipeline.jpg
+cover_image: https://raw.githubusercontent.com/sinedied/articles/master/articles/azure/cosmosdb-nestjs/assets/cosmosdb-nest.jpg
 canonical_url:
 ---
 
-If you are building an API for your application, one of the first questions you will probably ask yourself is: ***Where to store my data?***
+If you are building an API for your application, one of the first questions you will probably ask yourself is ***where to store my data?***
 
 Most of the time the answer will be *in a database*, but which one? Especially if you are looking for good performance at a cheap price (or for free), your options are quite reduced. Good news, [a free tier has been introduced for Azure Cosmos DB](https://devblogs.microsoft.com/cosmosdb/build-apps-for-free-with-azure-cosmos-db-free-tier/) that is suitable for production workloads, with up to 5 GB storage included.
 
-In this article we will go through **all** the steps to configure and use an [Azure Cosmos DB](https://azure.microsoft.com/fr-fr/services/cosmos-db/) database in a new [NestJS](https://nestjs.com) application.
+In this article, we will go through **all** the steps to configure and use an [Azure Cosmos DB](https://azure.microsoft.com/fr-fr/services/cosmos-db/) database in a new [NestJS](https://nestjs.com) application.
 
 ## TL;DR key takeaways
 
@@ -33,16 +33,15 @@ In this article, we will:
 ### Reference links for everything we use
 
 - [NestJS](https://nestjs.com) with [@nestjs/typeorm](https://github.com/nestjs/typeorm) for the backend
-- [Azure Portal](https://https://portal.azure.com/) to create resources
 - [Azure Cosmos DB](https://azure.microsoft.com/services/functions/?WT.mc_id=servsept_devto-blog-yolasors) for the database
 - [TypeORM](https://typeorm.io) with [MongoDB driver](https://github.com/mongodb/node-mongodb-native) to access the database
 
 ## Requirements
 
 - A working [Node.js](https://nodejs.org) environment
-- An Azure account is to create the Cosmos DB database. If you don't have an account, you can [create one for free using this link](https://azure.microsoft.com/free/?WT.mc_id=servsept_devto-blog-yolasors).
+- An Azure account to create the Cosmos DB database. If you don't have an account, you can [create one for free using this link](https://azure.microsoft.com/free/?WT.mc_id=servsept_devto-blog-yolasors).
 
-As an alternative, if you don't want to create an Azure subscription you can also use the [Try Cosmos DB](https://azure.microsoft.com/try/cosmosdb/) website to get access to a pre-provisionned Cosmos DB trial instance.
+As an alternative, if you don't want to create an Azure subscription you can also use the [Try Cosmos DB](https://azure.microsoft.com/try/cosmosdb/) website to get access to a Cosmos DB trial instance.
 
 ## Getting started
 
@@ -66,23 +65,23 @@ We will create a simple pet management API as an example, so let's create a cont
 $ nest generate controller pets
 ```
 
-Now you are ready to integrate the database.
+You are now ready to integrate the database.
 
 ## Configure Cosmos DB
 
-[Cosmos DB](https://azure.microsoft.com/services/cosmos-db/?WT.mc_id=nitro-workshop-yolasors) is a managed distributed NoSQL database that will allow you to save and retrieve data. It supports multiple data models and many well known database APIs, including [MongoDB](https://www.mongodb.com/) that we will use for our application.
+[Cosmos DB](https://azure.microsoft.com/services/cosmos-db/?WT.mc_id=nitro-workshop-yolasors) is a managed distributed NoSQL database that will allow you to save and retrieve data. It supports multiple data models and many well-known database APIs, including [MongoDB](https://www.mongodb.com/) that we will use for our application.
 
 ![CosmosDB multi-model and different APIs illustration](./assets/cosmos-db.png)
 
-First we have to create a Cosmos DB account, which can hold one or more databases. Make sure you have an [Azure account](https://azure.microsoft.com/free/?WT.mc_id=servsept_devto-blog-yolasors) before going through these steps:
+First, we have to create a Cosmos DB account, which can hold one or more databases. Make sure you have an [Azure account](https://azure.microsoft.com/free/?WT.mc_id=servsept_devto-blog-yolasors) before going through these steps:
 
-1. Click on this link: [Create Azure Cosmos DB Account](https://ms.portal.azure.com/#create/Microsoft.DocumentDB). Log in if needed, then fill up the form like this:
+1. Click on this link: [Create Azure Cosmos DB Account](https://ms.portal.azure.com/#create/Microsoft.DocumentDB). Log in if needed, then fill-up the form like this:
 
     ![mongoDB database creation option](./assets/create-cosmos.png)
 
     When you are finished, click on **Review + create**, then finally **Create**.
 
-2. Provisionning the database will take a few minutes, so you can continue to the next section and come back once it's finished. When it's ready, click on **Go to resource**.
+2. Provisioning the database will take a few minutes, so you can continue to the next section and come back once it's finished. When it's ready, click on **Go to resource**.
 
 3. Click on the **Data Explorer** tab, then on the **New Collection** button:
 
@@ -132,7 +131,7 @@ That's all we need for now, but keep in mind that `@nestjs/config` provides [a l
 
 You are now ready to use the database in your application. NestJS provides a great integration with [TypeORM](https://typeorm.io) which is the most mature Object Relational Mapper (ORM) available for TypeScript, so we will use that.
 
-First, you have to install the a few more packages with this command:
+First, you have to install a few more packages with this command:
 
 ```sh
 npm install @nestjs/typeorm typeorm mongodb
@@ -162,7 +161,7 @@ Don't forget to add the missing import at the top:
 import { TypeOrmModule } from '@nestjs/typeorm';
 ```
 
-> Tip: Using `process.env.<VARIABLE_NAME>` in place of hardcoded values allows to keep sensitive informations out of your code base and read them from environment variables instead. This also allows you to deploy the exact same code on different environments (like staging and production for example), but with different configurations, as recommend in the [12-factor app](https://12factor.net/config) best practices.
+> Tip: Using `process.env.<VARIABLE_NAME>` in place of hardcoded values allows to keep sensitive information out of your codebase and read them from environment variables instead. This also allows you to deploy the exact same code on different environments (like staging and production for example), but with different configurations, as recommended in the [12-factor app](https://12factor.net/config) best practices.
 
 TypeORM will discover and map your entities following the `*.entity.ts` (`.js` once compiled) naming scheme, as specified in the module options.
 
@@ -292,7 +291,7 @@ async getPet(@Param('id') id): Promise<Pet> {
 We use the `@Get()` annotation like previously, but this time we add a [route parameter](https://docs.nestjs.com/controllers#route-parameters) using `:id`.
 This parameter can then be retrieved with the function arguments using the `@Param('id')` annotation.
 
-We check that the provided string is a valid MongoDB `ObjectID` and then we call the `petsRepository.findOne()` method to find the matching entity. In case it's not found or if provided ID is invalid, we return a status `404` error using NestJS predefined exception class `NotFoundException`.
+We check that the provided string is a valid MongoDB `ObjectID` and then we call the `petsRepository.findOne()` method to find the matching entity. In case it's not found or if the provided ID is invalid, we return a status `404` error using NestJS predefined exception class `NotFoundException`.
 
 ### Create
 
@@ -331,7 +330,7 @@ We added the annotation `@HttpCode(204)` to change the HTTP status to `204` (No 
 
 ### Delete
 
-Finally we add the delete method, which looks like a lot like the previous one:
+Finally, we add the delete method, which looks like a lot like the previous one:
 ```ts
 @Delete(':id')
 @HttpCode(204)
@@ -345,7 +344,7 @@ async deletePet(@Param('id') id): Promise<void> {
 }
 ```
 
-TODO GET and POST
+CRUD endpoints, done ✔️.
 
 > If you want to know more about available annotations and helpers you can use in your controllers, you can look at the [NestJS documentation](https://docs.nestjs.com/controllers#full-resource-sample) and the [TypeORM documentation](https://typeorm.io/#/repository-api/repository-api).
 
@@ -393,9 +392,9 @@ curl http://localhost:3000/pets/<id_from_post_command> \
 
 Once you have played a bit with your API and created some pets, why not take a look at the data you have created?
 
-You can either use the standalone [Storage Explorer application](https://azure.microsoft.com/features/storage-explorer/?WT.mc_id=nitro-workshop-yolasors) for that, or go to the Azure portal and access the online version.
+You can either use the standalone [Storage Explorer application](https://azure.microsoft.com/features/storage-explorer/?WT.mc_id=nitro-workshop-yolasors) for that or go to the Azure portal and access the online version.
 
-We only want to give a quick look, so let's use the online version: TODO
+We only want to give a quick look, so let's use the online version:
 
 1. Go back to [portal.azure.com](https://portal.azure.com?WT.mc_id=nitro-workshop-yolasors)
 
