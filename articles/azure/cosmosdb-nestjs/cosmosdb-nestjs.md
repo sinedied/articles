@@ -77,7 +77,7 @@ First, we have to create a Cosmos DB account, which can hold one or more databas
 
 1. Click on this link: [Create Azure Cosmos DB Account](https://ms.portal.azure.com/?WT.mc_id=devto-blog-yolasors#create/Microsoft.DocumentDB). Log in if needed, then fill-up the form like this:
 
-    ![mongoDB database creation option](./assets/create-cosmos.png)
+    ![mongoDB database creation option](./assets/create-cosmosdb.png)
 
     When you are finished, click on **Review + create**, then finally **Create**.
 
