@@ -105,7 +105,7 @@ MONGODB_CONNECTION_STRING=<your primary connection string>
 MONGODB_DATABASE=pets-db
 ```
 
-> Note: you should NEVER commit the `.env` file to your repository! This file is only for local testing, so add it to you `.gitignore` file.
+> Note: you should NEVER commit the `.env` file to your repository! This file is only for local testing, so add it to your `.gitignore` file.
 
 These values will be exposed to your app as **environment variables** during development to access to your database. To do that we use the `@nestjs/config` package that provides [dotenv](https://github.com/motdotla/dotenv) integration:
 
@@ -139,6 +139,8 @@ npm install @nestjs/typeorm typeorm mongodb
 
 Open the file `src/app.module.ts` and add `TypeOrmModule` to the module imports:
 ```ts
+import { TypeOrmModule } from '@nestjs/typeorm';
+
 @Module({
   imports: [
     TypeOrmModule.forRoot({
@@ -154,11 +156,6 @@ Open the file `src/app.module.ts` and add `TypeOrmModule` to the module imports:
     }),
     ...
   ]
-```
-
-Don't forget to add the missing import at the top:
-```ts
-import { TypeOrmModule } from '@nestjs/typeorm';
 ```
 
 > Tip: Using `process.env.<VARIABLE_NAME>` in place of hardcoded values allows to keep sensitive information out of your codebase and read them from environment variables instead. This also allows you to deploy the exact same code on different environments (like staging and production for example), but with different configurations, as recommended in the [12-factor app](https://12factor.net/config) best practices.
@@ -195,11 +192,11 @@ Now let's break down the annotations we have used:
 - `@ObjectIdColumn` marks the unique identifier of an entity that will be mapped to the mandatory MongoDB `_id` property. It will be automatically generated if you don't provide one.
 - `@Column` marks the properties you want to map to a table column. The type of property will also define the type of data that will be stored.
 
-> Note: for more complex domain models you can define subdocuments using simple type references, see [this example](https://typeorm.io/#/mongodb/defining-subdocuments-embed-documents) for usage information.
+> Note: for more complex domain models you can define subdocuments using simple type references, see [this example](https://typeorm.io/#/mongodb/defining-subdocuments-embed-documents).
 
 ## Inject the repository
 
-TypeORM supports the [repository design pattern](https://docs.microsoft.com/dotnet/architecture/microservices/microservice-ddd-cqrs-patterns/infrastructure-persistence-layer-design?WT.mc_id=nitro-workshop-yolasors#the-repository-pattern), and `@nestjs/typeorm` package provides you an easy way to declare repositories you can inject for each of your entities.
+TypeORM supports the [repository design pattern](https://docs.microsoft.com/dotnet/architecture/microservices/microservice-ddd-cqrs-patterns/infrastructure-persistence-layer-design?WT.mc_id=nitro-workshop-yolasors#the-repository-pattern), and `@nestjs/typeorm` package provides you an easy way to declare injectable repositories for each of your entities.
 
 Open the file `src/app.module.ts` again and add this to the module imports:
 ```ts
@@ -234,13 +231,13 @@ import { ObjectID } from 'mongodb';
 import { Pet } from './pet.entity';
 ```
 
-You can now use `this.petsRepository` within your controller to perform CRUD operations (methods signature were simplified for readability):
+You can now use `this.petsRepository` within your controller to perform CRUD operations (method signatures were simplified for readability):
 
 - `save(entity: PartialEntity<Entity> | PartialEntity<Entity>[], options?: SaveOptions): Promise<Entity | Entity[]>`: inserts one or more entities in the database if they do not exists, updates otherwise.
 - `findOne(criteria?: ObjectID | FindOneOptions<Entity>): Promise<Entity | undefined>`: finds the first entity matching an ID or query options.
 - `find(criteria?: FindManyOptions<Entity>): Promise<Entity[]>`: finds all entities that match the specified criteria (return all entities if none is provided).
-- `update(criteria: ObjectID | ObjectID[] | FindConditions<Entity>, partialEntity: PartialEntity<Entity> | PartialEntity<Entity>[]): Promise<UpdateResult>`: Updates entities matching the specified criteria. It allows partial updates, but does not check if entities exists.
-- `delete(criteria: ObjectID | ObjectID[] | FindConditions<Entity>): Promise<DeleteResult>`: Removes one or more entities matching the specified criteria from the database. Does not check if entities exists.
+- `update(criteria: ObjectID | ObjectID[] | FindConditions<Entity>, partialEntity: PartialEntity<Entity> | PartialEntity<Entity>[]): Promise<UpdateResult>`: updates entities matching the specified criteria. It allows partial updates, but does not check if entities exists.
+- `delete(criteria: ObjectID | ObjectID[] | FindConditions<Entity>): Promise<DeleteResult>`: removes one or more entities matching the specified criteria from the database. Does not check if entities exists.
 
 In all these methods, you can either use the entity ID or a regular [MongoDB query](https://docs.mongodb.com/manual/tutorial/query-documents/) to match specific entities. For example, you can use:
 
@@ -288,8 +285,7 @@ async getPet(@Param('id') id): Promise<Pet> {
 }
 ```
 
-We use the `@Get()` annotation like previously, but this time we add a [route parameter](https://docs.nestjs.com/controllers#route-parameters) using `:id`.
-This parameter can then be retrieved with the function arguments using the `@Param('id')` annotation.
+We use the `@Get()` annotation like previously, but this time we add a [route parameter](https://docs.nestjs.com/controllers#route-parameters) using `:id`. This parameter can then be retrieved with the function arguments using the `@Param('id')` annotation.
 
 We check that the provided string is a valid MongoDB `ObjectID` and then we call the `petsRepository.findOne()` method to find the matching entity. In case it's not found or if the provided ID is invalid, we return a status `404` error using NestJS predefined exception class `NotFoundException`.
 
@@ -306,13 +302,13 @@ async createPet(@Body() pet: Partial<Pet>): Promise<Pet> {
 }
 ```
 
-Here we use the `@Body()` annotation as a function parameter to retrieve the request data for the pet to create. We also add basic validation and return a status `400` error with a message, using exception `BadParamException`.
+Here we use the `@Body()` annotation as a function parameter to retrieve the request data for our pet. We also add basic validation and return a status `400` error with a message, using NestJS `BadRequestException`.
 
-> Tip: for more advanced validation techniques using DTOs (Data Transfer Objects) and annotation you can take a look at [this documentation](https://docs.nestjs.com/techniques/validation).
+> Tip: for more advanced validation techniques using DTOs (Data Transfer Objects) and annotations you can take a look at [this documentation](https://docs.nestjs.com/techniques/validation).
 
 ### Update
 
-For the update endpoint, it's sort of a mix between *read* and *create*. We check if an entity exists before updating it:
+For the update endpoint, it's sort of a mix between *read* and *create*:
 ```ts
 @Put(':id')
 @HttpCode(204)
@@ -326,11 +322,11 @@ async updatePet(@Param('id') id, @Body() pet: Partial<Pet>): Promise<void> {
 }
 ```
 
-We added the annotation `@HttpCode(204)` to change the HTTP status to `204` (No Content) as we don't return anything if the update succeeds.
+We added the annotation `@HttpCode(204)` to change the HTTP status to `204` (No Content) as we don't return anything if the update succeeds. We also need to check if an entity exists before updating it.
 
 ### Delete
 
-Finally, we add the delete method, which looks like a lot like the previous one:
+Finally, we add the delete method which looks a lot like the previous one:
 ```ts
 @Delete(':id')
 @HttpCode(204)
@@ -350,7 +346,7 @@ CRUD endpoints, done ✔️.
 
 ## Test your endpoints
 
-After you finished adding the new endpoints, start your server with the command:
+Now it's time to test if your REST API works, start your server with the command:
 
 ```sh
 npm run start
@@ -378,10 +374,10 @@ curl http://localhost:3000/pets/<id_from_post_command> \
   -X PUT \
   -H "content-type: application/json" \
   -d '{ "pictureUrl": "https://placekitten.com/400/600" }'
-# should return the updated pet
+# should update the pet
 
 curl http://localhost:3000/pets/<id_from_post_command>
-# should return this single pet
+# should return the updated pet
 
 curl http://localhost:3000/pets/<id_from_post_command> \
   -X DELETE
@@ -390,7 +386,7 @@ curl http://localhost:3000/pets/<id_from_post_command> \
 
 ## Explore your data
 
-Once you have played a bit with your API and created some pets, why not take a look at the data you have created?
+Once you have played a bit with your API and created some pets, why not take a look at your data?
 
 You can either use the standalone [Storage Explorer application](https://azure.microsoft.com/features/storage-explorer/?WT.mc_id=nitro-workshop-yolasors) for that or go to the Azure portal and access the online version.
 
