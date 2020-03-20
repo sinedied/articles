@@ -10,5 +10,9 @@
   {
     "id": 282393,
     "relativePathToArticle": "./articles/vscode/vm-extension/vm-extension.md"
+  },
+  {
+    "id": 284343,
+    "relativePathToArticle": "./articles/azure/cosmosdb-nestjs/cosmosdb-nestjs.md"
   }
 ]

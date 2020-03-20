@@ -1,7 +1,7 @@
 ---
 title: How to add a FREE MongoDB database to your NestJS API with TypeORM
-published: false
-description: Need a performant, geo-distributed database for your NestJS app? Learn how you can easily integrate Azure Cosmos DB using TypeORM and the MongoDB driver with this hands-on tutorial.
+published: true
+description: Need a free and performant database for your NestJS app? Learn how you can easily integrate Azure Cosmos DB using TypeORM and the MongoDB driver with this hands-on tutorial.
 tags: webdev, tutorial, node, azure
 cover_image: https://raw.githubusercontent.com/sinedied/articles/master/articles/azure/cosmosdb-nestjs/assets/cosmosdb-nest.jpg
 canonical_url:
