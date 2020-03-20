@@ -11,7 +11,7 @@ If you are building an API for your application, one of the first questions you 
 
 Most of the time the answer will be *in a database*, but which one? Especially if you are looking for good performance at a cheap price (or for free), your options are quite reduced. Good news, [a free tier has been introduced for Azure Cosmos DB](https://devblogs.microsoft.com/cosmosdb/build-apps-for-free-with-azure-cosmos-db-free-tier/) that is suitable for production workloads, with up to 5 GB storage included.
 
-In this article, we will go through **all** the steps to configure and use an [Azure Cosmos DB](https://azure.microsoft.com/fr-fr/services/cosmos-db/) database in a new [NestJS](https://nestjs.com) application.
+In this article, we will go through **all** the steps to configure and use an [Azure Cosmos DB](https://azure.microsoft.com/services/cosmos-db/?WT.mc_id=devto-blog-yolasors) database in a new [NestJS](https://nestjs.com) application.
 
 ## TL;DR key takeaways
 
@@ -33,15 +33,15 @@ In this article, we will:
 ### Reference links for everything we use
 
 - [NestJS](https://nestjs.com) with [@nestjs/typeorm](https://github.com/nestjs/typeorm) for the backend
-- [Azure Cosmos DB](https://azure.microsoft.com/services/functions/?WT.mc_id=servsept_devto-blog-yolasors) for the database
+- [Azure Cosmos DB](https://azure.microsoft.com/services/functions/?WT.mc_id=devto-blog-yolasors) for the database
 - [TypeORM](https://typeorm.io) with [MongoDB driver](https://github.com/mongodb/node-mongodb-native) to access the database
 
 ## Requirements
 
 - A working [Node.js](https://nodejs.org) environment
-- An Azure account to create the Cosmos DB database. If you don't have an account, you can [create one for free using this link](https://azure.microsoft.com/free/?WT.mc_id=servsept_devto-blog-yolasors).
+- An Azure account to create the Cosmos DB database. If you don't have an account, you can [create one for free using this link](https://azure.microsoft.com/free/?WT.mc_id=devto-blog-yolasors).
 
-As an alternative, if you don't want to create an Azure subscription you can also use the [Try Cosmos DB](https://azure.microsoft.com/try/cosmosdb/) website to get access to a Cosmos DB trial instance.
+As an alternative, if you don't want to create an Azure subscription you can also use the [Try Cosmos DB](https://azure.microsoft.com/try/cosmosdb/?WT.mc_id=devto-blog-yolasors) website to get access to a Cosmos DB trial instance.
 
 ## Getting started
 
@@ -69,13 +69,13 @@ You are now ready to integrate the database.
 
 ## Configure Cosmos DB
 
-[Cosmos DB](https://azure.microsoft.com/services/cosmos-db/?WT.mc_id=nitro-workshop-yolasors) is a managed distributed NoSQL database that will allow you to save and retrieve data. It supports multiple data models and many well-known database APIs, including [MongoDB](https://www.mongodb.com/) that we will use for our application.
+[Cosmos DB](https://azure.microsoft.com/services/cosmos-db/?WT.mc_id=devto-blog-yolasors) is a managed distributed NoSQL database that will allow you to save and retrieve data. It supports multiple data models and many well-known database APIs, including [MongoDB](https://www.mongodb.com/) that we will use for our application.
 
 ![CosmosDB multi-model and different APIs illustration](./assets/cosmos-db.png)
 
-First, we have to create a Cosmos DB account, which can hold one or more databases. Make sure you have an [Azure account](https://azure.microsoft.com/free/?WT.mc_id=servsept_devto-blog-yolasors) before going through these steps:
+First, we have to create a Cosmos DB account, which can hold one or more databases. Make sure you have an [Azure account](https://azure.microsoft.com/free/?WT.mc_id=devto-blog-yolasors) before going through these steps:
 
-1. Click on this link: [Create Azure Cosmos DB Account](https://ms.portal.azure.com/#create/Microsoft.DocumentDB). Log in if needed, then fill-up the form like this:
+1. Click on this link: [Create Azure Cosmos DB Account](https://ms.portal.azure.com/?WT.mc_id=devto-blog-yolasors#create/Microsoft.DocumentDB). Log in if needed, then fill-up the form like this:
 
     ![mongoDB database creation option](./assets/create-cosmos.png)
 
@@ -92,8 +92,8 @@ First, we have to create a Cosmos DB account, which can hold one or more databas
     ![screenshot of new collection creation](./assets/new-collection.png)
 
     > There are two things worth mentioning here:
-    > - We choose to share a provisioned throughput of [Request Units](https://docs.microsoft.com/azure/cosmos-db/request-units?WT.mc_id=nitro-workshop-yolasors) among all our collections within our database, using the checkbox `Provision database throughput`. This greatly helps to reduce costs when using a paid account.
-    > - We need to define a shard key (also called [partition key](https://docs.microsoft.com/azure/cosmos-db/partitioning-overview?WT.mc_id=nitro-workshop-yolasors#choose-partitionkey)) for the collection, to ensure proper [partitioning](https://docs.microsoft.com/azure/cosmos-db/partitioning-overview?WT.mc_id=nitro-workshop-yolasors). We use the default auto-generated `_id` property by MongoDB for that.
+    > - We choose to share a provisioned throughput of [Request Units](https://docs.microsoft.com/azure/cosmos-db/request-units?WT.mc_id=devto-blog-yolasors) among all our collections within our database, using the checkbox `Provision database throughput`. This greatly helps to reduce costs when using a paid account.
+    > - We need to define a shard key (also called [partition key](https://docs.microsoft.com/azure/cosmos-db/partitioning-overview?WT.mc_id=devto-blog-yolasors#choose-partitionkey)) for the collection, to ensure proper [partitioning](https://docs.microsoft.com/azure/cosmos-db/partitioning-overview?WT.mc_id=devto-blog-yolasors). We use the default auto-generated `_id` property by MongoDB for that.
 
 5. Finally, go to the `Connection strings` tab and click on the button next to your primary connection string to copy it:
 
@@ -196,7 +196,7 @@ Now let's break down the annotations we have used:
 
 ## Inject the repository
 
-TypeORM supports the [repository design pattern](https://docs.microsoft.com/dotnet/architecture/microservices/microservice-ddd-cqrs-patterns/infrastructure-persistence-layer-design?WT.mc_id=nitro-workshop-yolasors#the-repository-pattern), and `@nestjs/typeorm` package provides you an easy way to declare injectable repositories for each of your entities.
+TypeORM supports the [repository design pattern](https://docs.microsoft.com/dotnet/architecture/microservices/microservice-ddd-cqrs-patterns/infrastructure-persistence-layer-design?WT.mc_id=devto-blog-yolasors#the-repository-pattern), and `@nestjs/typeorm` package provides you an easy way to declare injectable repositories for each of your entities.
 
 Open the file `src/app.module.ts` again and add this to the module imports:
 ```ts
@@ -388,11 +388,11 @@ curl http://localhost:3000/pets/<id_from_post_command> \
 
 Once you have played a bit with your API and created some pets, why not take a look at your data?
 
-You can either use the standalone [Storage Explorer application](https://azure.microsoft.com/features/storage-explorer/?WT.mc_id=nitro-workshop-yolasors) for that or go to the Azure portal and access the online version.
+You can either use the standalone [Storage Explorer application](https://azure.microsoft.com/features/storage-explorer/?WT.mc_id=devto-blog-yolasors) for that or go to the Azure portal and access the online version.
 
 We only want to give a quick look, so let's use the online version:
 
-1. Go back to [portal.azure.com](https://portal.azure.com?WT.mc_id=nitro-workshop-yolasors)
+1. Go back to [portal.azure.com](https://portal.azure.com?WT.mc_id=devto-blog-yolasors)
 
 2. Use the search bar at the top and enter the name of the Cosmos DB account you created, then click on it in the search results:
 
