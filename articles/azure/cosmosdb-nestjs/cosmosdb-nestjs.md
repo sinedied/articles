@@ -19,7 +19,7 @@ In this article we will go through **all** the steps to configure and use an [Az
 - Azure Cosmos DB can be used with many different drivers including MongoDB, allowing easy integration with existing libraries.
 - While TypeORM primary focus is SQL databases, it also works very well with NoSQL using MongoDB.
 
-Here is the final project [source code on GitHub](https://github.com/sinedied/catfacts). TODO
+Here is the final project [source code on GitHub](https://github.com/sinedied/pets-api).
 
 ## What will you learn here?
 
@@ -52,7 +52,7 @@ If you're not familiar with NestJS, it's a [TypeScript](https://www.typescriptla
 
 ### Install NestJS CLI and bootstrap new server app
 
-Use the following commands to install the NestJS CLI and create a new server app:
+Use the following commands to install the NestJS CLI and create a new app:
 
 ```sh
 $ npm install -g @nestjs/cli
@@ -60,64 +60,73 @@ $ nest new pets-api
 $ cd pets-api
 ```
 
-We will create a simple pet management API as an example, let's create a controller for that using this command:
+We will create a simple pet management API as an example, so let's create a controller for that using this command:
 
 ```sh
 $ nest generate controller pets
 ```
 
-Now you are ready to integrate a database.
+Now you are ready to integrate the database.
 
 ## Configure Cosmos DB
 
 [Cosmos DB](https://azure.microsoft.com/services/cosmos-db/?WT.mc_id=nitro-workshop-yolasors) is a managed distributed NoSQL database that will allow you to save and retrieve data. It supports multiple data models and many well known database APIs, including [MongoDB](https://www.mongodb.com/) that we will use for our application.
 
-![CosmosDB multi-model and different APIs illustration](./images/cosmos-db.png)
+![CosmosDB multi-model and different APIs illustration](./assets/cosmos-db.png)
 
-First we have to create a Cosmos DB account, which can hold one or more databases. Make sure you have an Azure account
+First we have to create a Cosmos DB account, which can hold one or more databases. Make sure you have an [Azure account](https://azure.microsoft.com/free/?WT.mc_id=servsept_devto-blog-yolasors) before going through these steps:
 
 1. Click on this link: [Create Azure Cosmos DB Account](https://ms.portal.azure.com/#create/Microsoft.DocumentDB). Log in if needed, then fill up the form like this:
 
-    ![mongoDB database creation option](./images/create-cosmos.png)
+    ![mongoDB database creation option](./assets/create-cosmos.png)
 
     When you are finished, click on **Review + create**, then finally **Create**.
 
-2. Deployment will takes a few minutes so you can continue to the next section and come back once it's finished. After that, click on **Go to resource**.
+2. Provisionning the database will take a few minutes, so you can continue to the next section and come back once it's finished. When it's ready, click on **Go to resource**.
 
 3. Click on the **Data Explorer** tab, then on the **New Collection** button:
 
-    ![screenshot of data explorer](./images/data-explorer.png)
+    ![screenshot of data explorer](./assets/data-explorer.png)
 
 4. Fill in the fields like this:
 
-    ![screenshot of new collection creation](./images/new-collection.png)
+    ![screenshot of new collection creation](./assets/new-collection.png)
 
-    ::: tip Pro tip
-    There are two things worth mentioning here:
-    - We choose to share a provisioned throughput of [Request Units](https://docs.microsoft.com/azure/cosmos-db/request-units?WT.mc_id=nitro-workshop-yolasors) among all our collections within our database, using the checkbox `Provision database throughput`. This greatly helps to reduce costs when using a paid account.
-    - We need to define a shard key (also called [partition key](https://docs.microsoft.com/azure/cosmos-db/partitioning-overview?WT.mc_id=nitro-workshop-yolasors#choose-partitionkey)) for the collection, to ensure proper [partitioning](https://docs.microsoft.com/azure/cosmos-db/partitioning-overview?WT.mc_id=nitro-workshop-yolasors). We use the default auto-generated `_id` property by MongoDB for that.
-    :::
+    > There are two things worth mentioning here:
+    > - We choose to share a provisioned throughput of [Request Units](https://docs.microsoft.com/azure/cosmos-db/request-units?WT.mc_id=nitro-workshop-yolasors) among all our collections within our database, using the checkbox `Provision database throughput`. This greatly helps to reduce costs when using a paid account.
+    > - We need to define a shard key (also called [partition key](https://docs.microsoft.com/azure/cosmos-db/partitioning-overview?WT.mc_id=nitro-workshop-yolasors#choose-partitionkey)) for the collection, to ensure proper [partitioning](https://docs.microsoft.com/azure/cosmos-db/partitioning-overview?WT.mc_id=nitro-workshop-yolasors). We use the default auto-generated `_id` property by MongoDB for that.
 
 5. Finally, go to the `Connection strings` tab and click on the button next to your primary connection string to copy it:
 
-    ![Screenshot of connection strings](./images/connection-string.png)
+    ![Screenshot of connection strings](./assets/connection-string.png)
 
-
-
-TODO!!! https://docs.nestjs.com/techniques/configuration
-
-Now edit the file `local.settings.json`, and add these properties to the `Values` list:
-```json
-"MONGODB_CONNECTION_STRING": "<your primary connection string>",
-"MONGODB_DATABASE": "funpets-db",
+Now create a `.env` file in your project root with these values:
+```
+MONGODB_CONNECTION_STRING=<your primary connection string>
+MONGODB_DATABASE=pets-db
 ```
 
-Remove this line as it's not needed:
-```json
-"AzureWebJobsStorage": "",
+> Note: you should NEVER commit the `.env` file to your repository! This file is only for local testing, so add it to you `.gitignore` file.
+
+These values will be exposed to your app as **environment variables** during development to access to your database. To do that we use the `@nestjs/config` package that provides [dotenv](https://github.com/motdotla/dotenv) integration:
+
+```sh
+npm i @nestjs/config
 ```
 
-These values will be exposed to our app as **environment variables** by the Functions runtime, to allow access to your database.
+Open the file `src/app.module.ts` and add this to the module imports:
+```ts
+...
+import { ConfigModule } from '@nestjs/config';
+
+@Module({
+  imports: [
+    ConfigModule.forRoot(),
+    ...
+  ]
+```
+
+That's all we need for now, but keep in mind that `@nestjs/config` provides [a lot more options](https://docs.nestjs.com/techniques/configuration) for advanced needs.
 
 ## Integrate with NestJS
 
@@ -126,7 +135,7 @@ You are now ready to use the database in your application. NestJS provides a gre
 First, you have to install the a few more packages with this command:
 
 ```sh
-npm install --save @nestjs/typeorm typeorm mongodb
+npm install @nestjs/typeorm typeorm mongodb
 ```
 
 Open the file `src/app.module.ts` and add `TypeOrmModule` to the module imports:
@@ -153,9 +162,7 @@ Don't forget to add the missing import at the top:
 import { TypeOrmModule } from '@nestjs/typeorm';
 ```
 
-::: tip Pro tip
-Using `process.env.<VARIABLE_NAME>` in place of a hardcoded values allows to keep sensitive informations out of your code base and read them from environment variables instead. This also allows you to deploy the exact same code on different environments (like staging and production for example), but with different configurations, as recommend in the [12-factor app](https://12factor.net/config) best practices.
-:::
+> Tip: Using `process.env.<VARIABLE_NAME>` in place of hardcoded values allows to keep sensitive informations out of your code base and read them from environment variables instead. This also allows you to deploy the exact same code on different environments (like staging and production for example), but with different configurations, as recommend in the [12-factor app](https://12factor.net/config) best practices.
 
 TypeORM will discover and map your entities following the `*.entity.ts` (`.js` once compiled) naming scheme, as specified in the module options.
 
@@ -177,7 +184,7 @@ export class Pet {
   @Column() pictureUrl?: string;
   @Column() birthDate?: Date;
 
-  constructor(pet?: Partial<Story>) {
+  constructor(pet?: Partial<Pet>) {
     Object.assign(this, pet);
   }
 }
@@ -189,9 +196,7 @@ Now let's break down the annotations we have used:
 - `@ObjectIdColumn` marks the unique identifier of an entity that will be mapped to the mandatory MongoDB `_id` property. It will be automatically generated if you don't provide one.
 - `@Column` marks the properties you want to map to a table column. The type of property will also define the type of data that will be stored.
 
-::: info Note
-For more complex domain models you can define subdocuments using simple type references, see [this example](https://typeorm.io/#/mongodb/defining-subdocuments-embed-documents) for usage information.
-:::
+> Note: for more complex domain models you can define subdocuments using simple type references, see [this example](https://typeorm.io/#/mongodb/defining-subdocuments-embed-documents) for usage information.
 
 ## Inject the repository
 
@@ -199,6 +204,8 @@ TypeORM supports the [repository design pattern](https://docs.microsoft.com/dotn
 
 Open the file `src/app.module.ts` again and add this to the module imports:
 ```ts
+import { Pet } from './pets/pet.entity';
+
 @Module({
   imports: [
     TypeOrmModule.forFeature([Pet]),
@@ -213,7 +220,7 @@ Now you can inject your `Pet` repository using the annotation `@InjectRepository
 export class PetsController {
   constructor(
     @InjectRepository(Pet)
-    private readonly petsRepository: MongoRepository<Story>,
+    private readonly petsRepository: MongoRepository<Pet>,
   ) {}
   ...
 }
@@ -225,7 +232,7 @@ Don't forget to add these missing imports at the top of the file:
 import { InjectRepository } from '@nestjs/typeorm';
 import { MongoRepository } from 'typeorm';
 import { ObjectID } from 'mongodb';
-import { Pet } from './story.pet';
+import { Pet } from './pet.entity';
 ```
 
 You can now use `this.petsRepository` within your controller to perform CRUD operations (methods signature were simplified for readability):
@@ -233,8 +240,8 @@ You can now use `this.petsRepository` within your controller to perform CRUD ope
 - `save(entity: PartialEntity<Entity> | PartialEntity<Entity>[], options?: SaveOptions): Promise<Entity | Entity[]>`: inserts one or more entities in the database if they do not exists, updates otherwise.
 - `findOne(criteria?: ObjectID | FindOneOptions<Entity>): Promise<Entity | undefined>`: finds the first entity matching an ID or query options.
 - `find(criteria?: FindManyOptions<Entity>): Promise<Entity[]>`: finds all entities that match the specified criteria (return all entities if none is provided).
-- `update(criteria: ObjectID | ObjectID[] | FindConditions<Entity>, partialEntity: PartialEntity<Entity>): Promise<UpdateResult>`: Updates entities matching the specified criteria. It allows partial updates.
-- `delete(criteria: ObjectID | ObjectID[] | FindConditions<Entity>): Promise<DeleteResult>`: Removes one or more entities matching the specified criteria from the database.
+- `update(criteria: ObjectID | ObjectID[] | FindConditions<Entity>, partialEntity: PartialEntity<Entity> | PartialEntity<Entity>[]): Promise<UpdateResult>`: Updates entities matching the specified criteria. It allows partial updates, but does not check if entities exists.
+- `delete(criteria: ObjectID | ObjectID[] | FindConditions<Entity>): Promise<DeleteResult>`: Removes one or more entities matching the specified criteria from the database. Does not check if entities exists.
 
 In all these methods, you can either use the entity ID or a regular [MongoDB query](https://docs.mongodb.com/manual/tutorial/query-documents/) to match specific entities. For example, you can use:
 
@@ -248,7 +255,7 @@ await this.petsRepository.findOne(id);
 
 ## Add new endpoints
 
-Now you have everything needed to create new endpoints CRUD (Create, Read, Update and Delete) operations:
+Now you have everything needed to create your CRUD (Create, Read, Update and Delete) endpoints:
 ```
 GET /pets         // Get all pets
 GET /pets/:id     // Get the pet with the specified ID
@@ -257,9 +264,9 @@ PUT /pets/:id     // Update the pet with the specified ID
 DELETE /pets/:id  // Delete the pet with the specified ID
 ```
 
-Let's start with the first one, to get all the pets.
-Add this method to your controller:
+### Read
 
+Let's start with the first one, to get all the pets. Add this method to your controller:
 ```ts
 @Get()
 async getPets(): Promise<Pet[]> {
@@ -270,7 +277,6 @@ async getPets(): Promise<Pet[]> {
 Easy right 😎? By not specifying any criteria for the `find()` method, all entities in the collection will be returned.
 
 Now continue with the next one, to retrieve a single pet using its ID:
-
 ```ts
 @Get(':id')
 async getPet(@Param('id') id): Promise<Pet> {
@@ -279,7 +285,7 @@ async getPet(@Param('id') id): Promise<Pet> {
     // Entity not found
     throw new NotFoundException();
   }
-  return story;
+  return pet;
 }
 ```
 
@@ -288,12 +294,60 @@ This parameter can then be retrieved with the function arguments using the `@Par
 
 We check that the provided string is a valid MongoDB `ObjectID` and then we call the `petsRepository.findOne()` method to find the matching entity. In case it's not found or if provided ID is invalid, we return a status `404` error using NestJS predefined exception class `NotFoundException`.
 
+### Create
 
+Now for the pet creation:
+```ts
+@Post()
+async createPet(@Body() pet: Partial<Pet>): Promise<Pet> {
+  if (!pet || !pet.name || !pet.animalType) {
+    throw new BadRequestException(`A pet must have at least name and animalType defined`);
+  }
+  return await this.petsRepository.save(new Pet(pet));
+}
+```
 
+Here we use the `@Body()` annotation as a function parameter to retrieve the request data for the pet to create. We also add basic validation and return a status `400` error with a message, using exception `BadParamException`.
+
+> Tip: for more advanced validation techniques using DTOs (Data Transfer Objects) and annotation you can take a look at [this documentation](https://docs.nestjs.com/techniques/validation).
+
+### Update
+
+For the update endpoint, it's sort of a mix between *read* and *create*. We check if an entity exists before updating it:
+```ts
+@Put(':id')
+@HttpCode(204)
+async updatePet(@Param('id') id, @Body() pet: Partial<Pet>): Promise<void> {
+  // Check if entity exists
+  const exists = ObjectID.isValid(id) && await this.petsRepository.findOne(id);
+  if (!exists) {
+    throw new NotFoundException();
+  }
+  await this.petsRepository.update(id, pet);
+}
+```
+
+We added the annotation `@HttpCode(204)` to change the HTTP status to `204` (No Content) as we don't return anything if the update succeeds.
+
+### Delete
+
+Finally we add the delete method, which looks like a lot like the previous one:
+```ts
+@Delete(':id')
+@HttpCode(204)
+async deletePet(@Param('id') id): Promise<void> {
+  // Check if entity exists
+  const exists = ObjectID.isValid(id) && await this.petsRepository.findOne(id);
+  if (!exists) {
+    throw new NotFoundException();
+  }
+  await this.petsRepository.delete(id);
+}
+```
 
 TODO GET and POST
 
-If you're stuck, you may find some help in the [NestJS documentation](https://docs.nestjs.com/controllers#full-resource-sample) and the [TypeORM documentation](https://typeorm.io/#/repository-api/repository-api).
+> If you want to know more about available annotations and helpers you can use in your controllers, you can look at the [NestJS documentation](https://docs.nestjs.com/controllers#full-resource-sample) and the [TypeORM documentation](https://typeorm.io/#/repository-api/repository-api).
 
 ## Test your endpoints
 
@@ -303,67 +357,67 @@ After you finished adding the new endpoints, start your server with the command:
 npm run start
 ```
 
-After the server is started, you can test if your new endpoints behave correctly using `curl`:
+When the server is started, you can test if your new endpoints behave correctly using `curl`:
 
 ```sh
-curl http://localhost:3000/api/pets
+curl http://localhost:3000/pets
 # should return an empty list: []
 
-curl http://localhost:3000/api/pets/0
+curl http://localhost:3000/pets/0
 # should return 404 with an error
 
-curl http://localhost:3000/api/pets \
+curl http://localhost:3000/pets \
   -X POST \
   -H "content-type: application/json" \
   -d '{ "name": "Garfield", "animalType": "cat" }'
 # should return the newly created pet
 
-curl http://localhost:3000/api/pets
+curl http://localhost:3000/pets
 # should return a list including the previously added pet
 
-curl http://localhost:3000/api/pets/<id_from_post_command> \
+curl http://localhost:3000/pets/<id_from_post_command> \
   -X PUT \
   -H "content-type: application/json" \
   -d '{ "pictureUrl": "https://placekitten.com/400/600" }'
 # should return the updated pet
 
-curl http://localhost:3000/api/pets/<id_from_post_command>
+curl http://localhost:3000/pets/<id_from_post_command>
 # should return this single pet
 
-curl http://localhost:3000/api/pets/<id_from_post_command> \
-  - X DELETE
+curl http://localhost:3000/pets/<id_from_post_command> \
+  -X DELETE
 # should delete the pet
 ```
 
 ## Explore your data
 
-As you should have created to stories at this point, why not take a look a the data you have created?
+Once you have played a bit with your API and created some pets, why not take a look at the data you have created?
 
 You can either use the standalone [Storage Explorer application](https://azure.microsoft.com/features/storage-explorer/?WT.mc_id=nitro-workshop-yolasors) for that, or go to the Azure portal and access the online version.
 
-We only want to give a quick look, so let's use the online version:
+We only want to give a quick look, so let's use the online version: TODO
 
 1. Go back to [portal.azure.com](https://portal.azure.com?WT.mc_id=nitro-workshop-yolasors)
 
 2. Use the search bar at the top and enter the name of the Cosmos DB account you created, then click on it in the search results:
 
-    ![searching your Cosmos DB account](./images/cosmos-portal.png)
+    ![searching your Cosmos DB account](./assets/cosmos-portal.png)
 
-3. Click on **Storage Explorer** in the resource menu, then unfold the `funpets-db` database and `stories` collection to open the **Documents** where your data lives in:
+3. Click on **Storage Explorer** in the resource menu, then unfold the `pets-db` database and `pets` collection to open the **Documents** where your data lives in:
 
-    ![storage explorer](./images/cosmos-explorer.png)
+    ![storage explorer](./assets/cosmos-explorer.png)
 
 From there, you can query your pets, edit or delete them and even create new ones.
 This tool can be helpful to quickly check your data visually and debug things when something's wrong.
 
 ## Going further
 
-This was brief introduction, but you have already seen how quickly you can create a basic CRUD API with NestJS and Azure Cosmos DB.
+This was a brief introduction, but you have already seen how quickly you can create a basic CRUD API with NestJS and Azure Cosmos DB.
 
 If you want to dig further into NestJS or Azure, here are some resources I recommend:
 
-- [Learn how to build and deploy a serverless backend using NestJS an Azure (free workshop)](https://aka.ms/nitro-ws)
-- [Integrate MongoDB datbase with NestJS using Mongoose](https://docs.nestjs.com/techniques/mongodb)
+- [Learn how to build and deploy a complete serverless backend using NestJS and Azure (free workshop)](https://aka.ms/nitro-ws)
+- [Integrate MongoDB database with NestJS using Mongoose](https://docs.nestjs.com/techniques/mongodb)
 - [Azure Storage module for NestJS](https://github.com/nestjs/azure-storage)
 
 ---
