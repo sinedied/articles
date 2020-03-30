@@ -3,17 +3,19 @@ title: 3 tips for perfect VS Code video & GIFs recordings
 published: false
 description: Learn how to make your next VS Code screencast look perfect with these simple tips!
 tags: vscode, productivity, beginners, discuss
-cover_image: https://raw.githubusercontent.com/sinedied/articles/master/articles/vscode/record-tips/record-tips.png
+cover_image: https://raw.githubusercontent.com/sinedied/articles/master/articles/vscode/record-tips/record-tips-banner.png
 canonical_url:
 ---
 
-As many of us are spending more time these days recording development screencasts, I thought I would share a few simple tips to improve your recordings of [VS Code](https://code.visualstudio.com), whether it's for making videos or GIFs.
+As many of us are spending more time these days recording development screencasts, I thought I would share a few simple tips to improve your recordings of [VS Code](https://code.visualstudio.com/?WT.mc_id=sinedied-github-yolasors), whether it's for making videos or GIFs.
 
 ## 1. Set pixel-perfect window size
 
-I struggled a bit with this one problem, before finding an acceptable solution: *how to resize your VS Code window to a given pixel size?*
+I struggled a bit with this one problem, before finding an acceptable solution:
 
-When I make a 1080p video recording, I want my VS Code window to **exactly** have a size of 1920x1080 pixels for perfect rendering. I know some premium third-party apps can do that, but I wanted a way to do it that works all the time, regardless of my current monitor setup and OS (I frequently switch between Mac OS and Windows).
+> How to resize your VS Code window to a given pixel size?
+
+When I record a 1080p video, I want my VS Code window to have **exactly** a size of 1920x1080 pixels for perfect rendering. I know that some premium third-party apps can resize any app window, but I wanted a way to do it that works all the time, regardless of my current monitor setup and OS (I frequently switch between Mac OS and Windows).
 
 Turns out VS Code extensions can't do that, as they have access to neither the Electron nor DOM API. But you can use the Developer Tools directly:
 
@@ -21,7 +23,7 @@ Turns out VS Code extensions can't do that, as they have access to neither the E
 - Search for `Toggle Developer Tools`, then press `Enter`.
 - In the Chrome Developer Tools window that will show up, select the **Console** tab and enter this code `window.resize(1920, 1080)`:
 
-![Chrome Developer Tools screenshot](./assets/resize.png)
+![Chrome Developer Tools screenshot](./assets/devtools-resize.png)
 
 This will perfectly resize your current VS Code window to the size you chose 🎉.
 
@@ -34,7 +36,7 @@ Did you know that VS Code can highlight your mouse clicks and show the keys bein
 
 With this mode enabled, every mouse click will become circled in red and keystrokes will be shown as an overlay, like that:
 
-![Animation showing result of screencast mode](./assets/screencast-mode.gif)
+![Animation showing result of screencast mode](./assets/vscode-screencast-mode.gif)
 
 You might then think that showing ***every*** keystroke will become quickly tiring, but thankfully there's a setting for that:
 
