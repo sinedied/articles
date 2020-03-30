@@ -14,5 +14,9 @@
   {
     "id": 284343,
     "relativePathToArticle": "./articles/azure/cosmosdb-nestjs/cosmosdb-nestjs.md"
+  },
+  {
+    "id": 295093,
+    "relativePathToArticle": "./articles/vscode/record-tips/record-tips.md"
   }
 ]
