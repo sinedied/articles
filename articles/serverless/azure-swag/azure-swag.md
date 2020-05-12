@@ -5,12 +5,13 @@ description: "If you're building web apps with custom APIs, Azure SWAG may becom
 tags: webdev, beginners, javascript, azure
 cover_image: ./assets/azure-swag.jpg
 canonical_url:
+tracking-code: build2020_swa-blog-yolasors
 ---
 # The easy way to serverless web apps and APIs with Azure SWAG
 
 What's this new Azure *SWAG* thing?
 
-During the Build conference, the new Azure **S**tatic **W**eb **A**pps service has just been announced. And it works with **G**itHub repositories. So for short, Azure **SWAG** 😎. But what is it about?
+During last week [Build 2020 conference](https://mybuild.microsoft.com), the new Azure **S**tatic **W**eb **A**pps service has just been unveiled. And it works with **G**itHub repositories. So for short, Azure **SWAG** 😎. But what is it about?
 
 #### Short version
 
@@ -26,15 +27,15 @@ With a quick one-time setup you can deploy any web app, be it a SPA or a static 
 - Using Gatsby.js, Vuepress, Hugo, Jekyll or static website generator? You're covered too ✅.
 - Want to go further and do SSR? Works too ✅.
 
-If you need to crunch some data, you also get a serverless API alongside your web app, based on [Functions](https://docs.microsoft.com/fr-fr/azure/azure-functions/functions-overview). You put your API code on the same repo as your web app, and it will be deployed at the same way with no extra efforts.
+If you need to crunch some data, you also get a serverless API alongside your web app, based on [Functions](https://docs.microsoft.com/azure/azure-functions/functions-overview). You put your API code on the same repo as your web app, and it will be deployed at the same way with no extra efforts.
 
 Oh, and did I mention that it also comes with a built-in Identity manager service? You can add authentication with differents roles for your users at the hand of a JSON configuration file.
 
-![boom meme](./assets/boom.jpg)
+![meme with child girl swaying boom](./assets/boom.jpg)
 
 I'm really excited about this new service because my previous web development experience with Azure was far from smooth sailing... Let's be completely honest here: it felt way over-complicated for a developer just wanting to deploy a web app with an API.
 
-With this new [Static Web Apps](TODO link) all-in-one solution, it's kind of a relief and feels to me like a welcome gift for us web developer. And by gift, I really mean it as it comes with a Free tier 🎁.
+With this new [Static Web Apps](https://docs.microsoft.com/azure/static-web-apps?WT.mc_id=staticwebapps-blog-yolasors) all-in-one solution, it's kind of a relief and feels to me like a welcome gift for us web developer. And by gift, I really mean it as it comes with a Free tier 🎁.
 
 Getting excited too? Let's see how it works!
 
@@ -46,38 +47,54 @@ Rather than telling you more about it, let's experience it by yourself.
 - [A GitHub account](https://github.com/join)
 - [An Azure account](https://azure.microsoft.com/free/?WT.mc_id=swa_devto-blog-yolasors) (you can reuse your GitHub account to login)
 
-#### Deploy in 3 steps
+#### 4 steps to deploy from scratch
 
 Once you're ready to go, follow these steps to deploy your first app.
 
-1. Fork this repository: http://
+1. Fork this repository: [https://github.com/sinedied/azure-swag](https://github.com/sinedied/azure-demo/fork)
 
-TODO: swag example repo with plain HTML and API :)
-TODO image fork
-
-2. Click on this button:
+2. Click on this button to open the Azure portal: [![Deploy to Azure button](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/?feature.canmodifystamps=true&feature.customportal=false&WebsitesExtension=beta&feature.fastmanifest=false&nocdn=force&websitesextension_ext=appsvc.env%3Drelease&feature.fullscreenblades=true&microsoft_azure_marketplace_ItemHideKey=StaticApp&WebsitesExtension_assettypeoptions=%7B%22StaticSite%22%3A%20%7B%20%22options%22%3A%20%22ShowAssetType%22%20%7D%7D#create/Microsoft.StaticApp)
 
 
-3. Set these options, then click on DSHJD
+3. Fill in the details (you have to sign in to your GitHub account for the last part):
 
-Aaaand you're done. That's it!
-Now navigate to your TODO...
+    ![basic options to fill in in Azure Portal](./assets/swa-portal.png)
 
-Notice that a [GitHub Actions](https://github.com/features/actions) workflow has been created for you. It does 2 things:
+4. Click on **Review + create**, then **Create** to complete the deployment.
+
+Aaaand you're done. That's it! 😎
+
+Wait a few seconds for everything to be set up, and click on **Go to resource**.
+
+![Deployment complete screenshot](./assets/deployment-complete.png)
+
+On your resource overview page, click on the **Browse** button to open your deployed web app.
+
+![browse button](./assets/browse.png)
+
+The first build may take a minute or so, after a few refreshes you should see your positive thought for the day 💙.
+
+#### How does it work?
+
+Now come back to your forked GitHub repo. Let's take a look at what you have here:
+
+- `/`: the root folder contains the web app. This one is a pure vanilla HTML/CSS/JavaScript website, it's been a long time since you saw one, right?
+- `api/`: this folder contains the API, split in individual functions. Any endpoint declared here will be accessible by default under `https://<your_deployment_url>/api/`.
+
+You can also notice that a [GitHub Actions](https://github.com/features/actions) workflow has been created for you. It does 2 things:
 
 - Deploy your app to production each time new changes are pushed to your `master` branch.
 - Deploy a staging version of your app to a separate pre-production environment each time a new pull request is created against the `master` branch.
 
-You got the basics here.
+You now got all the basics here.
 
+![funny cat with sunglasses and "You got swag" text](./assets/got-swag.jpg)
 
-TODO: You got SWAG image
+To dig further from there, you can go to [the official docs](https://docs.microsoft.com/azure/static-web-apps?WT.mc_id=staticwebapps-blog-yolasors) and learn more about what you can do with SWAG.
 
+> Note that the service is currently in public *preview*, so there might still be some rough edges here and there. If you have feedback or issues, you can reach out [here](https://github.com/microsoft/appservice-static-web-apps/issues).
 
-To dig further from there, you can go to [the official docs]() and learn more about what you can do with SWAG.
-Note that the service is currently in public *preview*, so there might still be some rough edges here and there.
-
-TODO: or follow this full tutorial?
+<!-- You can also follow [this full tutorial](TODO dev.to article) for making a fullstack web app with Angular + NestJS using Azure SWAG. -->
 
 What are your thoughts about this new service?
 
