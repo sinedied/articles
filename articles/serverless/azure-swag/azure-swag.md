@@ -88,7 +88,7 @@ You can also notice that a [GitHub Actions](https://github.com/features/actions)
 - Deploy your app to production each time new changes are pushed to your `master` branch.
 - Deploy a staging version of your app to a separate pre-production environment each time a new pull request is created against the `master` branch.
 
-You now got all the basics here.
+You got all the basics here.
 
 ![funny cat with sunglasses and "You got swag" text](./assets/got-swag.jpg)
 
