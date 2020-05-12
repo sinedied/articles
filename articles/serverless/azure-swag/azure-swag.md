@@ -1,25 +1,26 @@
 ---
 title: The easy way to serverless web apps and APIs with Azure SWAG
 published: false
-description: "If you're building web apps with custom APIs, Azure SWAG may become your next best friend: streamlined serverless deployment, all from GitHub. With a Free tier. Wanna take a look?"
-tags: webdev, beginners, javascript, azure
-cover_image: ./assets/azure-swag.jpg
-canonical_url:
+description: "If you're building web apps with custom APIs, Azure SWAG may become your next best friend. Streamlined serverless deployment, all from GitHub. With a Free tier. Wanna take a look?"
+tags: 'webdev, beginners, javascript, azure'
+cover_image: ./assets/azure-swag-banner.jpg
+canonical_url: null
 tracking_code: build2020_swa-blog-yolasors
+id: 333249
 ---
 # The easy way to serverless web apps and APIs with Azure SWAG
 
 What's this new Azure *SWAG* thing?
 
-During last week [Build 2020 conference](https://mybuild.microsoft.com), the new Azure **S**tatic **W**eb **A**pps service has just been unveiled. And it works with **G**itHub repositories. So for short, Azure **SWAG** 😎. But what is it about?
+Earlier during [Build 2020 conference](https://mybuild.microsoft.com), the new Azure **S**tatic **W**eb **A**pps service has just been unveiled. And it works with **G**itHub repositories. So for short, Azure **SWAG** 😎. But what is it about?
 
-#### Short version
+### Short version
 
 > It's an all-inclusive hosting service for web apps with serverless APIs, based on continuous deployment from a GitHub repository.
 
 Boom.
 
-#### Slightly longer version
+### Slightly longer version
 
 With a quick one-time setup you can deploy any web app, be it a SPA or a static website:
 
@@ -43,11 +44,11 @@ Getting excited too? Let's see how it works!
 
 Rather than telling you more about it, let's experience it by yourself.
 
-#### Prerequisites
+### Prerequisites
 - [A GitHub account](https://github.com/join)
 - [An Azure account](https://azure.microsoft.com/free/?WT.mc_id=sinedied-github-yolasors) (you can reuse your GitHub account to login)
 
-#### 4 steps to deploy from scratch
+### 4 steps to deploy from scratch
 
 Once you're ready to go, follow these steps to deploy your first app.
 
@@ -70,13 +71,13 @@ Wait a few seconds for everything to be set up, and click on **Go to resource**.
 
 On your resource overview page, click on the **Browse** button to open your deployed web app.
 
-![browse button](./assets/browse.png)
+![browse button in resource overview](./assets/overview-browse.png)
 
 The first build may take a minute or so, after a few refreshes you should see your positive thought for the day.
 
 ![let your unique positive energy inspire confidence in others](./assets/positive-quote.jpg)
 
-#### How does it work?
+### How does it work?
 
 Now come back to your forked GitHub repo. Let's take a look at what you have here:
 
