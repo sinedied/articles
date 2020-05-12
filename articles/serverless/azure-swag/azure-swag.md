@@ -1,14 +1,13 @@
 ---
 title: The easy way to serverless web apps and APIs with Azure SWAG
 published: false
-description: "If you're building web apps with custom APIs, Azure SWAG may become your next best friend. Streamlined serverless deployment, all from GitHub. With a Free tier. Wanna take a look?"
+description: 'If you''re building web apps with custom APIs, Azure SWAG may become your next best friend. Streamlined serverless deployment, all from GitHub. With a Free tier. Wanna take a look?'
 tags: 'webdev, beginners, javascript, azure'
 cover_image: ./assets/azure-swag-banner.jpg
 canonical_url: null
 tracking_code: build2020_swa-blog-yolasors
 id: 333249
 ---
-# The easy way to serverless web apps and APIs with Azure SWAG
 
 What's this new Azure *SWAG* thing?
 
