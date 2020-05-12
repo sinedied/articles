@@ -66,13 +66,15 @@ Aaaand you're done. That's it! 😎
 
 Wait a few seconds for everything to be set up, and click on **Go to resource**.
 
-![Deployment complete screenshot](./assets/deployment-complete.png)
+![deployment complete screenshot](./assets/deployment-complete.png)
 
 On your resource overview page, click on the **Browse** button to open your deployed web app.
 
 ![browse button](./assets/browse.png)
 
-The first build may take a minute or so, after a few refreshes you should see your positive thought for the day 💙.
+The first build may take a minute or so, after a few refreshes you should see your positive thought for the day.
+
+![let your unique positive energy inspire confidence in others](./assets/positive-quote.jpg)
 
 #### How does it work?
 
