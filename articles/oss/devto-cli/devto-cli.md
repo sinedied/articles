@@ -3,7 +3,7 @@ title: Introducing the dev.to publisher CLI and GitHub Action
 published: false
 description: null
 tags: 'productivity, javascript, node, beginners'
-cover_image: ./assets/devto-cli-banner.jpg
+cover_image: ./assets/devto-cli-gift.jpg
 id: 334147
 ---
 
