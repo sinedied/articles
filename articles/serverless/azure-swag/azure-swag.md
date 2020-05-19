@@ -7,6 +7,7 @@ cover_image: ./assets/azure-swag-banner.jpg
 canonical_url: null
 tracking_code: build2020_swa-blog-yolasors
 id: 333249
+date: '2020-05-19T17:23:49Z'
 ---
 
 What's this new Azure *SWAG* thing?
