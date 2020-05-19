@@ -51,7 +51,7 @@ Rather than telling you more about it, let's experience it by yourself.
 
 Once you're ready to go, follow these steps to deploy your first app.
 
-1. Fork this repository: [https://github.com/sinedied/azure-swag](https://github.com/sinedied/azure-demo/fork)
+1. Fork this repository: [https://github.com/sinedied/azure-swag](https://github.com/sinedied/azure-swag/fork)
 
 2. Click on this button to open the Azure portal: [![Deploy to Azure button](https://aka.ms/deploytoazurebutton?WT.mc_id=build2020_swa-blog-yolasors)](https://portal.azure.com/?feature.customportal=false&WT.mc_id=build2020_swa-blog-yolasors#create/Microsoft.StaticApp)
 
