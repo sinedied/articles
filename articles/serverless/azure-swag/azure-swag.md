@@ -16,7 +16,7 @@ Earlier during [Build 2020](https://mybuild.microsoft.com) keynote, the new Azur
 
 ### Short version
 
-> It's an all-inclusive hosting service for web apps with serverless APIs, based on continuous deployment from a GitHub repository.
+> It's an all-inclusive hosting service for web apps with serverless APIs built using JavaScript, based on continuous deployment from a GitHub repository.
 
 Boom.
 
