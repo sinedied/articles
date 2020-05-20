@@ -95,7 +95,9 @@ You got all the basics here.
 
 To dig further from there, you can go to [the official docs](https://docs.microsoft.com/azure/static-web-apps?WT.mc_id=build2020_swa-blog-yolasors) and learn more about what you can do with SWAG.
 
-> Note that the service is currently in public *preview*, so there might still be some rough edges here and there. If you have feedback or issues, you can reach out [here](https://github.com/microsoft/appservice-static-web-apps/issues).
+> Note that the service is currently in public *preview*, so there might still be some rough edges here and there.
+
+<!-- If you have feedback or issues, you can reach out [here](https://github.com/microsoft/appservice-static-web-apps/issues). -->
 
 <!-- You can also follow [this full tutorial](TODO dev.to article) for making a fullstack web app with Angular + NestJS using Azure SWAG. -->
 
