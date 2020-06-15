@@ -545,7 +545,7 @@ Our current app is very basic for now, but it doesn't get much harder to extend 
 
 Here are some article recommendations if you want to dig in further:
 
-- [Getting started with NestJS](https://scotch.io/tutorials/getting-started-with-nestj)
+- [Getting started with NestJS](https://scotch.io/tutorials/getting-started-with-nestjs)
 - [Introducing NoSQL Azure Table Storage for NestJS](https://dev.to/azure/introducing-nosql-azure-table-storage-for-nestjs-291m)
 - [Azure Storage module for NestJS](https://github.com/nestjs/azure-storage)
 - [Is Serverless really as cheap as everyone claims?](https://dev.to/azure/is-serverless-really-as-cheap-as-everyone-claims-4i9n)
