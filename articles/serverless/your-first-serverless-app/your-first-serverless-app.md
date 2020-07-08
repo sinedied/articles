@@ -1,11 +1,13 @@
 ---
-title: "Build your first serverless app with Angular, NestJS and Azure"
+title: 'Build your first serverless app with Angular, NestJS and Azure'
 published: true
-description: "Let's build a full-stack serverless app from scratch using Angular, NestJS and Azure"
-tags: serverless, angular, azure, webdev
-cover_image: https://raw.githubusercontent.com/sinedied/articles/master/articles/serverless/your-first-serverless-app/assets/banner.jpg
-series: "Serverless September"
-canonical_url:
+description: 'Let''s build a full-stack serverless app from scratch using Angular, NestJS and Azure'
+tags: 'serverless, angular, azure, webdev'
+cover_image: 'https://raw.githubusercontent.com/sinedied/articles/master/articles/serverless/your-first-serverless-app/assets/banner.jpg'
+series:
+canonical_url: null
+id: 176242
+date: '2020-06-15T07:29:24Z'
 ---
 
 Ever wanted to take the plunge and see what it looks like to build a complete serverless app from scratch? Let's just do that!
