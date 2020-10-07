@@ -3,11 +3,11 @@ title: Learn JavaScript with this series of videos for beginners
 published: false
 description: Learn the foundations you need to know to start coding with JavaScript by watching this free series of videos for beginners.
 tags: 'javascript, beginners, webdev, node'
-cover_image: 'https://raw.githubusercontent.com/sinedied/articles/master/articles/javascript/js-beginner-series/bsjs-banner.jpg'
+cover_image: 'https://raw.githubusercontent.com/sinedied/articles/master/articles/javascript/js-beginner-series/assets/js-banner.jpg'
 id: 480481
 ---
 
-Learning a new framework or development environment is made even more difficult when you don't know the programming language. Fortunately, we're here to help! We've created this series of videos to focus on the core concepts of JavaScript. 
+Learning a new framework or development environment is made even more difficult when you don't know the programming language. To help you with that, we've created this series of videos to focus on the core concepts of JavaScript. 
 
 **The full video series is available for free here:**
 **[Beginner's Series to JavaScript](https://channel9.msdn.com/Series/Beginners-Series-to-JavaScript?WT.mc_id=jsbeginner-devto-yolasors)**
@@ -22,7 +22,7 @@ The videos take you from the very beginning on how to set up your machine and in
 
 Most topics will be covered by explaining first the concepts behind, then show you a demo on how you can use it in your code. All the code used in the demos is also available on [this GitHub repository](https://github.com/microsoft/beginners-intro-javascript-node).
 
-## What's coming next?
+## What's next?
 
 This is only the beginning of your learning journey, and once you're up to speed with JavaScript, maybe you'll want to get started with Node.js?
 
