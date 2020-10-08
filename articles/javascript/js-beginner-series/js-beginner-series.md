@@ -1,10 +1,11 @@
 ---
 title: Learn JavaScript with this series of videos for beginners
-published: false
+published: true
 description: Learn the foundations you need to know to start coding with JavaScript by watching this free series of videos for beginners.
 tags: 'javascript, beginners, webdev, node'
 cover_image: 'https://raw.githubusercontent.com/sinedied/articles/master/articles/javascript/js-beginner-series/assets/js-banner.jpg'
 id: 480481
+date: '2020-10-07T16:43:09Z'
 ---
 
 Learning a new framework or development environment is made even more difficult when you don't know the programming language. To help you with that, we've created this series of videos to focus on the core concepts of JavaScript. 
@@ -34,6 +35,6 @@ We have a lot more content in the pipe, so stay tuned 😉
 
 While we don't cover every aspect of JavaScript in these videos, we want to help you build a foundation from which you can continue to grow. By the end of this series, you'll be able to work through tutorials, quick starts, books, and other resources, continuing to grow on your own.
 
-We're also looking to improve, so please tell us what you think of the format, what were your difficulties and how was your experience in the comments.
+We're also looking to improve, so please tell us what you think of the format, what were your difficulties, and how was your experience in the comments.
 
 Time to learn some JavaScript! 🎉
