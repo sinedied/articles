@@ -1,12 +1,13 @@
 ---
 title: Learn Node.js with this series of short videos for beginners
-published: false
+published: true
 description: Learn how to create apps with Node.js using JavaScript with this series of bite-sized videos for beginners.
 tags: 'webdev, beginners, javascript, node'
 cover_image: 'https://raw.githubusercontent.com/sinedied/articles/master/articles/node/beginner-series/assets/watch-fun.jpg'
 canonical_url: null
 series: nodejs-for-beginners
 id: 479025
+date: '2020-10-12T15:27:03Z'
 ---
 
 Getting started with any new technology is hard, and very time-consuming. Node.js being my favorite platform, I've always wanted to give something back to this awesome community. That's why with some awesome friends, we created this series of practical, bite-sized videos about Node.js for beginners, so you can learn the foundations at your own pace.
