@@ -1,11 +1,13 @@
 ---
-title: "Learn Node.js: create a new Node.js project and work with packages"
-published: false
+title: 'Learn Node.js: create a new Node.js project and work with packages'
+published: true
 description: Learn how to create a new Node.js project and work with packages with this series of bite-sized videos for beginners.
 tags: 'webdev, beginners, javascript, node'
 cover_image: 'https://raw.githubusercontent.com/sinedied/articles/master/articles/node/beginner-series/assets/banner2.jpg'
 canonical_url: null
 series: nodejs-for-beginners
+id: 488029
+date: '2020-10-21T15:00:18Z'
 ---
 
 > Are you new to Node.js? We created *Beginner’s Series to Node.js*, a series of short practical videos to get started with Node.js, from installing to debugging, with everything in between. You can look at the [announcement here](https://dev.to/sinedied/learn-node-js-with-this-series-of-short-videos-for-beginners-4lpm) and watch all videos here: [Beginner's Series to Node.js](https://www.youtube.com/playlist?list=PLlrxD0HtieHje-_287YJKhY8tDeSItwtg).

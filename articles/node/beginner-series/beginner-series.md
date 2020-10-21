@@ -5,7 +5,6 @@ description: Learn how to create apps with Node.js using JavaScript with this se
 tags: 'webdev, beginners, javascript, node'
 cover_image: 'https://raw.githubusercontent.com/sinedied/articles/master/articles/node/beginner-series/assets/watch-fun.jpg'
 canonical_url: null
-series: nodejs-for-beginners
 id: 479025
 date: '2020-10-12T15:27:03Z'
 ---
