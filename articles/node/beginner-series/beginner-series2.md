@@ -1,5 +1,5 @@
 ---
-title: 'Learn Node.js: create a new Node.js project and work with packages'
+title: 'Create a new Node.js project and work with packages'
 published: true
 description: Learn how to create a new Node.js project and work with packages with this series of bite-sized videos for beginners.
 tags: 'webdev, beginners, javascript, node'
@@ -42,7 +42,7 @@ To help you get up to speed on these topics, my friend **Jen Looper** will be ou
 
 ## Create a new Node.js project
 
-Using the [`npm init`](https://docs.npmjs.com/cli/init) is the faster way to create a new Node.js project from scratch. Let's walk through the different fields you're asked to fill and what's their purpose.
+Using the [`npm init`](https://docs.npmjs.com/cli/init) command is the faster way to create a new Node.js project from scratch. Let's walk through the different fields you're asked to fill and what's their purpose.
 
 {% youtube EBxsKGdIWaE %}
 
