@@ -1,11 +1,12 @@
 ---
-title: 'Work with files and directories in a Node.js app'
+title: Work with files and directories in a Node.js app
 published: false
 description: Learn how to use built-in modules to work with files and directories in a Node.js app with this series of bite-sized videos for beginners.
 tags: 'webdev, beginners, javascript, node'
 cover_image: 'https://raw.githubusercontent.com/sinedied/articles/master/articles/node/beginner-series/assets/banner3.jpg'
 canonical_url: null
 series: nodejs-for-beginners
+id: 494877
 ---
 
 > Are you new to Node.js? We created *Beginner’s Series to Node.js*, a series of short practical videos to get started with Node.js, from installing to debugging, with everything in between. You can look at the [announcement here](https://dev.to/sinedied/learn-node-js-with-this-series-of-short-videos-for-beginners-4lpm) and watch all videos here: [Beginner's Series to Node.js](https://www.youtube.com/playlist?list=PLlrxD0HtieHje-_287YJKhY8tDeSItwtg).

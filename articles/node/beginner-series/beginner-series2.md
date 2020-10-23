@@ -1,5 +1,5 @@
 ---
-title: 'Create a new Node.js project and work with packages'
+title: Create a new Node.js project and work with packages
 published: true
 description: Learn how to create a new Node.js project and work with packages with this series of bite-sized videos for beginners.
 tags: 'webdev, beginners, javascript, node'
