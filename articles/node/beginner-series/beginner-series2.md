@@ -5,7 +5,7 @@ description: Learn how to create a new Node.js project and work with packages wi
 tags: 'webdev, beginners, javascript, node'
 cover_image: 'https://raw.githubusercontent.com/sinedied/articles/master/articles/node/beginner-series/assets/banner2.jpg'
 canonical_url: null
-series: nodejs-for-beginners
+series: "Node.js for beginners"
 id: 488029
 date: '2020-10-21T15:00:18Z'
 ---
