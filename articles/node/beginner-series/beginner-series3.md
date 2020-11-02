@@ -5,7 +5,7 @@ description: Learn how to use built-in modules to work with files and directorie
 tags: 'webdev, beginners, javascript, node'
 cover_image: 'https://raw.githubusercontent.com/sinedied/articles/master/articles/node/beginner-series/assets/banner3.jpg'
 canonical_url: null
-series: "Node.js for beginners"
+series: Node.js for beginners
 id: 494877
 date: '2020-10-27T14:33:14Z'
 ---
