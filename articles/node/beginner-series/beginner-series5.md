@@ -1,17 +1,18 @@
 ---
 title: Debug Node.js app with built-in or VS Code debugger
-published: false
+published: true
 description: Learn how to use built-in or VS Code debugger to fix bugs in your Node.js apps more efficiently with this series of bite-sized videos for beginners.
 tags: 'webdev, beginners, javascript, node'
 cover_image: 'https://raw.githubusercontent.com/sinedied/articles/master/articles/node/beginner-series/assets/banner5.jpg'
 canonical_url: null
 series: Node.js for beginners
 id: 499215
+date: '2020-11-09T17:15:48Z'
 ---
 
 > Are you new to Node.js? We created *Beginner’s Series to Node.js*, a series of short practical videos to get started with Node.js, from installing to debugging, with everything in between. You can look at the [announcement here](https://dev.to/sinedied/learn-node-js-with-this-series-of-short-videos-for-beginners-4lpm) and watch all videos here: [Beginner's Series to Node.js](https://www.youtube.com/playlist?list=PLlrxD0HtieHje-_287YJKhY8tDeSItwtg).
 
-If you ask me on which task I've spent most of my time as a software developer, it would probably be fixing bugs. Working with JavaScript apps, I've used `console.log` when debugging surely more than I should have. Learning how to become efficient at finding bugs in programs is a very important skill that can save you a lot of time. Debuggers help you with that task by providing tools to analyze your programs and run control execution flow.
+If you ask me on which task I've spent most of my time as a software developer, it would probably be bug fixing. Working with JavaScript apps, I've used `console.log` when debugging surely more than I should have. Learning how to become efficient at finding bugs in programs is a very important skill that can save you a lot of time. Debuggers help you with that task by providing tools to analyze your programs and run control execution flow.
 
 In this post, my friend **Burke Holland** will walk you through the steps that can help you find issues more efficiently in Node.js apps. 
 
@@ -67,7 +68,7 @@ Now we're getting serious. After walking through all the debugging basics, it's 
 
 I hope that this short overview will convince you to launch your debugger more often to get used to it, and ultimately drop the `console.log` approach. Or not. But at least you have more tools in hands to track and fix those nasty bugs.
 
-If you would like to get more into details and practice your skills on a concrete example, you can also take a look at this[Interactive tutorial on debugging Node.js apps](https://docs.microsoft.com/learn/modules/debug-nodejs/?wt.mc_id=nodebeginner-devto-yolasors). You can also try doing the fixes by yourself using the source code used in the videos [here](https://github.com/MicrosoftDocs/node-essentials/tree/main/nodejs-debug).
+If you would like to get more into details and practice your skills on a concrete example, you can also take a look at this [Interactive tutorial on debugging Node.js apps](https://docs.microsoft.com/learn/modules/debug-nodejs/?wt.mc_id=nodebeginner-devto-yolasors). You can also try doing the fixes by yourself on the source code used in the videos [here](https://github.com/MicrosoftDocs/node-essentials/tree/main/nodejs-debug).
 
 Please share any questions or experiences you've had on these topics in the comments. Thanks for reading!
 
