@@ -28,7 +28,7 @@ My friend **Christopher Harrison** will walk through what you need to get starte
 
 ### Additional learning resources
 - [Interactive in-depth tutorial on Node.js filesystem](https://docs.microsoft.com/learn/modules/build-web-api-nodejs-express/?wt.mc_id=nodebeginner-devto-yolasors)
-- [Source code of the demonstrated API](https://github.com/WebDev-Beginners/7-bank-project/tree/main/api)
+- [Source code of the demonstrated API](https://github.com/microsoft/Web-Dev-For-Beginners/tree/main/7-bank-project/api)
 - [Express reference](https://expressjs.com/en/4x/api.html)
 - [REST Client extension for VS Code](https://marketplace.visualstudio.com/items?itemName=humao.rest-client&WT.mc_id=nodebeginner-devto-yolasors)
 - [Use CosmosDB with a Node.js app](https://docs.microsoft.com/learn/modules/build-node-cosmos-app-vscode/?WT.mc_id=nodebeginner-devto-yolasors)
@@ -66,7 +66,7 @@ To complete our API and make it a full *CRUD* (Create, Read, Update and Delete) 
 
 ## What's next
 
-You should now have the ground to create your own API with Node.js and Express. If you want, you can also take a look at what [the final API](https://github.com/WebDev-Beginners/7-bank-project/tree/main/api)) we built looks like.
+You should now have the ground to create your own API with Node.js and Express. If you want, you can also take a look at what [the final API](https://github.com/microsoft/Web-Dev-For-Beginners/tree/main/7-bank-project/api)) we built looks like.
 
 If you would like to deepen your knowledge, you can also take a look at this [Interactive in-depth tutorial on Node.js and Express](https://docs.microsoft.com/learn/modules/build-web-api-nodejs-express/?wt.mc_id=nodebeginner-devto-yolasors). Once you start building your API, one of the next steps is usually to plug in a database. You can take a look a [this tutorial](https://docs.microsoft.com/azure/cosmos-db/sql-api-nodejs-application/?wt.mc_id=nodebeginner-devto-yolasors) to learn how to create and connect a [Cosmos DB](https://docs.microsoft.com/learn/modules/build-node-cosmos-app-vscode/?wt.mc_id=nodebeginner-devto-yolasors) instance to a Node.js app. If you never heard about CosmosDB, it's a hosted distributed database that supports multiples connectors, including [MongoDB](https://www.mongodb.com), a popular choice among Node.js developers.
 
