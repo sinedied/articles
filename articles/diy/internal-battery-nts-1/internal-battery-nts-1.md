@@ -66,7 +66,7 @@ Before attaching the wire, you have to unsolder the dangling USB cable on the ba
 
 ![Picture showing where to solder the red wire on the power switch and the black wire on the board](./assets/solder-usb.jpg)
 
-Once you the USB cable is detached, you can solder the red wire end to the `5V+` spot and the black wire end to the `5V-` spot. Be extra careful to avoid shorts here, as the circuit is powered at this point!
+Once the USB cable is detached, you can solder the red wire end to the `5V+` spot and the black wire end to the `5V-` spot. Be extra careful to avoid shorts here, as the circuit is powered at this point!
 
 ## Re-assemble and test
 
@@ -102,7 +102,7 @@ Place the wires of the battery board between the USB port and the small coil:
 
 ![Picture showing wires placement on the battery board](./assets/wire-position.jpg)
 
-After that, place the power switch on the left hole, and fit the USB plug of the battery board on the other one. You have to force a bit to to place the USB plug as it's designed to be a tight fit. You can use a small knife to remove any small bumps due to the 3D printing if it's a bit too tight to fit. The USB plug should clip in and be vertically aligned with the hole. Once in, it should not move anymore, as opposed to the power switch which will need some glue to stay in place.
+After that, place the power switch on the left hole, and fit the USB plug of the battery board on the other one. You have to force a bit to place the USB plug as it's designed to be a tight fit. You can use a small knife to remove any small bumps due to the 3D printing if it's a bit too tight to fit. The USB plug should clip in and be vertically aligned with the hole. Once in, it should not move anymore, as opposed to the power switch which will need some glue to stay in place.
 
 ![Picture showing the power switch and USB plug mounted in the side panel](./assets/place-usb-switch.jpg)
 
@@ -117,7 +117,7 @@ It's time to heat up your glue gun!
 ![My glue gun](./assets/glue-gun.jpg)
 
 Put some glue on the power switch pin, then behind the battery and on its side to prevent it from moving. **Make sure to avoid heating the battery directly!**
-Use your finger to mold the glue a bit and make it flat before it's completely cold.
+Use your finger to shape the glue a bit and make it flat before it's completely cold.
 
 ![Picture showing how everything should be placed before glueing](./assets/glue.jpg)
 
