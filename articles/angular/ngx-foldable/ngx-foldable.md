@@ -3,7 +3,7 @@ title: Adapt your Angular apps for dual-screen devices with ngx-foldable
 published: false
 description: 'Find out how you can quickly adapt existing Angular apps for dual-screen devices like the Surface Duo, without having to deep dive in custom-specific CSS and media queries.'
 tags: 'webdev, beginners, javascript, angular'
-cover_image: ./assets/dual-banner.jpg
+cover_image: ./assets/dual-ng-banner.jpg
 canonical_url: 'https://devblogs.microsoft.com/surface-duo/dual-screen-web-angular/'
 id: 664312
 ---
@@ -12,7 +12,7 @@ Foldable and dual-screen devices are becoming increasingly more common over time
 
 In this post we'll take a look at how you can use [Angular](https://angular.io/) to create a foldable web experience, with minimal changes to an existing code base. We'll start from the [photo gallery demo](https://github.com/foldable-devices/demos/tree/master/photo-gallery), create an Angular version of it and then see how using an Angular library makes the foldable adaptation way easier to approach.
 
-![Demonstration of the demo we'll build](./assets/foldable-demo.gif)
+![Demonstration of the demo we'll build](./assets/demo.gif)
 
 ## TL;DR key takeaway
 
@@ -179,7 +179,7 @@ With the library set up, we can now use the provided `fdSplitLayout`, `fdWindow`
 
 First, you'll notice that we added a top `<div>` container with the directive `fdSplitLayout`. This directive enables us to build a split layout on dual-screen devices without the need for extra CSS. The first parameter allow to choose which kind of CSS layout you want to use, so we're using `flex` here.  Other possible options are `grid` or `absolute`, to better fit your existing app layout. The second parameter allows you to choose whether you want to `reverse` the window segments order when the spanning (ie the orientation) changes, or keep the `normal` order.
 
-![Illustration of impact of window order values](./assets/splitview-window-order.png)
+![Illustration of impact of window order values](./assets/splitview-window-order-schema.png)
 
 Next you'll notice that we added the `fdWindow` directive to the **Gallery** and **Details** components. This one allows you to assign a particular component to a window segment in dual-screen mode, and works only within a `fdSplitLayout` container element.
 
@@ -206,7 +206,7 @@ Less code in the end, better performance and no need for specific CSS, sounds li
 
 You can see the final web app [here](https://sinedied.github.io/surface-duo-photo-gallery/).
 
-![Screenshot of the final photo gallery app](./assets/final-result.png)
+![Screenshot of the final photo gallery app](./assets/final-result-web.png)
 
 ## Going further
 
