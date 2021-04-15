@@ -1,11 +1,12 @@
 ---
 title: Adapt your Angular apps for dual-screen devices with ngx-foldable
-published: false
+published: true
 description: 'Find out how you can quickly adapt existing Angular apps for dual-screen devices like the Surface Duo, without having to deep dive in custom-specific CSS and media queries.'
 tags: 'webdev, beginners, javascript, angular'
 cover_image: ./assets/dual-ng-banner.jpg
 canonical_url: 'https://devblogs.microsoft.com/surface-duo/dual-screen-web-angular/'
 id: 664312
+date: '2021-04-15T16:01:15Z'
 ---
 
 Foldable and dual-screen devices are becoming increasingly more common over time, but you may wonder if investing development time to support these devices might be worth it, especially when creating fully responsive web apps is already a challenge. Using the new [CSS and JavaScript primitives](https://devblogs.microsoft.com/surface-duo/dual-screen-web-experiences-preview/?WT.mc_id=javascript-12159-yolasors) is a fun way to discover and learn about the new possibilities offered by devices like the Surface Duo, yet you might be looking for a more efficient way to adapt existing apps without having to make drastic changes and dive too much into custom CSS. That's what we're going to explore here.
