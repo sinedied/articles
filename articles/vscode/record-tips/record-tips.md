@@ -2,9 +2,11 @@
 title: 3 tips for perfect VS Code video & GIFs recordings
 published: true
 description: Learn how to make your next VS Code screencast look perfect with these simple tips!
-tags: vscode, productivity, beginners, tips
-cover_image: https://raw.githubusercontent.com/sinedied/articles/master/articles/vscode/record-tips/assets/record-tips-banner.png
-canonical_url:
+tags: 'vscode, productivity, beginners, tips'
+cover_image: 'https://raw.githubusercontent.com/sinedied/articles/master/articles/vscode/record-tips/assets/record-tips-banner.png'
+canonical_url: null
+id: 295093
+date: '2020-03-30T15:29:28Z'
 ---
 
 As many of us are spending more time these days recording development screencasts, I thought I would share a few simple tips to improve your recordings of [VS Code](https://code.visualstudio.com/?WT.mc_id=sinedied-github-yolasors), whether it's for making videos or GIFs.
