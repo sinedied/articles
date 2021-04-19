@@ -21,7 +21,7 @@ Turns out VS Code extensions can't do that, as they have access to neither the E
 
 - Open the command palette with `Ctrl+Shift+P` (Windows/Linux) or `Cmd+Shift+P` (Mac)
 - Search for `Toggle Developer Tools`, then press `Enter`.
-- In the Chrome Developer Tools window that will show up, select the **Console** tab and enter this code `window.resize(1920, 1080)`:
+- In the Chrome Developer Tools window that will show up, select the **Console** tab and enter this code `window.resizeTo(1920, 1080)`:
 
 ![Chrome Developer Tools screenshot](./assets/devtools-resize.png)
 
