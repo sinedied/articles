@@ -3,8 +3,9 @@ title: 16 Tips to Master Your Azure Static Web Apps
 published: false
 description: Get your web app project moving forward with this series of practical videos on Azure Static Web Apps.
 tags: 'webdev, beginners, javascript, azure'
-cover_image: './assets/banner.jpg'
+cover_image: ./assets/banner.jpg
 canonical_url: null
+id: 730987
 ---
 
 Azure Static Web Apps is a serverless web app hosting service offering streamlined full-stack development, with many built-in features designed to make your life easier. Because it's always hard to get started with any new technology, we created a series of practical, short videos with all the tips and tricks you need to get your apps up and running in a blink.
@@ -20,7 +21,7 @@ This series is made of 16 videos, organized in 4 modules each with a different f
 
 ## Azure Static Web Apps essentials
 
-You'll learn here what is Node.js and especially why you should learn it. Then we'll see how to set up your Node.js environment, and run some JavaScript with it. We'll also set up VS Code with a few recommended plugins.
+If you've never heard of Static Web Apps or if you're just being curious, this is the place to start. You'll discover the basics about it, install all the tools to work efficiently and see how fast you can get your website online. Then you'll set up a full CI/CD pipeline and see how to use pre-production environments, and finally create your own personal blog with Gatsby.
 
 **Videos:**
 
@@ -32,8 +33,7 @@ You'll learn here what is Node.js and especially why you should learn it. Then w
 
 ## Building a shopping app
 
-Now that you're ready to code, we see how to create new projects and make use of the rich ecosystem of packages. We'll also see how to automate your development task and take care of everything around your 
-dependencies.
+Now that you're ready to code, we'll cover the use case of building a shopping app progressively, configuring the routing, adding an API and securing your app with built-in authentication and authorization. And because as web developers we love to have nice looking URLs, we'll also see how to configure your custom domain step by step.
 
 **Videos:**
 
@@ -45,7 +45,7 @@ dependencies.
 
 ## Using C# and Blazor to create full-stack web apps
 
-Whatever programming language you use, you always need to work with the file system at some point. These videos will get you up to speed on this fundamental skill.
+With Blazor and Web Assembly you can use C# all the way to create full-stack web apps. This especially great if your're well versed in C#, and want to use your skills to create a comple serverless web app and API entirely written in C# with .Net. You'll start your journey here from the beginning, and see all the important aspects you need to care for while creating your Blazor app.
 
 **Videos:**
 
@@ -55,7 +55,7 @@ Whatever programming language you use, you always need to work with the file sys
 
 ## Using Cosmos DB with MongoDB API and Mongoose with your Static Web Apps
 
-Of one the main selling point of Node.js is its capability to quickly create web APIs, thanks to many popular libraries. In this section, we'll cover the most important concepts of the Express web framework to create a web server API.
+Almost every web project will require client and server-side code, and ultimately, *a database*. With Static Web Apps you've seen how to create and deploy websites, and we'll expand on that using tools you're already familiar with, including MongoDB and Mongoose for managing data. You'll save time learning how to create a complete app with a database from this starter kit, going through every steps you need to deploy your project and database.
 
 **Videos:**
 
