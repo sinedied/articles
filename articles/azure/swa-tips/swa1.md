@@ -6,6 +6,7 @@ tags: 'webdev, beginners, javascript, azure'
 cover_image: ./assets/banner.jpg
 canonical_url: null
 id: 730987
+date: '2021-06-17T13:39:33Z'
 ---
 
 Azure Static Web Apps is a serverless web app hosting service offering streamlined full-stack development, with many built-in features designed to make your life easier. Because it's always hard to get started with any new technology, we created a series of practical, short videos with all the tips and tricks you need to get your apps up and running in a blink.
@@ -39,8 +40,8 @@ Now that you're ready to code, we'll cover the use case of building a shopping a
 
 6\. [How to configure routing in Azure Static Web Apps](https://www.youtube.com/watch?v=A70tGiaHCTE&list=PLlrxD0HtieHgMPeBaDQFx9yNuFxx6S1VG&index=6)
 7\. [How to add an API to your Azure Static Web App](https://www.youtube.com/watch?v=VzML-6DClVU&list=PLlrxD0HtieHgMPeBaDQFx9yNuFxx6S1VG&index=7)
-8\. [How to integrate authentication in Azure Static Web Apps](https://www.youtube.com/watch?v=tb70Podwlvk&list=PLlrxD0HtieHgMPeBaDQFx9yNuFxx6S1VG&index=8)
-9\. [How to configure authorization in Azure Static Web Apps](https://www.youtube.com/watch?v=gprWQDYk0RU&list=PLlrxD0HtieHgMPeBaDQFx9yNuFxx6S1VG&index=9)
+8\. [How to integrate authentication in Azure Static Web Apps](https://www.youtube.com/watch?v=TygnLOA68B0&list=PLlrxD0HtieHgMPeBaDQFx9yNuFxx6S1VG&index=8)
+9\. [How to configure authorization in Azure Static Web Apps](https://www.youtube.com/watch?v=r5yrxgc12q4&list=PLlrxD0HtieHgMPeBaDQFx9yNuFxx6S1VG&index=9)
 10\. [How to set up a custom domain name in Azure Static Web Apps](https://www.youtube.com/watch?v=SpQgKfJ87fE&list=PLlrxD0HtieHgMPeBaDQFx9yNuFxx6S1VG&index=10)
 
 ## Using C# and Blazor to create full-stack web apps
