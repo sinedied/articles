@@ -5,6 +5,7 @@ description: Step-by-step instructions on how to add an internal battery to your
 tags: 'diy, mod, synth, 3d-printing'
 cover_image: './assets/cover.jpg'
 canonical_url: null
+devto: false
 ---
 
 When I just got my hands on the [Korg NTS-1](https://www.korg.com/us/products/dj/nts_1/) mini synth, my first thought was: *« Why isn't there a battery in this thing? »*
