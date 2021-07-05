@@ -64,6 +64,12 @@ Almost every web project will require client and server-side code, and ultimatel
 15\. [How to create your full-stack Azure Static Web Apps from a GitHub template](https://www.youtube.com/watch?v=oV4XMevxpiM&list=PLlrxD0HtieHgMPeBaDQFx9yNuFxx6S1VG&index=15)
 16\. [How to setup Cosmos DB with a MongoDB API to use with Azure Static Web Apps](https://www.youtube.com/watch?v=R9qhGra9FHs&list=PLlrxD0HtieHgMPeBaDQFx9yNuFxx6S1VG&index=16)
 
+## Bonus
+
+SQL Database are everywhere and are still the go-to solution for most data workflows. With this bonus video, you'll learn how to setup an Azure SQL Database and use it in your website deployed on Static Web Apps.
+
+17\. [Setup Azure SQL Database to use with Azure Static Web Apps](https://www.youtube.com/watch?v=FyxRonVvEkg&list=PLlrxD0HtieHgMPeBaDQFx9yNuFxx6S1VG&index=17)
+
 ## Want more?
 
 Videos are great for visual learning, but having additional forms of content is always helpful.
