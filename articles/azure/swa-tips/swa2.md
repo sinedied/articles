@@ -6,6 +6,8 @@ tags: 'webdev, beginners, javascript, azure'
 cover_image: ./assets/swa-02-banner.jpg
 canonical_url: null
 series: Static Web Apps Tips & Tricks
+id: 753838
+date: '2021-07-08T16:05:04Z'
 ---
 
 > If you're looking for tips and best practices on how to create and deploy fully featured web apps with Azure Static Web Apps, we created a series of short practical videos to help you with various use cases. You can look at the [announcement here](https://dev.to/azure/16-tips-to-master-your-azure-static-web-apps-3cgn) and watch all videos here: [Azure Tips and Tricks: Static Web Apps](https://aka.ms/StaticWebAppsTips).
@@ -24,7 +26,7 @@ To help you with all these featuress, I'll be joined by my friends [**Ayşegül 
 - Set up custom domains
 
 ### Additional learning resources
-- [Interactive in-depth tutorials Static Web Apps](https://aka.ms/learn/swa)
+- [Interactive tutorials on Static Web Apps](https://aka.ms/learn/swa)
 - [Static Web Apps docs overview](https://docs.microsoft.com/azure/static-web-apps/?WT.mc_id=javascript-17844-cxa)
 - [Shopping app source code template](https://github.com/MicrosoftDocs/mslearn-staticwebapp)
 - [Static Web Apps CLI](https://github.com/Azure/static-web-apps-cli)
