@@ -1,17 +1,17 @@
 ---
-title: Keep your dev environment clean using containers and VS Code
+title: Instantly set up a new dev environment using containers and VS Code
 published: false
-description: Discover how to get started in seconds on a new project, perfectly isolate your dev environment and share it with your teammates thanks to VS Code and containers.
+description: Discover how to get started in seconds on a new project, isolate all your dev environments and share them with your teammates using VS Code dev containers.
 tags: vscode, productivity, beginners, tips
-cover_image: 
+cover_image: ./assets/banner.png
 canonical_url:
 ---
 
 There are 3 things that makes me waste a lot of time as a developer, and that can be become a big source of frustration:
 
 - Set up a new development machine
-- Manage and update your development environment to work on a project
-- Reinstall everything again, because after many times installing and updating your dev tools everything broke :(
+- Manage and update my development environment to work on a project
+- Reinstall everything again, because after many times installing and updating my dev tools everything broke :(
 
 What if I told you that we can avoid these issues, and that it's possible to perfectly isolate each of your projects' environment? And to be able to share and update it easily, to have nothing to do when a newcomer joins your project?
 
@@ -136,10 +136,13 @@ You then only have to select `Rebuild` to update your environment to the latest 
 
 ## Where's the catch?
 
-TODO Performance....
+> It almost seems too good to be true, so where's the catch?
 
-- [Improving filesystem performance]()
+I've been asking that to myself since I started using it from the first beta, and so far it's been a happy ride. If you wonder about the performance, yes doing everything inside a container is a bit slower than doing it on the host machine, but nothing to worry about. In some cases, you may face disk performance issues especially with lots of small files (looking at you, `npm install`) but there are tips to [improve your filesystem performance with Docker](https://code.visualstudio.com/remote/advancedcontainers/improve-performance).
 
+The only issue I had at the beginning was with my git credentials as I'm using a SSH keys, but once I've followed [the guide to set up an SSH agent](https://code.visualstudio.com/docs/remote/containers#_sharing-git-credentials-with-your-container) everything went smoothly.
+
+You can have a look at the [known limitations](https://code.visualstudio.com/docs/remote/containers#_known-limitations), but so far I've yet to have any issue with it.
 
 ## What's next
 
