@@ -52,7 +52,7 @@ We solved all these problems by packaging the runtime environment of our applica
 ## Requirements
 
 You need to have these tools installed on your machine to get started:
-- [Visual Studio Code](https://code.visualstudio.com)
+- [Visual Studio Code](https://code.visualstudio.com?WT.mc_id=javascript-14373-yolasors)
 - [Docker](https://www.docker.com/products/docker-desktop) (or any Docker-compatible client)
 - [Remote Development Extension for VS Code](https://aka.ms/vscode/remote-dev)
 
@@ -143,11 +143,11 @@ You then only have to select `Rebuild` to update your environment to the latest 
 
 > It almost seems too good to be true, so where's the catch?
 
-I've been asking that to myself since I started using it from the first beta, and so far it's been a happy ride. If you wonder about the performance, yes doing everything inside a container is a bit slower than doing it on the host machine, but nothing to worry about. In some cases, you may face disk performance issues especially with lots of small files (looking at you, `npm install`) but there are tips to [improve your filesystem performance with Docker](https://code.visualstudio.com/remote/advancedcontainers/improve-performance).
+I've been asking that to myself since I started using it from the first beta, and so far it's been a happy ride. If you wonder about the performance, yes doing everything inside a container is a bit slower than doing it on the host machine, but nothing to worry about. In some cases, you may face disk performance issues especially with lots of small files (looking at you, `npm install`) but there are tips to [improve your filesystem performance with Docker](https://code.visualstudio.com/remote/advancedcontainers/improve-performance?WT.mc_id=javascript-14373-yolasors).
 
-The only issue I had at the beginning was with my git credentials as I'm using SSH keys, but once I've followed [the guide to set up an SSH agent](https://code.visualstudio.com/docs/remote/containers#_sharing-git-credentials-with-your-container) everything went smoothly.
+The only issue I had at the beginning was with my git credentials as I'm using SSH keys, but once I've followed [the guide to set up an SSH agent](https://code.visualstudio.com/docs/remote/containers?WT.mc_id=javascript-14373-yolasors#_sharing-git-credentials-with-your-container) everything went smoothly.
 
-You can have a look at the [known limitations](https://code.visualstudio.com/docs/remote/containers#_known-limitations), but so far I've yet to have any issue with it.
+You can have a look at the [known limitations](https://code.visualstudio.com/docs/remote/containers?WT.mc_id=javascript-14373-yolasors#_known-limitations), but so far I've yet to have any issue with it.
 
 ## What's next
 
