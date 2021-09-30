@@ -6,6 +6,7 @@ tags: beginners, 3dprinting, 3d, tips
 cover_image:
 canonical_url:
 series:
+devto_sync: false
 ---
 # The starter guide to 3D printing
 
