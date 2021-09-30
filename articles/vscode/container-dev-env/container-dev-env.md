@@ -1,11 +1,12 @@
 ---
 title: Instantly set up a new dev environment using containers and VS Code
-published: false
+published: true
 description: 'Discover how to get started in seconds on a new project, isolate all your dev environments and share them with your teammates using VS Code dev containers.'
 tags: 'vscode, productivity, beginners, tips'
 cover_image: ./assets/banner.jpg
 canonical_url: null
 id: 845440
+date: '2021-09-30T15:00:11Z'
 ---
 
 There are 3 things that make me waste a lot of time as a developer, and that can become a big source of frustration:
