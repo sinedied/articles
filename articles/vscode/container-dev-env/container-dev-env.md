@@ -95,7 +95,8 @@ Let's take a deeper look at how you can fine-tune your VS Code dev environment b
 You'll see something like this under the `settings` key: 
 
 ```json
-// Set *default* container specific settings.json values on container create.
+// Set *default* container specific settings.json values
+// on container create.
 "settings": { 
   "terminal.integrated.shell.linux": "/bin/bash"
 },
@@ -106,7 +107,8 @@ This key allows you to override any VS Code settings when it's connected to this
 Another useful option is located under the `extensions` key:
 
 ```json
-// Add the IDs of the extension you want installed when the container is created.
+// Add the IDs of the extension you want installed when
+// the container is created.
 "extensions": [
   "dbaeumeur.vscode-eslint"
 ],
@@ -117,7 +119,8 @@ This one allows specifying extensions that will be automatically installed *with
 One last essential option, `forwardPorts`, allows you to expose ports available from within your dev container and make them accessible by default from your local machine.
 
 ```json
-// Use 'forwardPorts' to make a list of ports inside the container available locally
+// Use 'forwardPorts' to make a list of ports inside the
+// container available locally
 "forwardPorts": [3000, 4200],
 ```
 
