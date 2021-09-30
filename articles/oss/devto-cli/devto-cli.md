@@ -22,11 +22,15 @@ My way to give back to this wonderful community is to present you **a new CLI ma
 
 Nothing is set in stone, but here are some ideas I have in mind for the future of this tool.
 
-- Add the ability to synchronize back changes made on dev.to website (in case you need a quick edit on the go). Using [webhooks](https://docs.dev.to/api/#tag/webhooks), it would even be possible to automatically merge the change back in your repo using the GitHub Action.
 - Make it a VS Code extension: because not everyone like CLI.
-- You name it? This project is not just Open Source in name, your contributions are welcome ♥️.
+- Bootstrap a personal blog automatically using the markdown files, and manage canonical URLs for you.
+- Synchronize back changes made on dev.to website, in case you need a quick edit on the go. Using [webhooks](https://docs.dev.to/api/#tag/webhooks), it would even be possible to automatically merge the changes back in your repo using the GitHub Action.
+- You name it? This project is not just Open Source in name, your contributions and ideas are welcome ♥️.
 
-Thanks for being here and taking part in this
+I would love to hear you feedback and ideas in the comments!
+Thanks for being here and taking part in this awesome community.
+
+**YOU ROCK!**
 
 ---
 
