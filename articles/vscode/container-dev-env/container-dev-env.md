@@ -17,7 +17,7 @@ There are 3 things that make me waste a lot of time as a developer, and that can
 
 What if I told you that we can avoid these issues, and that it's possible to perfectly isolate each of your projects' environment? And to be able to share and update it easily, to have nothing to do when a newcomer joins your project?
 
-It's now possible thanks to the [Remote Development extension](https://aka.ms/vscode/remote-dev) for VS Code and containers. In this post, I'll show you how to set up a complete dev environment inside a container and use it with your projects.
+It's now possible thanks to the [Remote Development extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack&WT.mc_id=javascript-14373-yolasors) for VS Code and containers. In this post, I'll show you how to set up a complete dev environment inside a container and use it with your projects.
 
 ## TL;DR key takeaways
 
@@ -54,7 +54,7 @@ We solved all these problems by packaging the runtime environment of our applica
 You need to have these tools installed on your machine to get started:
 - [Visual Studio Code](https://code.visualstudio.com?WT.mc_id=javascript-14373-yolasors)
 - [Docker](https://www.docker.com/products/docker-desktop) (or any Docker-compatible client)
-- [Remote Development Extension for VS Code](https://aka.ms/vscode/remote-dev)
+- [Remote Development Extension for VS Code](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack&WT.mc_id=javascript-14373-yolasors)
 
 ## Getting started
 
@@ -151,7 +151,7 @@ You can have a look at the [known limitations](https://code.visualstudio.com/doc
 
 ## What's next
 
-This article is only a brief overview of what's possible with these tools, and of course, you can push it way further if needed, like creating a dev environment using multiple containers for example. You can have a look a the documentation here for more advanced scenarios: [aka.ms/remote-dev-ext/advanced](https://aka.ms/remote-dev-ext/advanced)
+This article is only a brief overview of what's possible with these tools, and of course, you can push it way further if needed, like creating a dev environment using multiple containers for example. You can have a look at [the documentation for more advanced scenarios](https://code.visualstudio.com/remote/advancedcontainers/overview?WT.mc_id=javascript-14373-yolasors).
 
 Going further, you could still argue that you have to install VS Code with the remote extension and a Docker-compatible runtime to make this work. It's also possible to get rid of that, using for example [GitHub Codespace](https://github.com/features/codespaces) which makes use of the exact same tools and configuration to provide a cloud-based dev environment, accessible from any browser, without having to install anything (but a browser) on your machine.
 
