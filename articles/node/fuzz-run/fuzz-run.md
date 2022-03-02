@@ -1,7 +1,7 @@
 ---
-title: A simple Node.js command to improve your dev workflow
+title: A simple command to improve your JavaScript workflow
 description: Discover a no-thrill runner CLI with fuzzy matching to run all your Node.js tasks by typing less.
-tags: 'productivity, node, javascript, webdev'
+tags: 'productivity, javascript, node, webdev'
 cover_image: ./assets/run.jpg
 published: false
 id: 1005399
