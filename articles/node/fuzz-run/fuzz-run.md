@@ -5,6 +5,7 @@ tags: 'productivity, javascript, node, webdev'
 cover_image: ./assets/run.jpg
 published: true
 id: 1005399
+date: '2022-03-15T14:37:09Z'
 ---
 
 I don't know about you, but as a JavaScript developer, there's something I do hundreds of times a day: running **NPM scripts** to *test*, *lint*, *build*, *serve*, *release* and more.
