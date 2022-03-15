@@ -3,7 +3,7 @@ title: A simple command to improve your JavaScript workflow
 description: Discover a no-thrill runner CLI with fuzzy matching to run all your Node.js tasks by typing less.
 tags: 'productivity, javascript, node, webdev'
 cover_image: ./assets/run.jpg
-published: false
+published: true
 id: 1005399
 ---
 
@@ -79,4 +79,4 @@ It's also completly [open source](https://github.com/sinedied/fuzz-run), so you 
 
 ---
 
-Follow me on [Twitter](http://twitter.com/sinedied), I would be happy to discuss about it and take your suggestions!
+Follow me on [Twitter](http://twitter.com/sinedied) for more content, I would be happy to discuss about it and take your suggestions!
