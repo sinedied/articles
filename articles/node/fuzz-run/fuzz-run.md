@@ -58,7 +58,7 @@ It will run this sequence of actions:
 
 - If there are any, ask if you want to run `npm update` to update them within the allowed ranges in `package.json`.
 
-- Finally, perform an interactive upgrade for packages outside your allowed ranges, with `npm npm-check -u`. You'll be able to choose which packages to upgrade, with a link to their repository to see the changelogs.
+- Finally, perform an interactive upgrade for packages outside your allowed ranges, with `npx npm-check -u`. You'll be able to choose which packages to upgrade, with a link to their repository to see the changelogs.
 
 Of course, if you're within a Yarn or PNPM project, the commands will change accordingly.
 
