@@ -2,7 +2,7 @@
 title: Build a shopping app with Azure Static Web Apps
 published: true
 description: Learn how to implement various features for building a shopping app with Azure Static Web Apps.
-tags: 'webdev, beginners, javascript, azure'
+tags: 'webdev, beginners, javascript, staticwebapps'
 cover_image: ./assets/swa-02-banner.jpg
 canonical_url: null
 series: Static Web Apps Tips & Tricks

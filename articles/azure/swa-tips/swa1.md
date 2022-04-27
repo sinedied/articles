@@ -2,7 +2,7 @@
 title: 16 Tips to Master Your Azure Static Web Apps
 published: true
 description: Get your web app project moving forward with this series of practical videos on Azure Static Web Apps.
-tags: 'webdev, beginners, javascript, azure'
+tags: 'webdev, beginners, javascript, staticwebapps'
 cover_image: ./assets/banner.jpg
 canonical_url: null
 id: 730987

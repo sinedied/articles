@@ -1,8 +1,8 @@
 ---
-title: The easy way to serverless web apps and APIs with Azure Static Web Apps and GitHub
+title: Deploy serverless web apps and APIs with Azure Static Web Apps and GitHub
 published: true
 description: 'If you''re building web apps with custom APIs, Azure Azure Static Web Apps may become your next best friend. Streamlined serverless deployment, all from GitHub. With a Free tier. Wanna take a look?'
-tags: 'webdev, beginners, javascript, azure'
+tags: 'webdev, beginners, javascript, staticwebapps'
 cover_image: ./assets/azure-swag-banner.jpg
 canonical_url: null
 tracking_code: build2020_swa-blog-yolasors
