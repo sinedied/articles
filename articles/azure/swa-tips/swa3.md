@@ -5,11 +5,12 @@ description: Get your web app project moving forward with this series of practic
 tags: 'webdev, beginners, javascript, staticwebapps'
 cover_image: ./assets/swa-03-banner.jpg
 canonical_url: null
+id: 1087054
 ---
 
 About a year ago, we published [a series of videos](https://aka.ms/StaticWebAppsTips) to help you get the most out of Azure Static Web Apps. It's time to update it with fresh tips, as we got new exciting tools to improve your dev experience!
 
-> If you've never heard of Static Web Apps (or SWA for short), it's a web app hosting service provided by Azure, offering streamlined full-stack development with many built-in features like authentication, customizable routing, serverless functions and more.
+> If you've never heard of Static Web Apps (or SWA for short), it's a web app hosting service provided by Azure, offering streamlined full-stack development with many built-in features like authentication, customizable routing, serverless functions and more. It also has a great [free tier](https://azure.microsoft.com/free/?WT.mc_id=javascript-0000-yolasors) 😉
 
 ## Tip #18: Run, build and deploy your apps with the new SWA CLI
 
