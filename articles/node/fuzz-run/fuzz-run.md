@@ -74,7 +74,7 @@ The `nr --refresh` or `nr -r` scripted action comes to the rescue, well doing ex
 
 ## Final words
 
-This is very small tool that I've been using for a long time, and I hope it's useful to you even though I initially created it to scratch my own itch.
+This is a very small tool that I've been using for a long time, and I hope it's useful to you even though I initially created it to scratch my own itch.
 
 It's also completly [open source](https://github.com/sinedied/fuzz-run), so you can contribute to it or fork it to make it your own.
 
