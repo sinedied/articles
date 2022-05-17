@@ -34,6 +34,8 @@ INTRO
 
 ## Tell us your feedback!
 
+TODO
+
 We're also here on dev.to to listen and help as much as we can! 🙂
 
 Please tell us your experience, your difficulties and questions, and what videos you would like to see next in this series!
