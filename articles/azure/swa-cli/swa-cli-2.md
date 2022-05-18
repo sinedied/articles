@@ -25,6 +25,10 @@ INTRO
 - deploy over existing SWA (mention restrictions)
 
 
+## Environment variables
+
+Secrets, CI, etc
+
 
 
 ## Next steps
