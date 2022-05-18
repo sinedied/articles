@@ -1,11 +1,12 @@
 ---
 title: Get started with the new Azure Static Web Apps CLI
 published: false
-description: Discover how we revamped the SWA CLI to streamline the developer experience to create, test and deploy your Static Web Apps.
+description: 'Discover how we revamped the SWA CLI to streamline the developer experience to create, test and deploy your Static Web Apps.'
 tags: 'webdev, beginners, javascript, staticwebapps'
 cover_image: ./assets/cli-banner-1.jpg
 canonical_url: null
-series: 'swa-cli'
+series: swa-cli
+id: 1088826
 ---
 
 You may have missed it, but the [new Azure Static Web Apps CLI](https://github.com/Azure/static-web-apps-cli) is now available!

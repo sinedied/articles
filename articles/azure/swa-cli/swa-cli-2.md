@@ -5,7 +5,8 @@ description: Use the new SWA CLI commands to deploy your apps straight from the 
 tags: 'webdev, beginners, javascript, staticwebapps'
 cover_image: ./assets/cli-banner-2.jpg
 canonical_url: null
-series: 'swa-cli'
+series: swa-cli
+id: 1088825
 ---
 
 INTRO
