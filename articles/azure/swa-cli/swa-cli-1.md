@@ -33,6 +33,7 @@ swa
 
 This command is a macro shorcut for `swa init`, `swa build`, `swa login` and `swa deploy`. We'll get to the details of all these commands in a bit, the most important thing here is that `swa` is the only command you need to know to configure a new project for use with Static Web Apps, build it and deploy it. You don't have to worry about any options or flags, just type `swa` and you'll be on your way. 
 
+
 ## Creating the configuration
 
 The first of the new commands is `swa init`. This commands with detect your project configuration and the frameworks you're using to suggest a configuration for you, so you won't have to read through [the shiny new docs](https://azure.github.io/static-web-apps-cli/) to figure out what options you need.
@@ -41,23 +42,30 @@ The first of the new commands is `swa init`. This commands with detect your proj
 
 After asking a name for your project configuration, you can validate or edit the detected project settings. Once finished, it will create a `swa-cli.config.json` file in the current folder with your settings. You can commit this file in your project repository so everyone from your team can use it.
 
+
 ## Building your project
 
+After the configuration is created, you're all set to use other commands without having to bother with any options or flags.
+
+Whether you need to build your front-end app, your API, or both, the `swa build` command will do the job. It also takes care of installing your NPM dependencies (if needed) detecting if you're using npm, Yarn or PNPM with your project.
 
 
 ## Running your app locally
 
+Historically, being able to run your app locally was the first feature of the SWA CLI. Of course it's still there, and `swa start` allows you to emulate the SWA runtime environment, along with the routing, authentication features and API. A few changes were made to improve the developer experience, and of course bugs were fixed to more closely match the real SWA runtime.
+
+Previously, if you were using an API, you had to install [Functions Core Tools](https://docs.microsoft.com/azure/azure-functions/functions-run-local?tabs=v4%2Cwindows%2Ccsharp%2Cportal%2Cbash&WT.mc_id=javascript-0000-yolasors#publish) and make sure to match the tools version with the Node.js version you're using, but now the whole process is automated for you. If you don't have the tools installed or if the wrong version is installed, you don't have to worry about it: it will be automatically installed for you when needed.
 
 
 ## Next steps
 
+With these new commands, you can already setup your project, build it and test it locally. Using `swa start` is also great for debugging your app and API in a live running environment. Once you're happy with the result, you can deploy it to Azure, and that's what we'll explore in the next post.
 
+In the meantime, you can also head to [the new docs website](https://azure.github.io/static-web-apps-cli/) to learn more about the new features and how to use them.
 
 
 ## Tell us your feedback!
 
-TODO
-
 We're also here on dev.to to listen and help as much as we can! 🙂
 
-Please tell us your experience, your difficulties and questions, and what videos you would like to see next in this series!
+Please tell us your experience, your difficulties, your questions, and what features you would like to see in the next versions of the SWA CLI.

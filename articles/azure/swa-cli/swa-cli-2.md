@@ -38,8 +38,6 @@ Secrets, CI, etc
 
 ## Tell us your feedback!
 
-TODO
-
 We're also here on dev.to to listen and help as much as we can! 🙂
 
-Please tell us your experience, your difficulties and questions, and what videos you would like to see next in this series!
+Please tell us your experience, your difficulties, your questions, and what features you would like to see in the next versions of the SWA CLI.
