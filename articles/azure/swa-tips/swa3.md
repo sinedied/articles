@@ -16,13 +16,13 @@ About a year ago, we published [a series of videos](https://aka.ms/StaticWebApps
 
 With the release of [the new SWA CLI](https://github.com/Azure/static-web-apps-cli), it's never been easier to get started with Azure Static Web Apps! With the new commands you can configure your project to test it locally with the emulator, and deploy it directly from the CLI in a few minutes. It also support multiple configurations, and it's compatible with monorepos. Watch the video to learn how to get started with the new commands.
 
-{% youtube w-tLZjO6XMc %} TODO: update video link
+{% youtube zchTNKmay6M %}
 
 ## Tip #19: End-to-end browser debugging of your Static Web Apps with VS Code
 
 I love web development, but when you're trying to debug your app, whether it's the HTML, CSS or JavaScript, it always involves a lot of painful back and forth between your code editor and the browser. But thanks to [this new VS Code extension](https://aka.ms/devtools-for-code), you can now preview and debug your apps without having to leave your editor, all from a single window! And it even comes with built-in hints and support for accessibility testing, so you won't have any excuses to not make your app accessible.
 
-{% youtube w-tLZjO6XMc %} TODO: update video link
+{% youtube l39cjaosxKw %}
 
 ## Tell us your feedback!
 
