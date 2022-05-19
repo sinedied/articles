@@ -9,7 +9,9 @@ series: swa-cli
 id: 1088825
 ---
 
-INTRO
+For this second article about the SWA CLI, we'll talk about the new deployment options. And yes, you can now deploy your apps straight from the command line! Who's better than the person who implemented it to talk about it? I'll let my friend [Wassim](https://twitter.com/manekinekko) explain it all to you.
+
+{% user wassimchegham %}
 
 > If you've never heard of Static Web Apps (or SWA for short), it's a web app hosting service provided by Azure, offering streamlined full-stack development with many built-in features like authentication, customizable routing, serverless functions and more. It also has a great [free tier](https://azure.microsoft.com/free/?WT.mc_id=javascript-0000-yolasors) 😉
 
