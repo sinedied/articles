@@ -144,9 +144,11 @@ You can read more about these environment variables in the [Environment Variable
 
 ## Next steps
 
-//TODO
+From the start of your project to its deployment to Azure, with all the needed local testing in-between, you should now be equipped to take care of your complete development process all from the command line. Now the main challenge remaining for you is to deploy and grow your app 😉.
 
-In the meantime, you can also head to the [new docs website](https://azure.github.io/static-web-apps-cli/) to learn more about the new features and how to use them.
+If you'd like to learn some tips you can use when developing your app, you can check out the [Static Web Apps - Tips & Tricks](https://aka.ms/StaticWebAppsTips) video series.
+
+You can also learn more about all the new features of the SWA CLI and how to use them by looking at the [new docs website](https://azure.github.io/static-web-apps-cli/).
 
 ## Tell us your feedback!
 
