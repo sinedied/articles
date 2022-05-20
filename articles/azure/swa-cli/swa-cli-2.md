@@ -1,12 +1,13 @@
 ---
 title: Deploy your Static Web Apps to Azure directly from the command line
-published: false
+published: true
 description: Use the new SWA CLI commands to deploy your apps straight from the command line. It's never been easier to deploy your apps to Azure!
 tags: 'webdev, beginners, javascript, staticwebapps'
 cover_image: ./assets/cli-banner-2.jpg
 canonical_url: null
 series: swa-cli
 id: 1088825
+date: '2022-05-20T13:09:10Z'
 ---
 
 For this second article about the SWA CLI, we'll talk about the new deployment options. And yes, you can now deploy your apps straight from the command line! Who's better than the person who implemented it to talk about it? I'll let my friend [Wassim](https://twitter.com/manekinekko) explain it all to you.
