@@ -1,11 +1,12 @@
 ---
 title: New tips & tricks for your Azure Static Web Apps
-published: false
+published: true
 description: Get your web app project moving forward with this series of practical videos on Azure Static Web Apps.
 tags: 'webdev, beginners, javascript, staticwebapps'
 cover_image: ./assets/swa-03-banner.jpg
 canonical_url: null
 id: 1087054
+date: '2022-05-23T16:13:53Z'
 ---
 
 About a year ago, we published [a series of videos](https://aka.ms/StaticWebAppsTips) to help you get the most out of Azure Static Web Apps. It's time to update it with fresh tips, as we got new exciting tools to improve your dev experience!
