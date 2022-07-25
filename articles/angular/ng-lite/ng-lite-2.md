@@ -1,18 +1,20 @@
 ---
-title: A smaller and simpler Angular starter with ng-lite
+title: The missing (simpler) introduction to Angular
 published: false
 description: ''
 tags: 'webdev, beginners, javascript, angular'
 cover_image: ./assets/.jpg
 ---
 
-A lot of complaints I heard when starting with Angular are about the sheer amount of files you get even on simple apps. When looking at the default starter template you get from Angular CLI's `ng new` command, it's true that it can be a bit overwhelming if you're not used to it.
+Being a rather complete framework, Angular is often said to be complex and difficult to learn. And seeing a lot of articles telling that you need to learn RxJS and observables before even starting to dig in Angular isn't really helping with that idea.
 
-But it doesn't have to *always* be that way. In this article, we'll explore how we can a smaller and simpler template that's also easier to grasp for beginners, following the [YAGNI principle](https://en.wikipedia.org/wiki/You_aren%27t_gonna_need_it).
+Sure, there's a lot of Angular built-in features and tools that you can use to make your life easier when dealing with complex applications, but you don't have to learn all of them to get started. In fact, you can build perfectly fine apps using mostly HTML/CSS and Angular components, without using any other features.
+
+Let's try building the infamous todo list app while learning the basics of Angular and keeping the project as simple as it can be, following the [YAGNI principle](https://en.wikipedia.org/wiki/You_aren%27t_gonna_need_it).
 
 ## Getting prepared
 
-Make sure you have a recent [Node.js](https://nodejs.org) runtime installed (at least v14), and let's start by installing the [Angular CLI](https://cli.angular.io).
+Make sure you have a recent [Node.js](https://nodejs.org) runtime installed, and let start by installing the [Angular CLI](https://cli.angular.io).
 
 ```bash
 npm install -g @angular/cli
@@ -20,31 +22,35 @@ npm install -g @angular/cli
 
 This command-line tool is used to initialize, develop, build and even update Angular projects. This is basically your best friend when working with Angular.
 
-After installing the CLI, you usually use it to create a new Angular project with the `ng new` command, but hold off a bit. If you're old enough, maybe you remember using [nLite](https://en.wikipedia.org/wiki/Software_remastering#nLite) to slim down your Windows install back in the days? We'll take a similar approach here with the Angular starter to create an "ng-lite" template, making sure to keep the amount of files to a minimum..
+## Bootstrapping the app
 
-> **Note:** In the following sections, we'll take some time to understand the base application template and how it can be slimmed down for simpler projects. If you want to skip directly to the end result, you can use the command `npx degit sinedied/ng-lite-starter my-app` that will use this pre-made [github template](https://github.com/sinedied/ng-lite-starter), but you'll miss all the fun 😉.
+After installing the CLI, you use it to create a new Angular project with the `ng new` command, but hold off a bit. A lot of complaints I heard when starting with Angular are about the sheer amount of files you get even on simple apps, so we'll make sure to keep that amount to a minimum.
 
-## Slimming down the starter template
+If you're old enough, maybe you remember using [nLite](https://en.wikipedia.org/wiki/Software_remastering#nLite) to slim down your Windows install back in the days? We'll take a similar approach here with the Angular starter to create an "ng-lite" template.
+
+> **Note:** In the following section, we'll take some time to understand the base application template and how it can be slimmed down for simpler projects. If you're not interested in that part, you can instead use the command `npx degit sinedied/ng-lite-starter ng-lite-todo` that will use this pre-made [github template](https://github.com/sinedied/ng-lite-starter) and jump to the [next section](#building-the-todo-list).
+
+### Slimming down the starter template
 
 Let's create our app with this (long) command:
 
 ```bash
-ng new ng-lite --minimal --inline-template --inline-style --routing=false --style=css
+ng new ng-lite-todo --minimal --inline-template --inline-style --routing=false --style=css
 ```
 
 Let's explain the options we used here:
 - `--minimal`: creates a project without any test tools. When we'll get there, we'll probably want to use a better test framework than the default one anyways.
-- `--inline-template` and `--inline-style`: enables single file components (SFC), including the HTML template and CSS styling directly into your TypeScript components. Instead of 3 files per component, you'll get only one.
-- `--routing=false`: disables the default routing system. We can always add it back later if needed.
-- `--style=css`: use standard CSS styling for our components. If you prefer other flavours like SCSS, you can adapt this option to suit your needs.
+- `--inline-template` and `--inline-style`: enables single file components (SFC), including the HTML template and CSS styling directly into your TypeScript components. Instead of 3 files (4 with tests) per component, you'll get only one.
+- `--routing=false`: disables the default routing system. We'll use our own router later on.
+- `--style=css`: use standard CSS styling for our components.
 
-After the files are generated and the dependencies installed, let's hop into the `ng-lite` folder and start with some cleaning, removing dependencies we don't need.
+After the files are generated and the dependencies installed, let's hop into the `ng-lite-todo` folder and start with some cleaning, removing dependencies we don't need.
 
 ```bash
-cd ng-lite
+cd ng-lite-todo
 
 # Remove the dependencies we don't need
-# It's not because it's part of the framework that we have to use it :)
+# It's not because it's part of the framework that we have to use it!
 npm rm @angular/animations @angular/forms @angular/router @angular/platform-browser-dynamic
 ```
 
@@ -118,7 +124,7 @@ Then you can remove the `.browserslistrc` file.
 rm .browserslistrc
 ```
 
-### Reworking the `src/` folder
+#### Reworking the `src/` folder
 
 In the `src/` folder, you'll find a file named `polyfills.ts` that may contains polyfills, small pieces of code used to provide a compatibility layer for newer features. If you're targetting recent browsers, you can get rid of this file and just add the `zone.js` import at the top of `main.ts`:
 
@@ -146,9 +152,9 @@ mv src/index.html src/favicon.ico src/public
 
 This doesn't change much, but it's more in-line with what you can find in almost all other web frameworks (React, Vue, Svelte...) and it means that you can easily add any new files to be placed at the root of the `dist/` folder without having to edit `angular.json` every time, something we'll have to do once a bit later.
 
-The next change we'll do here is get rid of `src/app/app.module.ts`. Starting with Angular 14, we can create apps using [only components](https://angular.io/guide/standalone-components) and that's perfect as it's all we need to get started.
+The next change we'll do here is get rid of `src/app/app.module.ts`. Starting with Angular 14, we can create apps using [only components](https://angular.io/guide/standalone-components) and that's perfect as it's all we need.
 
-> Keep in mind that Angular Standalone components are still in preview, so the API may still change in the future.
+> Keep in mind that Angular Standalone components are still in preview, so its API may still change in the future.
 
 ```bash
 # Removes app.module.ts file
@@ -186,7 +192,7 @@ We'll keep the rest of the files as-is as they will be useful for our app:
 - `src/styles.css` is the global stylesheet for the app. You can use it to import any CSS lib you want to use, and put your global styling here.
 - `src/environments/environment*.ts` these files contains the environment configuration for the app. `environment.ts` will be used during development, and `environment.prod.ts` will replace it during production builds so it's an easy way to define any environment-specific settings, like your API URL.
 
-### Editing `angular.json`
+#### Editing `angular.json`
 
 The `angular.json` file is the (rather verbose) configuration file that tells the Angular CLI how to run your project's tasks, such as building your app. Since we changed a few things from the default app structure, our final step it to update this file to reflect our changes.
 
@@ -225,87 +231,96 @@ Wheew! That's a lot of changes, but we managed to simplify our starter template 
 
 Also, a nice side effect of this work is the reduction of the initial bunldle size, from a 150.74 kB total (46.16 kB gzipped) with the default `ng new` template to a 115.52 kB total (13.5 kB gzipped) with our starter.
 
-Of course, that's a bit tedious and not something you want to do everytime you start a new project! You can use this [github template](https://github.com/sinedied/ng-lite-starter) if you'd like to use this starter again in the future, or make your own.
+Of course, that's a bit tedious and not something you want to do everytime you start a new project! You can use this [github template](https://github.com/sinedied/ng-lite-starter) if you'd like to use this starter again in the future.
 
-## What about testing?
+## Building the todo list
 
-You may have noticed that this template doesn't include any testing tools. That may be fine for personal projects, but it's not a good idea for a production app to skip on unit testing.
+Let's focus now on building our todo list app. The feature set we'll implement is rather classic, but will allow us to have a look at all the learning fundamentals: 
 
-While the default Angular starter includes unit tests, it makes use of the older and clunky [Karma](https://karma-runner.github.io)/[Jasmine](https://jasmine.github.io) combo for unit tests.
+- Creating container and presentational components
+- Passing data between components
+- Showing/hiding content dynamically
+- Creating forms and handling form data
+- Displaying a keyed list
+- Handling app routing
+- Calling an API
 
-When you need units testing for your project, you can use the much better and faster testing framework [Jest](https://jestjs.io) with our `ng-lite` template in a few extra steps:
+Time to get started!
 
-1. Run the command `npm install --save-dev jest @angular-builders/jest @types/jest` to install the dependencies.
+### Creating the task list component
 
-2. Add a `jest.config.js` file to your project root with the following content:
-  ```js
-  module.exports = {
-    clearMocks: true,
-    collectCoverage: true,
-    coverageDirectory: "coverage",
-  };
-  ```
+We'll start by creating a component that will display the list of tasks. Run the command:
 
-3. Add a `tsconfig.spec.json` file to your project root with the following content:
-  ```json
-  {
-    "extends": "./tsconfig.json",
-    "compilerOptions": {
-      "outDir": "./out-tsc/spec",
-      "types": ["jest"],
-      "esModuleInterop": true
-    },
-    "include": [
-      "src/**/*.spec.ts",
-      "src/**/*.d.ts"
-    ]
+```bash
+ng g component task-list --flat
+```
+
+This will create the new file `src/app/task-list.component.ts`. The `--flat` option indicates that we don't need an extra folder for the component.
+
+You'll notice an error on your newly created component, what?!
+![Screenshort showing TaskListComponent class error](./assets/component-error.png)
+
+Don't mind it, this is a good reminder that currently this component isn't used anywhere, so we need to fix that.
+
+In the file `src/app/app.component.ts`, import our new component at the top:
+
+```typescript
+import { TaskListComponent } from './task-list.component';
+```
+
+And add this line to the `@Component` properties:
+
+```typescript
+@Component({
+  imports: [TaskListComponent],
+  // ...
+})
+```
+
+Because we're using Angular [standalone components](https://angular.io/guide/standalone-components) in this project, we need to explicitely imports the components and Angular features we want to use in every component of our app.
+
+#### What
+
+Now let's move back to `src/app/task-list.component.ts` and take a moment to look at how a component is defined with Angular:
+
+```typescript
+@Component({
+  selector: 'app-task-list',
+  standalone: true,
+  imports: [CommonModule],
+  template: `
+    <p>
+      task-list works!
+    </p>
+  `,
+  styles: [
+  ]
+})
+export class TaskListComponent implements OnInit {
+
+  constructor() { }
+
+  ngOnInit(): void {
   }
-  ```
 
-4. In your `angular.json` file, add this after your `serve` configuration (under the `architect` key):
-  ```json
-  "test": {
-    "builder": "@angular-builders/jest:run",
-    "options": {
-      "tsConfig": "tsconfig.spec.json"
-    }
-  },
-  ```
-  If you want to have tests generated by default when using the `ng generate` command, you can also remove all the `"skipTests": true` occurences in this file.
+}
+```
 
-5. Create your first test in `src/app/app.component.spec.ts`:
-  ```typescript
-  import { ComponentFixture, TestBed } from '@angular/core/testing';
-  import { AppComponent } from './app.component';
 
-  describe('AppComponent', () => {
-    let component: AppComponent;
-    let fixture: ComponentFixture<AppComponent>;
+- all / active / completed route filter
+- todoItem
+- todoService
 
-    beforeEach(async () => {
-      await TestBed.configureTestingModule({
-        imports: [AppComponent],
-      }).compileComponents();
 
-      fixture = TestBed.createComponent(AppComponent);
-      component = fixture.componentInstance;
-      fixture.detectChanges();
-    });
 
-    it('should create the component', () => {
-      expect(component).toBeTruthy();
-    });
-  });
-  ```
+### Your next learning steps
 
-You can now run your tests with `ng test` or `ng test --watch`.
-
-## What's next?
-
-If you followed closely, you've seen that we didn't even include some Angular's core libraries like `@angular/forms` or `@angular/router`. Well, that's not because you're writing an Angular app that you have to use **ALL** of the provided libraries! For sure they're convenient, and you can always add them back later if you need it, but you can also build your entire app without them.
-
-That's what we'll explore in a further article, now that we have a simpler starter template, why not trying to build a complete app, keeping things lean?
-
----
-
-Follow me on [Twitter](http://twitter.com/sinedied), I would be happy to discuss and take your suggestions!
+- Angular router
+- Angular forms
+- Angular services and dependency injection
+- Angular HTTP service
+- Reactives forms and observables
+- Angular animations
+- Angular modules
+- Angular service worker
+- ...
