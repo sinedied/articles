@@ -228,7 +228,7 @@ The `angular.json` file is the (rather verbose) configuration file that tells th
 
 Wheew! That's a lot of changes, but we managed to simplify our starter template by quite a lot while still retaining essential Angular features. Look at this screenshot:
 
-![Comparison between default starter and our](./assets/ng-lite-starter-compare.png)
+![Comparison between default starter and our](./assets/ng-lite-starter-comparison.png)
 
 Also, a nice side effect of this work is the reduction of the initial bunldle size, from a 150.74 kB total (46.16 kB gzipped) with the default `ng new` template to a 115.52 kB total (13.5 kB gzipped) with our starter.
 
