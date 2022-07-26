@@ -4,6 +4,7 @@ published: false
 description: 'Discover how you can start your Angular apps from a leaner Angular template, by changing the default configuration.'
 tags: 'webdev, beginners, javascript, angular'
 cover_image: ./assets/ng-lite-banner.jpg
+series: 'ng-lite'
 id: 1151114
 ---
 

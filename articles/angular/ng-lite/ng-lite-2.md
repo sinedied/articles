@@ -4,6 +4,7 @@ published: false
 description: 'Angular might be easier to learn than you think! This is an introduction to building complete apps with Angular, without the minimal required complexity.'
 tags: 'webdev, beginners, javascript, angular'
 cover_image: ./assets/ng-lite-todo-banner.jpg
+series: 'ng-lite'
 ---
 
 Being a rather complete framework, Angular is often said to be complex and difficult to learn. And seeing a lot of articles telling that you need to learn RxJS and observables before even starting to dig in Angular isn't really helping with that idea.
@@ -24,16 +25,33 @@ This command-line tool is used to initialize, develop, build and even update Ang
 
 ## Bootstrapping the app
 
-After installing the CLI, you use it to create a new Angular project with the `ng new` command, but hold off a bit. A lot of complaints I heard when starting with Angular are about the sheer amount of files you get even on simple apps, so we'll make sure to keep that amount to a minimum.
+Usually, you start a new Angular project by using the CLI `ng new` command, but the default Angular template might be a bit overwhelming with lots of files and tools included that you don't necessarily need.
 
-If you're old enough, maybe you remember using [nLite](https://en.wikipedia.org/wiki/Software_remastering#nLite) to slim down your Windows install back in the days? We'll take a similar approach here with the Angular starter to create an "ng-lite" template.
+Instead we'll use the "ngLite" template we created [this previous article](TODO) to get a simpler starting point.
 
-> **Note:** In the following section, we'll take some time to understand the base application template and how it can be slimmed down for simpler projects. If you're not interested in that part, you can instead use the command `npx degit sinedied/ng-lite-starter ng-lite-todo` that will use this pre-made [github template](https://github.com/sinedied/ng-lite-starter) and jump to the [next section](#building-the-todo-list).
+```bash
+# Creates a new Angular project
+npx degit sinedied/ng-lite-starter ng-lite-todo
+cd ng-lite-todo
+```
 
+Here's a quick overview of the project organization:
 
-## Building the todo list
+```bash
+src/
+|- app/
+| |- app.component.ts     # The main component of the app
+|- environments/
+| |- environment.prod.ts  # Production environment settings
+| |- environment.ts       # Development environment settings
+|- public/                # Static files and assets
+|- main.ts                # The entry point of the app
+|- styles.css             # The global stylesheet of the app
+angular.json              # Angular's project config
+tsconfig.json             # TypeScript config
+```
 
-Let's focus now on building our todo list app. The feature set we'll implement is rather classic, but will allow us to have a look at all the learning fundamentals: 
+Let's focus now on building our todo list app. The feature set we'll implement is rather classic, but will allow us to have a look at all these fundamentals: 
 
 - Creating container and presentational components
 - Passing data between components
@@ -45,7 +63,7 @@ Let's focus now on building our todo list app. The feature set we'll implement i
 
 Time to get started!
 
-### Creating the task list component
+## Creating the task list component
 
 We'll start by creating a component that will display the list of tasks. Run the command:
 
@@ -110,6 +128,7 @@ export class TaskListComponent implements OnInit {
 - todoService
 
 
+WIP
 
 ### Your next learning steps
 
