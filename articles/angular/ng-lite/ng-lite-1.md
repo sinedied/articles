@@ -19,9 +19,9 @@ Make sure you have a recent [Node.js](https://nodejs.org) runtime installed (at 
 npm install -g @angular/cli
 ```
 
-This command-line tool is used to initialize, develop, build and even update Angular projects. This is basically your best friend when working with Angular.
+This command-line tool is used to initialize new projects, among other things. After installing, you usually use it to create a new Angular project with the `ng new` command, but hold off a bit!
 
-After installing the CLI, you usually use it to create a new Angular project with the `ng new` command, but hold off a bit. If you're old enough, maybe you remember using [nLite](https://en.wikipedia.org/wiki/Software_remastering#nLite) to slim down your Windows install back in the days? We'll take a similar approach here with the Angular starter to create an "ngLite" template, making sure to keep the amount of files to a minimum..
+If you're old enough, maybe you remember using [nLite](https://en.wikipedia.org/wiki/Software_remastering#nLite) to slim down your Windows install, back in the days? We'll take a similar approach here with the Angular starter to create an "ngLite" template, making sure to keep the amount of files to a minimum..
 
 > **Note:** In the following sections, we'll take some time to understand the base application template and how it can be slimmed down for simpler projects. If you want to skip directly to the end result, you can use the command `npx degit sinedied/ng-lite-starter my-app` that will use this pre-made [github template](https://github.com/sinedied/ng-lite-starter), but you'll miss all the fun 😉.
 
@@ -36,7 +36,7 @@ ng new ng-lite --minimal --inline-template --inline-style --routing=false --styl
 ```
 
 Let's explain the options we used here:
-- `--minimal`: creates a project without any test tools. When we'll get there, we'll probably want to use a better test framework than the default one anyways.
+- `--minimal`: creates a minimal project, without any test tools. When we'll get there, we'll probably want to use a better test framework than the default one anyways.
 - `--inline-template` and `--inline-style`: enables single file components (SFC), including the HTML template and CSS styling directly into your TypeScript components. Instead of 3 files per component, you'll get only one.
 - `--routing=false`: disables the default routing system. We can always add it back later if needed.
 - `--style=css`: use standard CSS styling for our components. If you prefer other flavours like SCSS, you can adapt this option to suit your needs.
@@ -230,17 +230,17 @@ Wheew! That's a lot of changes, but we managed to simplify our starter template 
 
 ![Comparison between default starter and our](./assets/ng-lite-starter-comparison.png)
 
-Also, a nice side effect of this work is the reduction of the initial bunldle size, from a 150.74 kB total (46.16 kB gzipped) with the default `ng new` template to a 115.52 kB total (13.5 kB gzipped) with our starter.
+Also, a nice side effect of this work is the reduction of the initial bunldle size, from a 150.91 kB total (46.20 kB gzipped) with the default `ng new` template to a 116.01 kB total (36.15 kB gzipped) with our starter.
 
-Of course, that's a bit tedious and not something you want to do everytime you start a new project! You can use this [github template](https://github.com/sinedied/ng-lite-starter) if you'd like to use this starter again in the future, or make your own.
+Of course, that's a bit tedious and not something you want to do everytime you start a new project! You can use this [github template](https://github.com/sinedied/ng-lite-starter) if you'd like to use this starter again in the future, or you can make your own.
 
 ## What about testing?
 
-You may have noticed that this template doesn't include any testing tools. That may be fine for personal projects, but it's not a good idea for a production app to skip on unit testing.
+You may have noticed that this template doesn't include any testing tools. That may be fine for learning and personal projects, but it's not a good idea for a production app to skip on unit testing.
 
 While the default Angular starter includes unit tests, it makes use of the older and clunky [Karma](https://karma-runner.github.io)/[Jasmine](https://jasmine.github.io) combo for unit testing.
 
-When you need units testing for your project, you can use the much better and faster testing framework [Jest](https://jestjs.io) with our `ngLite` template in a few extra steps:
+When you need units testing for your project, you can use the much better and faster testing framework [Jest](https://jestjs.io) with our `ngLite` template by adding a few extra steps:
 
 1. Run the command `npm install --save-dev jest @angular-builders/jest @types/jest` to install the dependencies.
 
