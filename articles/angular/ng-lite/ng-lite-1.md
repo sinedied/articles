@@ -238,7 +238,7 @@ Of course, that's a bit tedious and not something you want to do everytime you s
 
 You may have noticed that this template doesn't include any testing tools. That may be fine for personal projects, but it's not a good idea for a production app to skip on unit testing.
 
-While the default Angular starter includes unit tests, it makes use of the older and clunky [Karma](https://karma-runner.github.io)/[Jasmine](https://jasmine.github.io) combo for unit tests.
+While the default Angular starter includes unit tests, it makes use of the older and clunky [Karma](https://karma-runner.github.io)/[Jasmine](https://jasmine.github.io) combo for unit testing.
 
 When you need units testing for your project, you can use the much better and faster testing framework [Jest](https://jestjs.io) with our `ngLite` template in a few extra steps:
 
@@ -309,7 +309,7 @@ You can now run your tests with `ng test` or `ng test --watch`.
 
 ## What's next?
 
-If you followed closely, you've seen that we didn't even include some Angular's core libraries like `@angular/forms` or `@angular/router`. Well, that's not because you're writing an Angular app that you have to use **ALL** of the provided libraries! For sure they're convenient, and you can always add them back later if you need it, but you can also build your entire app *without them*.
+If you followed closely, you've seen that we didn't even include some Angular's core libraries like `@angular/forms` or `@angular/router`. Well, that's not because you're writing an Angular app that you have to use *all* of the provided libraries! For sure they're convenient, and you can always add them back later if you need it, but you can also build your entire app *without them*.
 
 That's what we'll explore in a further article, now that we have a simpler starter template, why not try building a complete app, keeping things lean?
 
