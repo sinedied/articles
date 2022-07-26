@@ -1,5 +1,5 @@
 ---
-title: A smaller and simpler Angular starter with ng-lite
+title: A simpler and smaller Angular starter with ngLite
 published: false
 description: 'Discover how you can start your Angular apps from a leaner Angular template, by changing the default configuration.'
 tags: 'webdev, beginners, javascript, angular'
@@ -21,11 +21,13 @@ npm install -g @angular/cli
 
 This command-line tool is used to initialize, develop, build and even update Angular projects. This is basically your best friend when working with Angular.
 
-After installing the CLI, you usually use it to create a new Angular project with the `ng new` command, but hold off a bit. If you're old enough, maybe you remember using [nLite](https://en.wikipedia.org/wiki/Software_remastering#nLite) to slim down your Windows install back in the days? We'll take a similar approach here with the Angular starter to create an "ng-lite" template, making sure to keep the amount of files to a minimum..
+After installing the CLI, you usually use it to create a new Angular project with the `ng new` command, but hold off a bit. If you're old enough, maybe you remember using [nLite](https://en.wikipedia.org/wiki/Software_remastering#nLite) to slim down your Windows install back in the days? We'll take a similar approach here with the Angular starter to create an "ngLite" template, making sure to keep the amount of files to a minimum..
 
 > **Note:** In the following sections, we'll take some time to understand the base application template and how it can be slimmed down for simpler projects. If you want to skip directly to the end result, you can use the command `npx degit sinedied/ng-lite-starter my-app` that will use this pre-made [github template](https://github.com/sinedied/ng-lite-starter), but you'll miss all the fun 😉.
 
 ## Slimming down the starter template
+
+![Man removing everything on a table](./assets/sweep.gif)
 
 Let's create our app with this (long) command:
 
@@ -192,33 +194,37 @@ We'll keep the rest of the files as-is as they will be useful for our app:
 The `angular.json` file is the (rather verbose) configuration file that tells the Angular CLI how to run your project's tasks, such as building your app. Since we changed a few things from the default app structure, our final step it to update this file to reflect our changes.
 
 1. Replace the line `"tsConfig": "tsconfig.app.json",` with `"tsConfig": "tsconfig.json",`
+
 2. Remove the line `"polyfills": "src/polyfills.ts",`
+
 3. Replace the line `"index": "src/index.html",` with `"index": "src/public/index.html",`
-4. Replace
-   ```json
-   "assets": [
-     "src/favicon.ico",
-     "src/assets"
-   ],
-   ```
-   with
-   ```json
-   "assets": [
-     {
-       "glob": "**/*",
-       "input": "src/public",
-       "output": "."
-     }
-   ],
-   ```
+
+4. Replace this:
+    ```json
+    "assets": [
+      "src/favicon.ico",
+      "src/assets"
+    ],
+    ```
+    with:
+    ```json
+    "assets": [
+      {
+        "glob": "**/*",
+        "input": "src/public",
+        "output": "."
+      }
+    ],
+    ```
+
 5. Finally, add the line `"standalone": true,` under the `"@schematics/angular:component"` key, as we'll use standalone component in our app:
-  ```json
-  // ...
-  "@schematics/angular:component": {
-    "standalone": true,
+    ```json
     // ...
-  }
-  ```
+    "@schematics/angular:component": {
+      "standalone": true,
+      // ...
+    }
+    ```
 
 Wheew! That's a lot of changes, but we managed to simplify our starter template by quite a lot while still retaining essential Angular features. Look at this screenshot:
 
@@ -234,66 +240,70 @@ You may have noticed that this template doesn't include any testing tools. That 
 
 While the default Angular starter includes unit tests, it makes use of the older and clunky [Karma](https://karma-runner.github.io)/[Jasmine](https://jasmine.github.io) combo for unit tests.
 
-When you need units testing for your project, you can use the much better and faster testing framework [Jest](https://jestjs.io) with our `ng-lite` template in a few extra steps:
+When you need units testing for your project, you can use the much better and faster testing framework [Jest](https://jestjs.io) with our `ngLite` template in a few extra steps:
 
 1. Run the command `npm install --save-dev jest @angular-builders/jest @types/jest` to install the dependencies.
+
 2. Add a `jest.config.js` file to your project root with the following content:
-   ```js
-   module.exports = {
-     clearMocks: true,
-     collectCoverage: true,
-     coverageDirectory: "coverage",
-   };
-   ```
+    ```js
+    module.exports = {
+      clearMocks: true,
+      collectCoverage: true,
+      coverageDirectory: "coverage",
+    };
+    ```
+
 3. Add a `tsconfig.spec.json` file to your project root with the following content:
-   ```json
-   {
-     "extends": "./tsconfig.json",
-     "compilerOptions": {
-       "outDir": "./out-tsc/spec",
-       "types": ["jest"],
-       "esModuleInterop": true
-     },
-     "include": [
-       "src/**/*.spec.ts",
-       "src/**/*.d.ts"
-     ]
-   }
-   ```
+    ```json
+    {
+      "extends": "./tsconfig.json",
+      "compilerOptions": {
+        "outDir": "./out-tsc/spec",
+        "types": ["jest"],
+        "esModuleInterop": true
+      },
+      "include": [
+        "src/**/*.spec.ts",
+        "src/**/*.d.ts"
+      ]
+    }
+    ```
+
 4. In your `angular.json` file, add this after your `serve` configuration (under the `architect` key):
-   ```json
-   "test": {
-     "builder": "@angular-builders/jest:run",
-     "options": {
-       "tsConfig": "tsconfig.spec.json"
-     }
-   },
-   ```
-   If you want to have tests generated by default when using the `ng generate` command, you can also remove all the `"skipTests": true` occurences in this file.
+    ```json
+    "test": {
+      "builder": "@angular-builders/jest:run",
+      "options": {
+        "tsConfig": "tsconfig.spec.json"
+      }
+    },
+    ```
+    If you want to have tests generated by default when using the `ng generate` command, you can also remove all the `"skipTests": true` occurences in this file.
+
 5. Create your first test in `src/app/app.component.spec.ts`:
-   ```typescript
-   import { ComponentFixture, TestBed } from '@angular/core/testing';
-   import { AppComponent } from './app.component'; 
+    ```typescript
+    import { ComponentFixture, TestBed } from '@angular/core/testing';
+    import { AppComponent } from './app.component'; 
 
-   describe('AppComponent', () => {
-     let component: AppComponent;
-     let fixture: ComponentFixture<AppComponent>;
+    describe('AppComponent', () => {
+      let component: AppComponent;
+      let fixture: ComponentFixture<AppComponent>;
 
-     beforeEach(async () => {
-       await TestBed.configureTestingModule({
-         imports: [AppComponent],
-       }).compileComponents();
+      beforeEach(async () => {
+        await TestBed.configureTestingModule({
+          imports: [AppComponent],
+        }).compileComponents();
 
-       fixture = TestBed.createComponent(AppComponent);
-       component = fixture.componentInstance;
-       fixture.detectChanges();
-     });
+        fixture = TestBed.createComponent(AppComponent);
+        component = fixture.componentInstance;
+        fixture.detectChanges();
+      });
 
-     it('should create the component', () => {
-       expect(component).toBeTruthy();
-     });
-   });
-   ```
+      it('should create the component', () => {
+        expect(component).toBeTruthy();
+      });
+    });
+    ```
 
 You can now run your tests with `ng test` or `ng test --watch`.
 
