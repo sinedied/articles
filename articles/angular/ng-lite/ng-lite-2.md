@@ -1,15 +1,16 @@
 ---
 title: The missing (simpler) introduction to Angular
 published: false
-description: 'Angular might be easier to learn than you think! This is an introduction to building complete apps with Angular, without the minimal required complexity.'
+description: 'Angular might be easier to learn than you think! This is an introduction to building complete apps with Angular, with the minimal required complexity.'
 tags: 'webdev, beginners, javascript, angular'
-cover_image: ./assets/ng-lite-todo-banner.jpg
-series: 'ng-lite'
+cover_image: ./assets/todo-banner.jpg
+series: ng-lite
+id: 1152011
 ---
 
-Being a rather complete framework, Angular is often said to be complex and difficult to learn. And seeing a lot of articles telling that you need to learn RxJS and observables before even starting to dig in Angular isn't really helping with that idea.
+Being a rather complete framework, Angular is often said to be complex and difficult to learn. And seeing articles telling that you need to learn RxJS and observables before even starting to dig in Angular isn't really helping with that idea.
 
-Sure, there's a lot of Angular built-in features and tools that you can use to make your life easier when dealing with complex applications, but you don't have to learn all of them to get started. In fact, you can build perfectly fine apps using mostly HTML/CSS and Angular components, without using any other features.
+Sure, there's a lot of Angular built-in features and tools that you can use to make your life easier when dealing with complex applications, but you don't have to learn all of them to get started. In fact, you can build perfectly fine apps using mostly HTML/CSS and the new [Angular standalone components](https://angular.io/guide/standalone-components), without using any other features.
 
 Let's try building the infamous todo list app while learning the basics of Angular and keeping the project as simple as it can be, following the [YAGNI principle](https://en.wikipedia.org/wiki/You_aren%27t_gonna_need_it).
 
@@ -51,7 +52,7 @@ angular.json              # Angular's project config
 tsconfig.json             # TypeScript config
 ```
 
-Let's focus now on building our todo list app. The feature set we'll implement is rather classic, but will allow us to have a look at all these fundamentals: 
+Let's focus now on building our todo list app. The feature set we'll implement is rather classic, but will allow us to have a look at all these fundamentals topics: 
 
 - Creating container and presentational components
 - Passing data between components
@@ -84,7 +85,7 @@ In the file `src/app/app.component.ts`, import our new component at the top:
 import { TaskListComponent } from './task-list.component';
 ```
 
-And add this line to the `@Component` properties:
+Add `imports: [TaskListComponent],` to the `@Component` properties like this:
 
 ```typescript
 @Component({
@@ -95,9 +96,9 @@ And add this line to the `@Component` properties:
 
 Because we're using Angular [standalone components](https://angular.io/guide/standalone-components) in this project, we need to explicitely imports the components and Angular features we want to use in every component of our app.
 
-#### What
+#### What's an Angular component?
 
-Now let's move back to `src/app/task-list.component.ts` and take a moment to look at how a component is defined with Angular:
+Let's move back to `src/app/task-list.component.ts` and take a moment to look at how a component is defined with Angular:
 
 ```typescript
 @Component({
@@ -116,11 +117,29 @@ export class TaskListComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
 
 }
 ```
+
+Angular components are defined with a [TypeScript](https://www.typescriptlang.org) **class** preceded by the `@Component` decorator. In this decorator are specified a few important properties:
+
+- `selector`: This is a standard CSS selector that will be used to find the component in the DOM. In this case, that means that our component will be found with the `<app-task-list>` tag. The `app-` prefix is used to identify your app component, as opposed as standard HTML tags and components that may come from other libraries.
+
+- `standalone`: This indicates that this component doesn't need to be part of an Angular *module*. Since we don't want to care about modules for now, this will be set to `true` for all the components of our project.
+
+- `imports`: This is the tricky part. For each *standalone* component, you need to import the Angular modules and other components your need. The `CommonModule` contains the core Angular features, so you'll likely need it in most of your components.
+
+- `template`: This is the HTML template of the component. If you're using VS Code, you should install the [Angular language service extension](https://marketplace.visualstudio.com/items?itemName=angular.ng-template&WT.mc_id=javascript-0000-yolasors) to get syntax and error highlighting.
+
+- `styles`: This is the CSS stylesheet of the component.
+
+> About **TypeScript**: think of it as JavaScript with added optional types. This allows you to build more safe applications and discover errors early, among other benefits. If you're never used TypeScript before, you can read [this 5-min introduction](https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html). But even if you don't, you can probably follow along just fine.
+
+
+
+
+
 
 
 - all / active / completed route filter

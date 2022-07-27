@@ -4,7 +4,7 @@ published: false
 description: 'Discover how you can start your Angular apps from a leaner Angular template, by changing the default configuration.'
 tags: 'webdev, beginners, javascript, angular'
 cover_image: ./assets/ng-lite-banner.jpg
-series: 'ng-lite'
+series: ng-lite
 id: 1151114
 ---
 
@@ -82,7 +82,7 @@ tsconfig.app.json
 tsconfig.json
 ```
 
-The `.vscode` folder contains configurations related to the [Visual Studio Code](https://aka.ms/vs/code) editor. It provides tasks to debug your app when pressing `F5` key, and suggests you to install the must-have [Angular language service extensions](https://marketplace.visualstudio.com/items?itemName=angular.ng-template&WT.mc_id=javascript-0000-yolasors) when you open the project. If you don't use VS Code though, you can remove this folder.
+The `.vscode` folder contains configurations related to the [Visual Studio Code](https://aka.ms/vs/code) editor. It provides tasks to debug your app when pressing `F5` key, and suggests you to install the must-have [Angular language service extension](https://marketplace.visualstudio.com/items?itemName=angular.ng-template&WT.mc_id=javascript-0000-yolasors) when you open the project. If you don't use VS Code though, you can remove this folder.
 
 Next, we'll slim down a bit the number of files at the root of the project. You can see two `tsconfig.json` files there, used for [TypeScript](https://www.typescriptlang.org) configuration. This separation may be useful when you want to use a different configuration for your tests, which is the case for the default setup created by `ng new`, but we don't need it here. Add these lines coming from `tsconfig.app.json` at the bottom of the `tsconfig.json` file:
 
