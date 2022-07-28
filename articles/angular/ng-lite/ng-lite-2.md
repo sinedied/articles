@@ -14,6 +14,8 @@ Sure, there's a lot of Angular built-in features and tools that you can use to m
 
 Let's try building the infamous todo list app while learning the basics of Angular and keeping the project as simple as it can be, following the [YAGNI principle](https://en.wikipedia.org/wiki/You_aren%27t_gonna_need_it).
 
+And I'll make it extra clear: **we won't use Angular modules, services, router, HTTP client, observables, dependency injection, etc**... Only components and a couple of built-in directives. Because we really don't need anything else.
+
 ## Getting prepared
 
 To work with Angular, you need a recent [Node.js](https://nodejs.org) runtime (v14 at least), and the [Angular CLI](https://cli.angular.io).
@@ -51,6 +53,8 @@ src/
 angular.json              # Angular's project config
 tsconfig.json             # TypeScript config
 ```
+
+> Notice how the source files use the `.ts` extension instead of `.js`: this is because Angular projects use [TypeScript](https://www.typescriptlang.org) instead of JavaScript. You can think of TypeScript as JavaScript with added optional types. This allows you to build safer applications and discover errors early, among other benefits. If you've never used TypeScript before, you can read [this 5-min introduction](https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html). But even if you don't, you can probably follow along this tutorial just fine.
 
 Let's focus now on building our todo list app. The feature set we'll implement is rather classic, but will allow us to have a look at all these fundamentals topics: 
 
@@ -110,19 +114,15 @@ Let's move back to `src/app/task-list.component.ts` and take a moment to look at
       task-list works!
     </p>
   `,
-  styles: [
-  ]
+  styles: []
 })
 export class TaskListComponent implements OnInit {
-
   constructor() { }
-
   ngOnInit(): void { }
-
 }
 ```
 
-Angular components are defined with a [TypeScript](https://www.typescriptlang.org) **class** preceded by the `@Component` decorator. In this decorator are specified a few important properties:
+Angular components are defined with a **class** preceded by the `@Component` decorator. In this decorator are specified a few important properties:
 
 - `selector`: This is a standard CSS selector that will be used to find the component in the DOM. In this case, that means that our component will be found with the `<app-task-list>` tag. The `app-` prefix is used to identify your app component, as opposed as standard HTML tags and components that may come from other libraries.
 
@@ -132,9 +132,21 @@ Angular components are defined with a [TypeScript](https://www.typescriptlang.or
 
 - `template`: This is the HTML template of the component. If you're using VS Code, you should install the [Angular language service extension](https://marketplace.visualstudio.com/items?itemName=angular.ng-template&WT.mc_id=javascript-0000-yolasors) to get syntax and error highlighting.
 
-- `styles`: This is the CSS stylesheet of the component.
+- `styles`: This is the CSS stylesheet of the component. You usually add a string with the CSS you want for the component. This CSS is scoped to the component, so it won't conflict with other components' styling.
 
-> About **TypeScript**: think of it as JavaScript with added optional types. This allows you to build more safe applications and discover errors early, among other benefits. If you're never used TypeScript before, you can read [this 5-min introduction](https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html). But even if you don't, you can probably follow along just fine.
+The component class contains the logic of the component. Public properties and methods declared in the class will be accessible to the template.
+
+You can see two methods in the class:
+
+- `constructor()`: This is the class constructor. This will be called when the component is created, but before any data is bound to the template. This is usually the place to initialize your class properties.
+
+- `ngOnInit()`: This special method will be called after the component is initialized, and its data bound to the template. This is the place where you usually perform additional initialization tasks.
+
+While these methods are often useful, we don't need them in this component. You can either remove them or leave them empty.
+
+#### Container and presentational components
+
+
 
 
 

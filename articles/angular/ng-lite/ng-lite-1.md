@@ -152,7 +152,7 @@ This doesn't change much, but it's more in-line with what you can find in almost
 
 The next change we'll do here is get rid of `src/app/app.module.ts`. Starting with Angular 14, we can create apps using [only components](https://angular.io/guide/standalone-components) and that's perfect as it's all we need to get started.
 
-> Keep in mind that Angular Standalone components are still in preview, so the API may still change in the future.
+> ⚠️ Keep in mind that Angular Standalone components are still in preview, so the API may still change in the future.
 
 ```bash
 # Removes app.module.ts file
@@ -218,7 +218,7 @@ The `angular.json` file is the (rather verbose) configuration file that tells th
     ],
     ```
 
-5. Finally, add the line `"standalone": true,` under the `"@schematics/angular:component"` key, as we'll use standalone component in our app:
+5. Finally, add the line `"standalone": true,` under the `"@schematics/angular:component"` key, as we'll use standalone components in our app:
     ```json
     // ...
     "@schematics/angular:component": {
@@ -237,7 +237,7 @@ Of course, that's a bit tedious and not something you want to do everytime you s
 
 ## What about testing?
 
-You may have noticed that this template doesn't include any testing tools. That may be fine for learning and personal projects, but it's not a good idea for a production app to skip on unit testing.
+You may have noticed that this template doesn't include any testing tools. This is fine for learning and personal projects, but it's not a good idea for a production app to skip on unit testing.
 
 While the default Angular starter includes unit tests, it makes use of the older and clunky [Karma](https://karma-runner.github.io)/[Jasmine](https://jasmine.github.io) combo for unit testing.
 
@@ -312,7 +312,9 @@ You can now run your tests with `ng test` or `ng test --watch`.
 
 If you followed closely, you've seen that we didn't even include some Angular's core libraries like `@angular/forms` or `@angular/router`. Well, that's not because you're writing an Angular app that you have to use *all* of the provided libraries! For sure they're convenient, and you can always add them back later if you need it, but you can also build your entire app *without them*.
 
-That's what we'll explore in a further article, now that we have a simpler starter template, why not try building a complete app, keeping things lean?
+That's what we'll explore in a further article. Now that we have a simpler starter template, why not try building a complete app, keeping the code as simple as it can?
+
+In the meantime, you can have a looking at [this todo list app](https://github.com/sinedied/ng-lite-todo) built from expanding on that idea.
 
 ---
 
