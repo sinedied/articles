@@ -1,11 +1,12 @@
 ---
 title: A simpler and smaller Angular starter with ngLite
-published: false
-description: 'Discover how you can start your Angular apps from a leaner Angular template, by changing the default configuration.'
+published: true
+description: Is it be possible to start your Angular apps from a leaner template? Let's try doing that by changing the default configuration.
 tags: 'webdev, beginners, javascript, angular'
 cover_image: ./assets/ng-lite-banner.jpg
 series: ng-lite
 id: 1151114
+date: '2022-07-29T13:02:18Z'
 ---
 
 A lot of complaints I heard when starting with Angular are about the sheer amount of files you get even on simple apps. When looking at the default starter template you get from Angular CLI's `ng new` command, it's true that it can be a bit overwhelming if you're not used to it.
@@ -233,7 +234,7 @@ Wheew! That's a lot of changes, but we managed to simplify our starter template 
 
 ![Comparison between default starter and our](./assets/ng-lite-starter-comparison.png)
 
-Also, a nice side effect of this work is the reduction of the initial bundle size, from a 150.91 kB total (46.20 kB gzipped) with the default `ng new` template to a 116.01 kB total (36.15 kB gzipped) with our starter.
+Also, a nice side effect of this work is the reduction of the initial bundle size, from a **150.91 kB total (46.20 kB gzipped)** with the default `ng new` template to a **116.01 kB total (36.15 kB gzipped)** with our starter.
 
 ![Bar graph showing bundle size reduction](./assets/bundle-size.png)
 
