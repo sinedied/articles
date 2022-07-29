@@ -10,7 +10,9 @@ id: 1151114
 
 A lot of complaints I heard when starting with Angular are about the sheer amount of files you get even on simple apps. When looking at the default starter template you get from Angular CLI's `ng new` command, it's true that it can be a bit overwhelming if you're not used to it.
 
-But it doesn't have to *always* be that way. In this article, we'll explore how we can a smaller and simpler template that's also easier to grasp for beginners, following the [YAGNI principle](https://en.wikipedia.org/wiki/You_aren%27t_gonna_need_it).
+But it doesn't have to *always* be that way. In this article, we'll explore how we can create a smaller and simpler template that's also easier to grasp for beginners, following the [YAGNI principle](https://en.wikipedia.org/wiki/You_aren%27t_gonna_need_it).
+
+> **Note:** what we'll discuss here doesn't aim to be a new universal starter to replace the default one for *all use cases*, but rather an experiment on how it's possible to make things simpler.
 
 ## Getting prepared
 
@@ -22,7 +24,7 @@ npm install -g @angular/cli
 
 This command-line tool is used to initialize new projects, among other things. After installing, you usually use it to create a new Angular project with the `ng new` command, but hold off a bit!
 
-If you're old enough, maybe you remember using [nLite](https://en.wikipedia.org/wiki/Software_remastering#nLite) to slim down your Windows install, back in the days? We'll take a similar approach here with the Angular starter to create an "ngLite" template, making sure to keep the amount of files to a minimum..
+If you're old enough, maybe you remember using [nLite](https://en.wikipedia.org/wiki/Software_remastering#nLite) to slim down your Windows install, back in the day? We'll take a similar approach here with the Angular starter to create a "ngLite" template, making sure to keep the number of files to a minimum..
 
 > **Note:** In the following sections, we'll take some time to understand the base application template and how it can be slimmed down for simpler projects. If you want to skip directly to the end result, you can use the command `npx degit sinedied/ng-lite-starter my-app` that will use this pre-made [github template](https://github.com/sinedied/ng-lite-starter), but you'll miss all the fun 😉.
 
@@ -40,7 +42,7 @@ Let's explain the options we used here:
 - `--minimal`: creates a minimal project, without any test tools. When we'll get there, we'll probably want to use a better test framework than the default one anyways.
 - `--inline-template` and `--inline-style`: enables single file components (SFC), including the HTML template and CSS styling directly into your TypeScript components. Instead of 3 files per component, you'll get only one.
 - `--routing=false`: disables the default routing system. We can always add it back later if needed.
-- `--style=css`: use standard CSS styling for our components. If you prefer other flavours like SCSS, you can adapt this option to suit your needs.
+- `--style=css`: use standard CSS styling for our components. If you prefer other flavors like SCSS, you can adapt this option to suit your needs.
 
 After the files are generated and the dependencies installed, let's hop into the `ng-lite` folder and start with some cleaning, removing dependencies we don't need.
 
@@ -124,7 +126,7 @@ rm .browserslistrc
 
 ### Reworking the `src/` folder
 
-In the `src/` folder, you'll find a file named `polyfills.ts` that may contains polyfills, small pieces of code used to provide a compatibility layer for newer features. If you're targetting recent browsers, you can get rid of this file and just add the `zone.js` import at the top of `main.ts`:
+In the `src/` folder, you'll find a file named `polyfills.ts` that may contain polyfills, small pieces of code used to provide a compatibility layer for newer features. If you're targetting recent browsers, you can get rid of this file and just add the `zone.js` import at the top of `main.ts`:
 
 ```typescript
 // Add this at the top of main.ts
@@ -137,7 +139,7 @@ Then, remove `polyfills.ts`:
 rm src/polyfills.ts
 ```
 
-Now, there's a folder named `assets/` that you can use to put any assets (images, fonts, JSON files...) you want to be copied to the `dist/` folder. It contains an empty `.gitkeep` to get the folder stored in the git repo, as git don't store empty folders. We can simplify this structure a bit, by also grouping our future assets with the base `index.html` and favicon file:
+Now, there's a folder named `assets/` that you can use to put any assets (images, fonts, JSON files...) you want to be copied to the `dist/` folder. It contains an empty `.gitkeep` to get the folder stored in the git repo, as git doesn't store empty folders. We can simplify this structure a bit, by also grouping our future assets with the base `index.html` and favicon file:
 
 ```bash
 # Removes assets/ folder
@@ -148,7 +150,7 @@ mkdir src/public
 mv src/index.html src/favicon.ico src/public
 ```
 
-This doesn't change much, but it's more in-line with what you can find in almost all other web frameworks (React, Vue, Svelte...) and it means that you can easily add any new files to be placed at the root of the `dist/` folder without having to edit `angular.json` every time, something we'll have to do once a bit later.
+This doesn't change much, but it's more in line with what you can find in almost all other web frameworks (React, Vue, Svelte...) and it means that you can easily add any new files to be placed at the root of the `dist/` folder without having to edit `angular.json` every time, something we'll have to do once a bit later.
 
 The next change we'll do here is get rid of `src/app/app.module.ts`. Starting with Angular 14, we can create apps using [only components](https://angular.io/guide/standalone-components) and that's perfect as it's all we need to get started.
 
@@ -168,7 +170,7 @@ Edit the file `src/app/app.component.ts`, our entry component, and add `standalo
   ...
 ```
 
-We'll finally update the entry point of the application located at `src/main.ts`, to bootstap our app using our component. Replace the content of the file with this:
+We'll finally update the entry point of the application located at `src/main.ts`, to bootstrap our app using our component. Replace the content of the file with this:
 
 ```typescript
 import 'zone.js';
@@ -188,7 +190,7 @@ bootstrapApplication(AppComponent)
 
 We'll keep the rest of the files as-is as they will be useful for our app:
 - `src/styles.css` is the global stylesheet for the app. You can use it to import any CSS lib you want to use, and put your global styling here.
-- `src/environments/environment*.ts` these files contains the environment configuration for the app. `environment.ts` will be used during development, and `environment.prod.ts` will replace it during production builds so it's an easy way to define any environment-specific settings, like your API URL.
+- `src/environments/environment*.ts` these files contain the environment configuration for the app. `environment.ts` will be used during development, and `environment.prod.ts` will replace it during production builds so it's an easy way to define any environment-specific settings, like your API URL.
 
 ### Editing `angular.json`
 
@@ -231,17 +233,19 @@ Wheew! That's a lot of changes, but we managed to simplify our starter template 
 
 ![Comparison between default starter and our](./assets/ng-lite-starter-comparison.png)
 
-Also, a nice side effect of this work is the reduction of the initial bunldle size, from a 150.91 kB total (46.20 kB gzipped) with the default `ng new` template to a 116.01 kB total (36.15 kB gzipped) with our starter.
+Also, a nice side effect of this work is the reduction of the initial bundle size, from a 150.91 kB total (46.20 kB gzipped) with the default `ng new` template to a 116.01 kB total (36.15 kB gzipped) with our starter.
 
-Of course, that's a bit tedious and not something you want to do everytime you start a new project! You can use this [github template](https://github.com/sinedied/ng-lite-starter) if you'd like to use this starter again in the future, or you can make your own.
+![Bar graph showing bundle size reduction](./assets/bundle-size.png)
+
+Of course, that's a bit tedious and not something you want to do every time you start a new project! You can use this [github template](https://github.com/sinedied/ng-lite-starter) if you'd like to use this starter again in the future, or you can make your own.
 
 ## What about testing?
 
-You may have noticed that this template doesn't include any testing tools. This is fine for learning and personal projects, but it's not a good idea for a production app to skip on unit testing.
+You may have noticed that this template doesn't include any testing tools. This is fine for learning and personal projects, but it's not a good idea for a production app to skip unit testing.
 
 While the default Angular starter includes unit tests, it makes use of the older and clunky [Karma](https://karma-runner.github.io)/[Jasmine](https://jasmine.github.io) combo for unit testing.
 
-When you need units testing for your project, you can use the much better and faster testing framework [Jest](https://jestjs.io) with our `ngLite` template by adding a few extra steps:
+When you need unit testing for your project, you can use the much better and faster testing framework [Jest](https://jestjs.io) with our `ngLite` template by adding a few extra steps:
 
 1. Run the command `npm install --save-dev jest @angular-builders/jest @types/jest` to install the dependencies.
 
@@ -279,7 +283,7 @@ When you need units testing for your project, you can use the much better and fa
       }
     },
     ```
-    If you want to have tests generated by default when using the `ng generate` command, you can also remove all the `"skipTests": true` occurences in this file.
+    If you want to have tests generated by default when using the `ng generate` command, you can also remove all the `"skipTests": true` occurrences in this file.
 
 5. Create your first test in `src/app/app.component.spec.ts`:
     ```typescript
@@ -310,11 +314,11 @@ You can now run your tests with `ng test` or `ng test --watch`.
 
 ## What's next?
 
-If you followed closely, you've seen that we didn't even include some Angular's core libraries like `@angular/forms` or `@angular/router`. Well, that's not because you're writing an Angular app that you have to use *all* of the provided libraries! For sure they're convenient, and you can always add them back later if you need it, but you can also build your entire app *without them*.
+If you followed closely, you've seen that we didn't even include some of Angular's core libraries like `@angular/forms` or `@angular/router`. Well, that's not because you're writing an Angular app that you have to use *all* of the provided libraries! For sure they're convenient, and you can always add them back later if you need them, but you can also build your entire app *without them*.
 
-That's what we'll explore in a further article. Now that we have a simpler starter template, why not try building a complete app, keeping the code as simple as it can?
+That's what we'll explore in a further article. Now that we have a simpler starter template, why not try building a complete app, and keeping the code as simple as it can?
 
-In the meantime, you can have a looking at [this todo list app](https://github.com/sinedied/ng-lite-todo) built from expanding on that idea.
+In the meantime, you can have a look at [this todo list app](https://github.com/sinedied/ng-lite-todo) built from expanding on that idea.
 
 ---
 
