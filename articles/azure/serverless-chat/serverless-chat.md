@@ -368,6 +368,7 @@ This was only an introduction to the possibilities of building AI-powered applic
 - [Generative AI For Beginners](https://github.com/microsoft/generative-ai-for-beginners): a collection of resources to learn about Generative AI, including tutorials, code samples, and more.
 - [Azure OpenAI Service](https://learn.microsoft.com/azure/ai-services/openai/overview): the official documentation for the Azure OpenAI Service, which provides access to the latest AI models from OpenAI.
 - [Ask YouTube: LangChain.js + Azure Quickstart sample](https://github.com/Azure-Samples/langchainjs-quickstart-demo): another LangChain.js sample project that uses RAG to answer questions from YouTube videos.
+- [ChatGPT + Enterprise data with Azure OpenAI and Azure AI Search: a more advanced version of this sample using Azure AI Search](https://github.com/Azure-Samples/azure-search-openai-javascript)
 - [Revolutionize your Enterprise Data with ChatGPT: Next-gen Apps w/ Azure OpenAI and AI Search](https://aka.ms/entgptsearchblog): a blog post that explain the RAG approach using Azure OpenAI and Azure AI Search.
 
 You can also find [more Azure AI samples here](https://github.com/Azure-Samples/azureai-samples).
