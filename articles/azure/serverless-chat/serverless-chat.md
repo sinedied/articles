@@ -1,9 +1,11 @@
 ---
 title: Build a serverless ChatGPT with RAG using LangChain.js
-published: false
-description: AI apps can be complex to build, but with LangChain.js and Serverless technologies, you can create an enterprise chatbot in no time. Using PDFs documents as a source of knowledge, we'll show how to build a support chatbot that can answer questions using a RAG (Retrieval-Augmented Generation) pipeline. 
-tags: webdev, javascript, beginners, ai
+published: true
+description: 'AI apps can be complex to build, but with LangChain.js and Serverless technologies, you can create an enterprise chatbot in no time. Using PDFs documents as a source of knowledge, we''ll show how to build a support chatbot that can answer questions using a RAG (Retrieval-Augmented Generation) pipeline.'
+tags: 'webdev, javascript, beginners, ai'
 cover_image: ./assets/banner.jpg
+id: 1817665
+date: '2024-04-10T14:55:38Z'
 ---
 
 We're still at the beginning of exploring what we can do with generative AI, and the field is moving fast, very fast!
@@ -24,7 +26,7 @@ Grab your favorite beverage ☕, and let's dive in!
 - Ollama is a powerful tool to experiment with AI models and embeddings locally.
 - Azure Cosmos DB for MongoDB vCore can be used as a vector database for AI workloads, in addition to your regular NoSQL storage.
 
-Here is the final project [source code on GitHub](hhttps://github.com/Azure-Samples/serverless-chat-langchainjs).
+Here is the final project [source code on GitHub](https://github.com/Azure-Samples/serverless-chat-langchainjs).
 
 If you like the project, don't forget to give it a star ⭐️!
 
