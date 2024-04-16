@@ -1,5 +1,5 @@
 ---
-title: Build a serverless ChatGPT with RAG using LangChain.js
+title: Build a serverless AI Chat with RAG using LangChain.js
 published: true
 description: 'AI apps can be complex to build, but with LangChain.js and Serverless technologies, you can create an enterprise chatbot in no time. Using PDFs documents as a source of knowledge, we''ll show how to build a support chatbot that can answer questions using a RAG (Retrieval-Augmented Generation) pipeline.'
 tags: 'webdev, javascript, beginners, ai'
@@ -99,7 +99,7 @@ Once the models are downloaded, you can test that the Ollama server is working c
 ollama run mistral
 ```
 
-You should get an invite in your terminal, where you can chat with the AI model directly, like a minimal ChatGPT:
+You should get an invite in your terminal, where you can chat with the AI model directly, like a minimal chatbot:
 
 ![Screenshot of Ollama running the Mistral model](./assets/ollama-mistral.png)
 
@@ -368,8 +368,8 @@ This was only an introduction to the possibilities of building AI-powered applic
 - [Generative AI For Beginners](https://github.com/microsoft/generative-ai-for-beginners): a collection of resources to learn about Generative AI, including tutorials, code samples, and more.
 - [Azure OpenAI Service](https://learn.microsoft.com/azure/ai-services/openai/overview): the official documentation for the Azure OpenAI Service, which provides access to the latest AI models from OpenAI.
 - [Ask YouTube: LangChain.js + Azure Quickstart sample](https://github.com/Azure-Samples/langchainjs-quickstart-demo): another LangChain.js sample project that uses RAG to answer questions from YouTube videos.
-- [ChatGPT + Enterprise data with Azure OpenAI and Azure AI Search](https://github.com/Azure-Samples/azure-search-openai-javascript): an enterprise implementation of the chatbot, using Azure AI Search
-- [Revolutionize your Enterprise Data with ChatGPT: Next-gen Apps w/ Azure OpenAI and AI Search](https://aka.ms/entgptsearchblog): a blog post that explain the RAG approach using Azure OpenAI and Azure AI Search.
+- [Chat + Enterprise data with Azure OpenAI and Azure AI Search](https://github.com/Azure-Samples/azure-search-openai-javascript): an enterprise implementation of the chatbot, using Azure AI Search
+- [Revolutionize your Enterprise Data with Chat: Next-gen Apps w/ Azure OpenAI and AI Search](https://aka.ms/entgptsearchblog): a blog post that explain the RAG approach using Azure OpenAI and Azure AI Search.
 
 You can also find [more Azure AI samples here](https://github.com/Azure-Samples/azureai-samples).
 
