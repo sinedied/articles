@@ -313,7 +313,7 @@ return data(createStream(responseStream), {
 
 Finally, the last part of the chain is to generate the response using `chain.stream()` and passing the last user message, containing the question, as input. The response is then streamed back to the client.
 
-We use a stream of newline-delimited JSON (NDJSON) for the response, following the [AI Chat Protocol](https://github.com/Azure-Samples/ai-chat-app-protocol) as our API contract between the frontend and the backend.
+We use a stream of newline-delimited JSON (NDJSON) for the response, following the [AI Chat Protocol](https://aka.ms/chatprotocol) as our API contract between the frontend and the backend.
 
 ## Deploying the chatbot to Azure (optional)
 
