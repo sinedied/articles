@@ -1,9 +1,10 @@
 ---
-title: Generative AI, from your local machine to Azure with LangChain.js
+title: 'Generative AI, from your local machine to Azure with LangChain.js'
 published: false
-description: In this article, we'll take you through the development journey, starting from an idea and progressing towards production. We'll explore how LangChain framework together with Azure AI building blocks allows you to quickly build complex AI applications at the various stages of development.
+description: 'In this article, we''ll take you through the development journey, starting from an idea and progressing towards production. We''ll explore how LangChain framework together with Azure AI building blocks allows you to quickly build complex AI applications at the various stages of development.'
 tags: 'webdev, javascript, beginners, ai'
 cover_image: ./assets/banner.jpg
+id: 1892440
 ---
 
 The generative AI landscape moves at a fast pace, and it can be challenging to keep up with the latest developments, even for seasoned developers. There are in particular two questions that often come up when starting a new AI project:
@@ -100,7 +101,9 @@ const response = await model.invoke([
 console.log(response.content);
 ```
 
-Now run the code with `node index.js`. You should see the response from the model in the console. Congrats, you've just built the hello world of AI chatbots!
+Run the code with `node index.js`. You should see the response from the model in the console. Congrats, you've just built the hello world of AI chatbots!
+
+### A more complex example
 
 What if I want to use [RAG (Retrieval-Augmented Generation)](https://aka.ms/ws?src=gh%3Aazure-samples%2Fazure-openai-rag-workshop%2Fbase%2Fdocs%2F&step=1#what-is-retrievial-augmented-generation) to ground the answers using documents? Let's update our `index.js` file with the following code:
 
@@ -189,7 +192,6 @@ store = await FaissStore.load(faissStoreFolder, embeddings);
 Switching to Azure OpenAI and Azure AI Search is as simple as changing the model and store initialization:
 
 ```typescript
-// We use passwordless authentication, so we don't need to store any secrets
 const credentials = getCredentials();
 
 embeddings = new AzureOpenAIEmbeddings({ credentials });
@@ -223,7 +225,7 @@ You can try it with our [Serverless AI Chat project](https://github.com/Azure-Sa
 
 ## Azure building blocks
 
-We skipped over the implementation details of our example project in the previous sections, but to build it quickly we used some of many of existing Azure AI building blocks. Here's a list of some components we used, that you can reuse in your own projects:
+We skipped a bit over the implementation details of our example project, but to build it quickly we used some of the already existing Azure AI building blocks. Here's a list of some components we used, that you can reuse in your own projects:
 
 - **OpenAI Node.js SDK**: we announced at Build a new integration of Azure OpenAI with the official [OpenAI Node.js SDK](https://github.com/openai/openai-node?tab=readme-ov-file#microsoft-azure-openai), meaning it's now easier than ever to switch between OpenAI and Azure OpenAI models. The [LangChain.js Azure OpenAI integration](https://js.langchain.com/docs/integrations/chat/azure/) has also been updated to use this new SDK.
 
