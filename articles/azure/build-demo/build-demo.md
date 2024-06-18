@@ -1,10 +1,11 @@
 ---
 title: 'Generative AI, from your local machine to Azure with LangChain.js'
-published: false
+published: true
 description: 'In this article, we''ll take you through the development journey, starting from an idea and progressing towards production. We''ll explore how LangChain framework together with Azure AI building blocks allows you to quickly build complex AI applications at the various stages of development.'
 tags: 'webdev, javascript, beginners, ai'
 cover_image: ./assets/banner.jpg
 id: 1892440
+date: '2024-06-18T14:58:00Z'
 ---
 
 The generative AI landscape moves at a fast pace, and it can be challenging to keep up with the latest developments, even for seasoned developers. There are in particular two questions that often come up when starting a new AI project:
