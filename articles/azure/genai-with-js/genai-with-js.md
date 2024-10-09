@@ -32,7 +32,7 @@ We tried to pair each topic with interactive demos, code samples, and additional
 
 In this repo, you'll find:
 - 📚 **Links to all the videos** in the series
-- 📄 **Slides and transcripts** for all sessions
+- 📄 **Slides and transcripts** for all sessions, to use as foundation for your own talks
 - 📦 **Demo and code samples** to get hands-on experience
 - 🚀 **Project examples and starter kits** to help you get use Gen AI in your projects
 - 🌟 **Additional resources** to learn more about generative AI
@@ -56,3 +56,8 @@ We're here to help you learn and grow, so we'd love to hear your feedback on the
 You can also join the discussion on the [AI Community #JavaScript channel on Discord](https://discordapp.com/channels/1113626258182504448/1237357005555892225) to chat with other developers, ask questions, and share your own projects.
 
 *THANK YOU* for taking this journey with us, I'm excited to see what you'll build!
+
+## TL;DR
+
+- **[📺 Watch the video series](https://aka.ms/genai-js)**
+- **[📦 Get the code samples and all the Gen AI + JavaScript content](https://github.com/microsoft/generative-ai-with-javascript)**
