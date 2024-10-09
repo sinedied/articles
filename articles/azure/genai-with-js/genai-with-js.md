@@ -1,10 +1,11 @@
 ---
 title: Generative AI with JavaScript FREE course
 published: false
-description: Master generative AI with JavaScript in our free course! Learn to integrate AI models into web, mobile, and server apps using tools like LangChain.js and Azure. Access hands-on demos, code samples, and project starters to build AI-driven applications.
+description: 'Master generative AI with JavaScript in our free course! Learn to integrate AI models into web, mobile, and server apps using tools like LangChain.js and Azure. Access hands-on demos, code samples, and project starters to build AI-driven applications.'
 tags: 'ai, javascript, ai, webdev'
 cover_image: ./assets/banner.jpg
 canonical_url: null
+id: 2031842
 ---
 
 Generative AI has come a long way in just two years, revolutionizing industries and unlocking new possibilities for developers across the globe. What initially started as a niche field primarily dominated by research and Python-based machine learning has quickly become a mainstream technology that’s reshaping how we approach creativity, automation, and interaction. But what’s even more exciting is how accessible this technology has become for developers from all backgrounds—especially JavaScript developers! 🎉
@@ -27,9 +28,7 @@ We've made each video self-contained, so you can watch them in any order that su
 
 The videos are *only one part* of the learning experience! 😉
 
-We tried to pair each topic with interactive demos, code samples, and additional resources to help you dive deeper into the subject. You can find all these resources in the video descriptions but we also gathered everything in a dedicated GitHub repository:
-
-https://github.com/microsoft/generative-ai-with-javascript
+We tried to pair each topic with interactive demos, code samples, and additional resources to help you dive deeper into the subject. You can find all these resources in the video descriptions but we also gathered everything in a dedicated GitHub repository: https://github.com/microsoft/generative-ai-with-javascript
 
 In this repo, you'll find:
 - 📚 **Links to all the videos** in the series
