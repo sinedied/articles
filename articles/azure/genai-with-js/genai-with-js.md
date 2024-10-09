@@ -16,7 +16,7 @@ Today, generative AI isn’t just about building complex models in Python. **The
 
 We built our new content series, **Generative AI with JavaScript**, to help you harness this power. Whether you’re a web developer curious about AI or an experienced coder looking to leverage generative AI in your projects, this series will walk you through everything you need to know: from connecting to APIs and working with large language models (LLMs), to building sophisticated, AI-driven applications using popular tools like LangChain.js and Azure.
 
-You can access the full series for free on our [YouTube playlist](https://aka.ms/genai-js), where you’ll find videos around 10 minutes long, each focusing on a specific topic:
+You can access the full series for free on our [YouTube playlist](https://aka.ms/genai-js), where you’ll find videos around 10 minutes long, each focusing on a specific topic.
 
 **[📺 Generative AI with JavaScript](https://aka.ms/genai-js)**
 
