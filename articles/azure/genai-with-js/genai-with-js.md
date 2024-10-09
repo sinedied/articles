@@ -53,4 +53,6 @@ We have plently more content coming, this is just the first part of the series. 
 
 We're here to help you learn and grow, so we'd love to hear your feedback on the series. What did you like? What could be improved? What topics would you like to see covered next? Let us know by [opening an issue in the GitHub repository](https://github.com/microsoft/generative-ai-with-javascript/issues) or by commenting on the videos. We're always listening, and we love to hear back from you! 🙌
 
+You can also join the discussion on the [AI Community #JavaScript channel on Discord](https://discordapp.com/channels/1113626258182504448/1237357005555892225) to chat with other developers, ask questions, and share your own projects.
+
 *THANK YOU* for taking this journey with us, I'm excited to see what you'll build!
