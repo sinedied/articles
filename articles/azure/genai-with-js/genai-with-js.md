@@ -20,7 +20,7 @@ You can access the full series for free on our [YouTube playlist](https://aka.ms
 
 **[📺 Generative AI with JavaScript](https://aka.ms/genai-js)**
 
-{% youtube XXXXXXXXv01 %}
+{% youtube GQ_2OjNZ9aA %}
 
 We've made each video self-contained, so you can watch them in any order that suits your learning style, though we chose and ordered them to provide a smooth learning curve if you're new to generative AI.
 
