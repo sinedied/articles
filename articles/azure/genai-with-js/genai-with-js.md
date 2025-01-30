@@ -4,7 +4,7 @@ published: true
 description: 'Master generative AI with JavaScript in our free course! Learn to integrate AI models into web, mobile, and server apps using tools like LangChain.js and Azure. Access hands-on demos, code samples, and project starters to build AI-driven applications.'
 tags: 'ai, javascript, ai, webdev'
 cover_image: ./assets/banner.jpg
-canonical_url: null
+canonical_url: 'https://techcommunity.microsoft.com/t5/apps-on-azure-blog/generative-ai-with-javascript-free-course/ba-p/4271798'
 id: 2031842
 date: '2024-10-16T08:58:50Z'
 ---
