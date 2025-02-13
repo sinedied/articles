@@ -1,10 +1,11 @@
 ---
 title: Using DeepSeek-R1 on Azure with JavaScript
-published: false
+published: true
 description: 'Learn how to deploy and use the DeepSeek-R1 models in your JavaScript applications on Azure. Discover how to switch between Azure AI, GitHub Models, or local models with Ollama, and start using DeepSeek-R1 with various libraries in TypeScript.'
 tags: 'webdev, javascript, beginners, ai'
 cover_image: ./assets/banner.jpg
 id: 2275789
+date: '2025-02-13T13:20:00Z'
 ---
 
 # Using DeepSeek-R1 on Azure with JavaScript
