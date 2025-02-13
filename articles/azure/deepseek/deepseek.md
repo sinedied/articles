@@ -3,14 +3,14 @@ title: Using DeepSeek-R1 on Azure with JavaScript
 published: false
 description: 'Learn how to deploy and use the DeepSeek-R1 models in your JavaScript applications on Azure. Discover how to switch between Azure AI, GitHub Models, or local models with Ollama, and start using DeepSeek-R1 with various libraries in TypeScript.'
 tags: 'webdev, javascript, beginners, ai'
-# cover_image: ./assets/banner.jpg
+cover_image: ./assets/banner.jpg
 ---
 
 # Using DeepSeek-R1 on Azure with JavaScript
 
 The pace at which innovative AI models are being developed is outstanding! DeepSeek-R1 is one such model that focuses on complex reasoning tasks, providing a powerful tool for developers to build intelligent applications.
 
-Just yesterday, we announced its availability on [GitHub Models](https://github.blog/changelog/2025-01-29-deepseek-r1-is-now-available-in-github-models-public-preview/)
+We recently announced its availability on [GitHub Models](https://github.blog/changelog/2025-01-29-deepseek-r1-is-now-available-in-github-models-public-preview/)
 as well as on [Azure AI Foundry](https://azure.microsoft.com/en-us/blog/deepseek-r1-is-now-available-on-azure-ai-foundry-and-github/). In this article, we’ll take a look at how you can deploy and use the DeepSeek-R1 models in your JavaScript applications.
 
 ## TL;DR key takeaways
@@ -147,5 +147,6 @@ Now it's your turn to experiment and discover the full potential of DeepSeek-R1!
 
 To continue your learning journey, you can check out the following resources:
 
+- [DeepSeek-R1 JavaScript starter](https://github.com/Azure-Samples/deepseek-js) (GitHub): a complete starter project including to use DeepSeek-R1 models in JavaScript, including infrastructure as code for secure deployment on Azure.
 - [Generative AI with JavaScript](https://github.com/microsoft/generative-ai-with-javascript) (GitHub): code samples and resources to learn Generative AI with JavaScript.
 - [Build a serverless AI chat with RAG using LangChain.js](https://techcommunity.microsoft.com/t5/apps-on-azure-blog/build-a-serverless-ai-chat-with-rag-using-langchain-js/ba-p/4111041) (GitHub): a next step code example to build an AI chatbot using Retrieval-Augmented Generation and LangChain.js.
