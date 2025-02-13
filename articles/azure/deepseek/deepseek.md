@@ -4,6 +4,7 @@ published: false
 description: 'Learn how to deploy and use the DeepSeek-R1 models in your JavaScript applications on Azure. Discover how to switch between Azure AI, GitHub Models, or local models with Ollama, and start using DeepSeek-R1 with various libraries in TypeScript.'
 tags: 'webdev, javascript, beginners, ai'
 cover_image: ./assets/banner.jpg
+id: 2275789
 ---
 
 # Using DeepSeek-R1 on Azure with JavaScript
@@ -40,7 +41,7 @@ We'll use [GitHub Codespaces](#use-github-codespaces) to get started quickly, as
 
 Click on the button below to open our sample repository in a web-based VS Code, directly in your browser:
 
-[![Open in GitHub Codespaces](https://img.shields.io/static/v1?style=flat-square&label=GitHub+Codespaces&message=Open&color=blue&logo=github)](https://codespaces.new/Azure-Samples/deepseek-azure-javascript?hide_repo_select=true&ref&quickstart=true)
+[![Open in GitHub Codespaces](https://img.shields.io/static/v1?style=for-the-badge&label=GitHub+Codespaces&message=Open&color=blue&logo=github)](https://codespaces.new/Azure-Samples/deepseek-azure-javascript?hide_repo_select=true&ref&quickstart=true)
 
 Once the project is open, wait a bit to ensure everything has loaded correctly. Open a terminal and run the following command to install the dependencies:
 
