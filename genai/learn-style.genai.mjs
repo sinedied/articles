@@ -5,7 +5,7 @@ const author = `Yohan is a French principal developer advocate working at Micros
 script({
   system: [],
   systemSafety: false,
-  model: 'azure:gpt-4.1-mini',
+  // model: 'azure:gpt-5-mini',
   parameters: {
     contentKind: 'blog',  // blog, technical article, tutorial, etc.
   }
