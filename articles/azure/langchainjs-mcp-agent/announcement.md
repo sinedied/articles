@@ -75,7 +75,7 @@ For this quickstart we'll only interact with the **Agent Web App** and the **Bur
 
 ### LangChain.js v1 agent features
 
-The recent release of LangChain.js v1 is a huge milestone for the JavaScript AI community! It marks a significant shift from experimental tools to a production-ready framework. The new version doubles down on what’s needed to build robust AI applications, with a strong focus on **agents**. This includes first-class support for streaming not just the final output, but also intermediate steps like tool calls and agent reasoning. This makes building transparent and interactive agent experiences—like the one in this sample—much more straightforward.
+The recent release of LangChain.js v1 is a huge milestone for the JavaScript AI community! It marks a significant shift from experimental tools to a production-ready framework. The new version doubles down on what’s needed to build robust AI applications, with a strong focus on **agents**. This includes first-class support for streaming not just the final output, but also intermediate steps like tool calls and agent reasoning. This makes building transparent and interactive agent experiences (like the one in this sample) much more straightforward.
 
 ## Quickstart
 
@@ -91,7 +91,7 @@ We'll use GitHub Codespaces for a quick zero-install setup here, but if you pref
 
 Click on the badge below (or open the link in a new tab):
 
-[![Open in Codespaces](https://img.shields.io/badge/Codespaces-Open-blue?style=flat-square&logo=github)](https://codespaces.new/Azure-Samples/mcp-agent-langchainjs?hide_repo_select=true&ref=main&quickstart=true)
+[![Open in Codespaces](./assets/Codespaces-Open-blue.svg)](https://codespaces.new/Azure-Samples/mcp-agent-langchainjs?hide_repo_select=true&ref=main&quickstart=true)
 
 This will open a VS Code environment in your browser with the repo already cloned and all the tools installed and ready to go.
 
@@ -100,6 +100,9 @@ This will open a VS Code environment in your browser with the repo already clone
 Open a terminal and run these commands:
 
 ```sh
+# Install dependencies
+npm install
+
 # Login to Azure
 azd auth login
 
@@ -163,18 +166,17 @@ Click on **Connect**, then try listing the tools first, and run `get_burgers` to
 
 After the deployment is completed, you can run the command `npm run env` to print the URLs of the deployed services. Open the Agent Web App URL in your browser (it should look like `https://<your-web-app>.azurestaticapps.net`).
 
-You'll first be greeted by an authentication page, you can sign in either with your GitHub or Microsoft accounts and then you should be able to access the chat interface.
+You'll first be greeted by an authentication page, you can sign in either with your GitHub or Microsoft account and then you should be able to access the chat interface.
 
 ![Agent chat interface screenshot](./assets/agent-webapp.png)
 
-From there, you can start asking any question or use one of the suggested prompts, for example try asking: `Recommendation me an extra spicy burger`.
+From there, you can start asking any question or use one of the suggested prompts, for example try asking: `Recommend me an extra spicy burger`.
 
 As the agent processes your request, you'll see the response streaming in real-time, along with the intermediate steps and tool calls. Once the response is complete, you can also unfold the debug panel to see the full reasoning chain and the tools that were invoked:
 
 ![Intermediate steps debug panel screenshot](./assets/steps-debug.png)
 
-> [!TIP]
-> Our agent service also sends detailed tracing data using OpenTelemetry. You can explore these either in Azure Monitor for the deployed service, or locally using an OpenTelemetry collector. We'll cover this in more detail in a future post.
+> **Tip:** Our agent service also sends detailed tracing data using OpenTelemetry. You can explore these either in Azure Monitor for the deployed service, or locally using an OpenTelemetry collector. We'll cover this in more detail in a future post.
 
 ## Wrap it up
 
