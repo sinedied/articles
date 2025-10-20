@@ -1,12 +1,11 @@
 ---
-title: Serverless MCP Agent with LangChain.js v1 — Burgers, Tools, and Traces 🍔
+title: "Serverless MCP Agent with LangChain.js v1 — Burgers, Tools, and Traces \U0001F354"
 published: false
-description: Build and deploy a full-stack serverless AI agent using LangChain.js v1 + Model Context Protocol (MCP) with Azure Functions, Static Web Apps, and Cosmos DB.
-tags: 'ai, javascript, langchain, azure, serverless'
+description: 'Build and deploy a full-stack serverless AI agent using LangChain.js v1 + Model Context Protocol (MCP) with Azure Functions, Static Web Apps, and Cosmos DB.'
+tags: 'ai, javascript, langchain, azure'
 cover_image: ./assets/banner.jpg
-canonical_url: null
-series: null
 date: '2025-10-16T00:00:00Z'
+id: 2944143
 ---
 
 AI agents that can actually do stuff (not just chat) are the fun part nowadays, but wiring them cleanly into real APIs, keeping things observable, and shipping them to the cloud can get... messy. So we built a fresh end‑to‑end sample to show how to do it right with the brand new **LangChain.js v1** and **Model Context Protocol (MCP)**.
@@ -39,11 +38,11 @@ Yes, it’s a burger ordering system. Who doesn't like burgers? Grab your favori
 
 ## Reference links for everything we use
 
-- GitHub repo: https://github.com/Azure-Samples/mcp-agent-langchainjs
-- LangChain.js docs: https://docs.langchain.com/oss/javascript/langchain/overview
-- Model Context Protocol: https://modelcontextprotocol.io
-- Azure Developer CLI (`azd`): https://learn.microsoft.com/azure/developer/azure-developer-cli/
-- MCP Inspector: https://www.npmjs.com/package/@modelcontextprotocol/inspector
+- [GitHub repo](https://github.com/Azure-Samples/mcp-agent-langchainjs)
+- [LangChain.js docs](https://docs.langchain.com/oss/javascript/langchain/overview)
+- [Model Context Protocol](https://modelcontextprotocol.io)
+- [Azure Developer CLI](https://learn.microsoft.com/azure/developer/azure-developer-cli/)
+- [MCP Inspector](https://www.npmjs.com/package/@modelcontextprotocol/inspector)
 
 ## Use case
 
