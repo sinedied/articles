@@ -89,9 +89,9 @@ The recent release of LangChain.js v1 is a huge milestone for the JavaScript AI 
 
 We'll use GitHub Codespaces for a quick zero-install setup here, but if you prefer to run it locally, check the [README](https://github.com/Azure-Samples/mcp-agent-langchainjs?tab=readme-ov-file#getting-started).
 
-Click on the badge below (or open the link in a new tab):
+Click on the following link or open it in a new tab to launch a Codespace:
 
-[![Open in Codespaces](./assets/Codespaces-Open-blue.svg)](https://codespaces.new/Azure-Samples/mcp-agent-langchainjs?hide_repo_select=true&ref=main&quickstart=true)
+- [Create Codespace](https://codespaces.new/Azure-Samples/mcp-agent-langchainjs?hide_repo_select=true&ref=main&quickstart=true)
 
 This will open a VS Code environment in your browser with the repo already cloned and all the tools installed and ready to go.
 
