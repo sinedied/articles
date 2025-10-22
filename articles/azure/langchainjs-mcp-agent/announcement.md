@@ -1,14 +1,15 @@
 ---
 title: "Serverless MCP Agent with LangChain.js v1 — Burgers, Tools, and Traces \U0001F354"
-published: false
+published: true
 description: 'Build and deploy a full-stack serverless AI agent using LangChain.js v1 + Model Context Protocol (MCP) with Azure Functions, Static Web Apps, and Cosmos DB.'
 tags: 'ai, javascript, langchain, azure'
 cover_image: ./assets/banner.jpg
-date: '2025-10-16T00:00:00Z'
+canonical_url: 'https://techcommunity.microsoft.com/blog/AzureDevCommunityBlog/serverless-mcp-agent-with-langchain-js-v1-%E2%80%94-burgers-tools-and-traces-%F0%9F%8D%94/4463157'
 id: 2944143
+date: '2025-10-21T16:09:46Z'
 ---
 
-AI agents that can actually do stuff (not just chat) are the fun part nowadays, but wiring them cleanly into real APIs, keeping things observable, and shipping them to the cloud can get... messy. So we built a fresh end‑to‑end sample to show how to do it right with the brand new **LangChain.js v1** and **Model Context Protocol (MCP)**.
+AI agents that can actually do stuff (not just chat) are the fun part nowadays, but wiring them cleanly into real APIs, keeping things observable, and shipping them to the cloud can get... messy. So we built a fresh end‑to‑end sample to show how to do it right with the brand new **LangChain.js v1** and **Model Context Protocol (MCP)**. In case you missed it, MCP is a recent open standard that makes it easy for LLM agents to consume tools and APIs, and LangChain.js, a great framework for building GenAI apps and agents, has first-class support for it.
 
 This new sample gives you:
 - A LangChain.js v1 agent that streams its result, along reasoning + tool steps
