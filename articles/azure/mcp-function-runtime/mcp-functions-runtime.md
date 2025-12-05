@@ -100,7 +100,7 @@ Create a `host.json` file at the root of your Node.js project:
 
 > **Note:** Adjust the `arguments` array to point to your compiled server file (e.g., `lib/server.js` or `dist/server.js`), depending on your build setup.
 
-This configures the Azure Functions runtime to run your Node.js MCP server as a *custom handler*, which allows you to use any HTTP server framework (like Express, Fastify, etc.) without modification (**tip: it can do more than MCP servers!** 😉).
+The `hosts.json` file holds [metadata configuration](https://learn.microsoft.com/en-us/azure/azure-functions/functions-host-json) for the Functions runtime. The most important part here is the `customHandler` section. It configures the Azure Functions runtime to run your Node.js MCP server as a *custom handler*, which allows you to use any HTTP server framework (like Express, Fastify, etc.) without modification (**tip: it can do more than MCP servers!** 😉).
 
 ### Step 2: Configure the port correctly
 
@@ -145,6 +145,8 @@ Create a `handler` directory with a `function.json` file and add the following c
 This file tells Azure Functions to route **all** HTTP requests to your MCP server. No configuration needed here, and this boilerplate file might even not be necessary in future versions.
 
 Aaand you're done with the configuration. That's it! 😎
+
+> **Note:** We're not covering the authentication and authorization aspects of Azure Functions here, but you can easily [add those later if needed](https://learn.microsoft.com/azure/app-service/overview-authentication-authorization).
 
 ### Automated setup with GitHub Copilot
 
