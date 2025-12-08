@@ -4,7 +4,7 @@ published: false
 description: Learn how to deploy Model Context Protocol (MCP) servers to Azure Functions with serverless scaling and the official Anthropic SDK
 tags: 'webdev, javascript, ai, azure'
 cover_image: ./assets/banner.jpg
-canonical_url: https://developer.microsoft.com/blog/host-your-node-js-mcp-server-on-azure-functions-in-3-simple-steps
+canonical_url: 'https://developer.microsoft.com/blog/host-your-node-js-mcp-server-on-azure-functions-in-3-simple-steps'
 id: 3061016
 ---
 
