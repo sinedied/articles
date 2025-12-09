@@ -339,7 +339,7 @@ The free tier is generous enough to allow running a typical MCP server with mode
 
 ## Wrap up
 
-Hosting MCP servers on Azure Functions gives you the best of both worlds: the simplicity of serverless infrastructure and the power of the official Anthropic SDK. With just **three simple configuration steps**, you can take your existing Node.js MCP server and deploy it to a production-ready, auto-scaling platform.
+Hosting MCP servers on Azure Functions gives you the best of both worlds: the simplicity of serverless infrastructure and the power of the official Anthropic SDK. With just **one simple configuration step**, you can take your existing Node.js MCP server and deploy it to a production-ready, auto-scaling platform.
 
 The combination of MCP's standardized protocol and Azure's serverless platform means you can focus on building amazing AI experiences instead of managing infrastructure. Boom. 😎
 
