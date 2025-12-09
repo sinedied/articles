@@ -63,7 +63,7 @@ Azure Functions is a serverless compute platform that's perfect for MCP servers:
 
 - **Zero infrastructure management**: No servers to maintain
 - **Automatic scaling**: Handles traffic spikes seamlessly
-- **Cost-effective**: Pay only for actual execution time (with generous free tier)
+- **Cost-effective**: Pay only for actual execution time (with generous free grant)
 - **Built-in monitoring**: Application Insights integration out of the box
 - **Global distribution**: Deploy to regions worldwide
 
@@ -331,11 +331,11 @@ But if you're only interested in the MCP server part, then you might want to loo
 
 Azure Functions Flex Consumption pricing is attractive for MCP servers:
 
-- **Free tier**: 1 million requests and 400,000 GB-s execution time per month
-- **After free tier**: Pay only for actual execution time
+- **Free grant**: 1 million requests and 400,000 GB-s execution time per month
+- **After free grant**: Pay only for actual execution time
 - **Automatic scaling**: From zero to hundreds of instances
 
-The free tier is generous enough to allow running a typical MCP server with moderate usage, and all the experimentation you might need. It's easy to configure the scaling limits to control costs as needed, with an option to scale down to zero when idle. This flexibility is why Functions is my personal go-to choice for TypeScript projects on Azure.
+The free grant is generous enough to allow running a typical MCP server with moderate usage, and all the experimentation you might need. It's easy to configure the scaling limits to control costs as needed, with an option to scale down to zero when idle. This flexibility is why Functions is my personal go-to choice for TypeScript projects on Azure.
 
 ## Wrap up
 
