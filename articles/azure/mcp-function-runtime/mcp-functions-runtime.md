@@ -82,24 +82,21 @@ Create a `host.json` file at the root of your Node.js project:
 ```json
 {
   "version": "2.0",
-  "extensions": {
-    "http": {
-      "routePrefix": ""
-    }
-  },
+  "configurationProfile": "mcp-custom-handler",
   "customHandler": {
     "description": {
       "defaultExecutablePath": "node",
-      "workingDirectory": "",
       "arguments": ["lib/server.js"]
     },
-    "enableForwardingHttpRequest": true,
-    "enableHttpProxyingRequest": true
+    "http": {
+      "DefaultAuthorizationLevel": "anonymous"
+    },
+    "port": "3000"
   }
 }
 ```
 
-> **Note:** Adjust the `arguments` array to point to your compiled server file (e.g., `lib/server.js` or `dist/server.js`), depending on your build setup.
+> **Note:** Adjust the `arguments` array to point to your compiled server file (e.g., `lib/server.js` or `dist/server.js`), depending on your build setup. You can also change the port if needed to match your server configuration.
 
 The `hosts.json` file holds [metadata configuration](https://learn.microsoft.com/azure/azure-functions/functions-host-json) for the Functions runtime. The most important part here is the `customHandler` section. It configures the Azure Functions runtime to run your Node.js MCP server as a *custom handler*, which allows you to use any HTTP server framework (like Express, Fastify, etc.) without modification (**tip: it can do more than MCP servers!** 😉).
 
