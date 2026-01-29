@@ -69,7 +69,7 @@ Azure Functions is a serverless compute platform that's perfect for MCP servers:
 
 The new Azure Functions support means you can take your existing Node.js MCP server and deploy it to a production-ready serverless environment with minimal changes. This comes up as an additional option for native Node.js MCP hosting, but you can still use the [Azure Functions MCP bindings](https://learn.microsoft.com/azure/azure-functions/functions-bindings-mcp?pivots=programming-language-typescript) that were available before.
 
-## 1 simple steps to enable Functions hosting
+## 1 simple step to enable Functions hosting
 
 Let's break down what you need to add to your existing Node.js MCP server to run it on Azure Functions. I'll use a [real-world example](https://github.com/Azure-Samples/mcp-agent-langchainjs/tree/main/packages/burger-mcp) from our burger ordering system.
 
@@ -102,18 +102,7 @@ The `hosts.json` file holds [metadata configuration](https://learn.microsoft.com
 
 There's no step 2 or 3. That's it! 😎
 
-> **Note:** We're not covering the authentication and authorization aspects of Azure Functions here, but you can easily [add those later if needed](https://learn.microsoft.com/azure/app-service/overview-authentication-authorization).
-
-### Automated setup with GitHub Copilot
-
-While this change is pretty straightforward, you might want to automate this (boring) process. That's why we have AI tools for, right?
-
-My friend Anthony Chu created an awesome GitHub Copilot prompt that automates this entire setup process. Just ask Copilot to use the prompt from [create-functions-mcp-server](https://github.com/anthonychu/create-functions-mcp-server) and it will:
-
-- Add the necessary configuration file
-- Set up the Infrastructure as Code
-
-If you're not using Copilot, you can also copy the prompt instructions from the repo in your favorite AI coding assistant.
+> **Note:** We're not covering the authentication and authorization aspects of Azure Functions here, but you can easily [add those later if needed](https://learn.microsoft.com/azure/azure-functions/functions-mcp-tutorial?tabs=self-hosted&pivots=programming-language-typescript#enable-built-in-server-authorization-and-authentication).
 
 ## Real-world example: Burger MCP Server
 
